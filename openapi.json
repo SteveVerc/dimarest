@@ -1,717 +1,1144 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "Swagger Petstore - OpenAPI 3.0",
-    "description": "This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about\nSwagger at [https://swagger.io](https://swagger.io). In the third iteration of the pet store, we've switched to the design first approach!\nYou can now help us improve the API whether it's by making changes to the definition itself or to the code.\nThat way, with time, we can improve the API in general, and expose some of the new features in OAS3.\n\n_If you're looking for the Swagger 2.0/OAS 2.0 version of Petstore, then click [here](https://editor.swagger.io/?url=https://petstore.swagger.io/v2/swagger.yaml). Alternatively, you can load via the `Edit > Load Petstore OAS 2.0` menu option!_\n\nSome useful links:\n- [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)\n- [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)",
-    "termsOfService": "http://swagger.io/terms/",
-    "contact": {
-      "email": "apiteam@swagger.io"
-    },
-    "license": {
-      "name": "Apache 2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
-    },
-    "version": "1.0.11"
-  },
-  "externalDocs": {
-    "description": "Find out more about Swagger",
-    "url": "http://swagger.io"
+    "title": "DimaRest Api V1",
+    "version": "1.0.0",
+    "contact": {}
   },
   "servers": [
     {
-      "url": "https://petstore3.swagger.io/api/v3"
-    }
-  ],
-  "tags": [
-    {
-      "name": "pet",
-      "description": "Everything about your Pets",
-      "externalDocs": {
-        "description": "Find out more",
-        "url": "http://swagger.io"
-      }
-    },
-    {
-      "name": "store",
-      "description": "Access to Petstore orders",
-      "externalDocs": {
-        "description": "Find out more about our store",
-        "url": "http://swagger.io"
-      }
-    },
-    {
-      "name": "user",
-      "description": "Operations about user"
+      "url": "http://beapsprogres01.kerridgecs.local:8070/web/api/v1"
     }
   ],
   "paths": {
-    "/pet": {
-      "put": {
-        "tags": [
-          "pet"
-        ],
-        "summary": "Update an existing pet",
-        "description": "Update an existing pet by Id",
-        "operationId": "updatePet",
-        "requestBody": {
-          "description": "Update an existent pet in the store",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid ID supplied"
-          },
-          "404": {
-            "description": "Pet not found"
-          },
-          "422": {
-            "description": "Validation exception"
-          }
-        },
-        "security": [
-          {
-            "petstore_auth": [
-              "write:pets",
-              "read:pets"
-            ]
-          }
-        ]
-      },
-      "post": {
-        "tags": [
-          "pet"
-        ],
-        "summary": "Add a new pet to the store",
-        "description": "Add a new pet to the store",
-        "operationId": "addPet",
-        "requestBody": {
-          "description": "Create a new pet in the store",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid input"
-          },
-          "422": {
-            "description": "Validation exception"
-          }
-        },
-        "security": [
-          {
-            "petstore_auth": [
-              "write:pets",
-              "read:pets"
-            ]
-          }
-        ]
-      }
-    },
-    "/pet/findByStatus": {
+    "/data/company/001/salesorders": {
       "get": {
         "tags": [
-          "pet"
+          "SalesOrders"
         ],
-        "summary": "Finds Pets by status",
-        "description": "Multiple status values can be provided with comma separated strings",
-        "operationId": "findPetsByStatus",
+        "summary": "Data - SalesOrders (firm 001 limit 5)",
+        "description": "Data - SalesOrders (firm 001 limit 5)",
+        "operationId": "dataSalesordersFirm001Limit5",
         "parameters": [
           {
-            "name": "status",
+            "name": "limit",
             "in": "query",
-            "description": "Status values that need to be considered for filter",
-            "required": false,
-            "explode": true,
             "schema": {
               "type": "string",
-              "default": "available",
-              "enum": [
-                "available",
-                "pending",
-                "sold"
-              ]
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Pet"
-                  }
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Pet"
-                  }
-                }
-              }
+              "example": "5"
             }
           },
-          "400": {
-            "description": "Invalid status value"
-          }
-        },
-        "security": [
           {
-            "petstore_auth": [
-              "write:pets",
-              "read:pets"
-            ]
-          }
-        ]
-      }
-    },
-    "/pet/findByTags": {
-      "get": {
-        "tags": [
-          "pet"
-        ],
-        "summary": "Finds Pets by tags",
-        "description": "Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.",
-        "operationId": "findPetsByTags",
-        "parameters": [
-          {
-            "name": "tags",
+            "name": "id",
             "in": "query",
-            "description": "Tags to filter by",
-            "required": false,
-            "explode": true,
             "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
+              "type": "string",
+              "example": "30783030-3030-3030-3030-3030336136613833"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Pet"
-                  }
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Pet"
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid tag value"
+            "description": ""
           }
-        },
-        "security": [
-          {
-            "petstore_auth": [
-              "write:pets",
-              "read:pets"
-            ]
-          }
-        ]
-      }
-    },
-    "/pet/{petId}": {
-      "get": {
-        "tags": [
-          "pet"
-        ],
-        "summary": "Find pet by ID",
-        "description": "Returns a single pet",
-        "operationId": "getPetById",
-        "parameters": [
-          {
-            "name": "petId",
-            "in": "path",
-            "description": "ID of pet to return",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid ID supplied"
-          },
-          "404": {
-            "description": "Pet not found"
-          }
-        },
-        "security": [
-          {
-            "api_key": []
-          },
-          {
-            "petstore_auth": [
-              "write:pets",
-              "read:pets"
-            ]
-          }
-        ]
+        }
       },
-      "post": {
+      "put": {
         "tags": [
-          "pet"
+          "SalesOrders"
         ],
-        "summary": "Updates a pet in the store with form data",
-        "description": "",
-        "operationId": "updatePetWithForm",
+        "summary": "Data - SalesOrder Update",
+        "description": "Data - SalesOrder Update",
+        "operationId": "dataSalesorderUpdate",
         "parameters": [
           {
-            "name": "petId",
-            "in": "path",
-            "description": "ID of pet that needs to be updated",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          },
-          {
-            "name": "name",
+            "name": "id",
             "in": "query",
-            "description": "Name of pet that needs to be updated",
             "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "status",
-            "in": "query",
-            "description": "Status of pet that needs to be updated",
-            "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "30783030-3030-3030-3030-3030363533396335"
             }
           }
         ],
-        "responses": {
-          "400": {
-            "description": "Invalid input"
-          }
-        },
-        "security": [
-          {
-            "petstore_auth": [
-              "write:pets",
-              "read:pets"
-            ]
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "pet"
-        ],
-        "summary": "Deletes a pet",
-        "description": "delete a pet",
-        "operationId": "deletePet",
-        "parameters": [
-          {
-            "name": "api_key",
-            "in": "header",
-            "description": "",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "petId",
-            "in": "path",
-            "description": "Pet id to delete",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          }
-        ],
-        "responses": {
-          "400": {
-            "description": "Invalid pet value"
-          }
-        },
-        "security": [
-          {
-            "petstore_auth": [
-              "write:pets",
-              "read:pets"
-            ]
-          }
-        ]
-      }
-    },
-    "/pet/{petId}/uploadImage": {
-      "post": {
-        "tags": [
-          "pet"
-        ],
-        "summary": "uploads an image",
-        "description": "",
-        "operationId": "uploadFile",
-        "parameters": [
-          {
-            "name": "petId",
-            "in": "path",
-            "description": "ID of pet to update",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          },
-          {
-            "name": "additionalMetadata",
-            "in": "query",
-            "description": "Additional Metadata",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/octet-stream": {
-              "schema": {
-                "type": "string",
-                "format": "binary"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "petstore_auth": [
-              "write:pets",
-              "read:pets"
-            ]
-          }
-        ]
-      }
-    },
-    "/store/inventory": {
-      "get": {
-        "tags": [
-          "store"
-        ],
-        "summary": "Returns pet inventories by status",
-        "description": "Returns a map of status codes to quantities",
-        "operationId": "getInventory",
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "integer",
-                    "format": "int32"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "api_key": []
-          }
-        ]
-      }
-    },
-    "/store/order": {
-      "post": {
-        "tags": [
-          "store"
-        ],
-        "summary": "Place an order for a pet",
-        "description": "Place a new order in the store",
-        "operationId": "placeOrder",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Order"
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/Order"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "$ref": "#/components/schemas/Order"
+                "type": "object",
+                "properties": {
+                  "SalesOrders": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "CompanyId": {
+                          "type": "string",
+                          "example": "001"
+                        },
+                        "DeliveryAddressCityName": {
+                          "type": "string",
+                          "example": "ZUTPHEN"
+                        },
+                        "DeliveryAddressCountryId": {
+                          "type": "string",
+                          "example": "Nederland"
+                        },
+                        "DeliveryAddressId": {
+                          "type": "number",
+                          "example": 10
+                        },
+                        "DeliveryAddressLine1": {
+                          "type": "string",
+                          "example": "POSTBUS 33"
+                        },
+                        "DeliveryAddressLine2": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "DeliveryAddressLine3": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "DeliveryAddressName1": {
+                          "type": "string",
+                          "example": "BUHRMANN UBENS"
+                        },
+                        "DeliveryAddressName2": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "DeliveryAddressName3": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "DeliveryAddressPostCode": {
+                          "type": "string",
+                          "example": "7200 AA"
+                        },
+                        "DeliveryAddressTelephoneNumber1": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "InternalDepartmentId": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "InvoiceAddressCityName": {
+                          "type": "string",
+                          "example": "ZUTPHEN"
+                        },
+                        "InvoiceAddressCountryId": {
+                          "type": "string",
+                          "example": "\n\nNederland"
+                        },
+                        "InvoiceAddressId": {
+                          "type": "number",
+                          "example": 10
+                        },
+                        "InvoiceAddressLine1": {
+                          "type": "string",
+                          "example": "POSTBUS 33"
+                        },
+                        "InvoiceAddressLine2": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "InvoiceAddressLine3": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "InvoiceAddressName1": {
+                          "type": "string",
+                          "example": "BUHRMANN UBENS"
+                        },
+                        "InvoiceAddressName2": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "InvoiceAddressName3": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "InvoiceAddressPostCode": {
+                          "type": "string",
+                          "example": "7200 AA"
+                        },
+                        "InvoiceAddressTelephoneNumber1": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "OrderAddressCityName": {
+                          "type": "string",
+                          "example": "ZUTPHEN"
+                        },
+                        "OrderAddressCountryId": {
+                          "type": "string",
+                          "example": "\n\nNederland"
+                        },
+                        "OrderAddressId": {
+                          "type": "number",
+                          "example": 10
+                        },
+                        "OrderAddressLine1": {
+                          "type": "string",
+                          "example": "POSTBUS 33"
+                        },
+                        "OrderAddressLine2": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "OrderAddressLine3": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "OrderAddressName1": {
+                          "type": "string",
+                          "example": "BUHRMANN UBENS"
+                        },
+                        "OrderAddressName2": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "OrderAddressName3": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "OrderAddressPersonName": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "OrderAddressPostCode": {
+                          "type": "string",
+                          "example": "7200 AA"
+                        },
+                        "OrderAddressTelephoneNumber1": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "OrderReference": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "OriginId": {
+                          "type": "string",
+                          "example": "\n\n"
+                        },
+                        "ProjectDiscountAmount": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "ProjectDiscountPercentage": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "ProvidedDeliveryDate": {
+                          "type": "string",
+                          "example": "2010-03-15"
+                        },
+                        "RequestedDeliveryDate": {
+                          "type": "string",
+                          "example": "2025-03-11"
+                        },
+                        "TermsOfDeliveryId": {
+                          "type": "string",
+                          "example": "EXW"
+                        },
+                        "TotalCostsAmount": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "VatNumber": {
+                          "type": "string",
+                          "example": "NL 812517611B01"
+                        },
+                        "promocode": {
+                          "type": "string",
+                          "example": ""
+                        }
+                      }
+                    },
+                    "example": [
+                      {
+                        "CompanyId": "001",
+                        "DeliveryAddressCityName": "ZUTPHEN",
+                        "DeliveryAddressCountryId": "\n\nNederland",
+                        "DeliveryAddressId": 10,
+                        "DeliveryAddressLine1": "POSTBUS 33",
+                        "DeliveryAddressLine2": "",
+                        "DeliveryAddressLine3": "",
+                        "DeliveryAddressName1": "BUHRMANN UBENS",
+                        "DeliveryAddressName2": "",
+                        "DeliveryAddressName3": "",
+                        "DeliveryAddressPostCode": "7200 AA",
+                        "DeliveryAddressTelephoneNumber1": "",
+                        "InternalDepartmentId": "",
+                        "InvoiceAddressCityName": "ZUTPHEN",
+                        "InvoiceAddressCountryId": "\n\nNederland",
+                        "InvoiceAddressId": 10,
+                        "InvoiceAddressLine1": "POSTBUS 33",
+                        "InvoiceAddressLine2": "",
+                        "InvoiceAddressLine3": "",
+                        "InvoiceAddressName1": "BUHRMANN UBENS",
+                        "InvoiceAddressName2": "",
+                        "InvoiceAddressName3": "",
+                        "InvoiceAddressPostCode": "7200 AA",
+                        "InvoiceAddressTelephoneNumber1": "",
+                        "OrderAddressCityName": "ZUTPHEN",
+                        "OrderAddressCountryId": "\n\nNederland",
+                        "OrderAddressId": 10,
+                        "OrderAddressLine1": "POSTBUS 33",
+                        "OrderAddressLine2": "",
+                        "OrderAddressLine3": "",
+                        "OrderAddressName1": "BUHRMANN UBENS",
+                        "OrderAddressName2": "",
+                        "OrderAddressName3": "",
+                        "OrderAddressPersonName": "",
+                        "OrderAddressPostCode": "7200 AA",
+                        "OrderAddressTelephoneNumber1": "",
+                        "OrderReference": "",
+                        "OriginId": "\n\n",
+                        "ProjectDiscountAmount": 0,
+                        "ProjectDiscountPercentage": 0,
+                        "ProvidedDeliveryDate": "2010-03-15",
+                        "RequestedDeliveryDate": "2025-03-11",
+                        "TermsOfDeliveryId": "EXW",
+                        "TotalCostsAmount": 0,
+                        "VatNumber": "NL 812517611B01",
+                        "promocode": ""
+                      }
+                    ]
+                  }
+                }
+              },
+              "examples": {
+                "Data - SalesOrder Update": {
+                  "value": {
+                    "SalesOrders": [
+                      {
+                        "CompanyId": "001",
+                        "DeliveryAddressCityName": "ZUTPHEN",
+                        "DeliveryAddressCountryId": "\n\nNederland",
+                        "DeliveryAddressId": 10,
+                        "DeliveryAddressLine1": "POSTBUS 33",
+                        "DeliveryAddressLine2": "",
+                        "DeliveryAddressLine3": "",
+                        "DeliveryAddressName1": "BUHRMANN UBENS",
+                        "DeliveryAddressName2": "",
+                        "DeliveryAddressName3": "",
+                        "DeliveryAddressPostCode": "7200 AA",
+                        "DeliveryAddressTelephoneNumber1": "",
+                        "InternalDepartmentId": "",
+                        "InvoiceAddressCityName": "ZUTPHEN",
+                        "InvoiceAddressCountryId": "\n\nNederland",
+                        "InvoiceAddressId": 10,
+                        "InvoiceAddressLine1": "POSTBUS 33",
+                        "InvoiceAddressLine2": "",
+                        "InvoiceAddressLine3": "",
+                        "InvoiceAddressName1": "BUHRMANN UBENS",
+                        "InvoiceAddressName2": "",
+                        "InvoiceAddressName3": "",
+                        "InvoiceAddressPostCode": "7200 AA",
+                        "InvoiceAddressTelephoneNumber1": "",
+                        "OrderAddressCityName": "ZUTPHEN",
+                        "OrderAddressCountryId": "\n\nNederland",
+                        "OrderAddressId": 10,
+                        "OrderAddressLine1": "POSTBUS 33",
+                        "OrderAddressLine2": "",
+                        "OrderAddressLine3": "",
+                        "OrderAddressName1": "BUHRMANN UBENS",
+                        "OrderAddressName2": "",
+                        "OrderAddressName3": "",
+                        "OrderAddressPersonName": "",
+                        "OrderAddressPostCode": "7200 AA",
+                        "OrderAddressTelephoneNumber1": "",
+                        "OrderReference": "",
+                        "OriginId": "\n\n",
+                        "ProjectDiscountAmount": 0,
+                        "ProjectDiscountPercentage": 0,
+                        "ProvidedDeliveryDate": "2010-03-15",
+                        "RequestedDeliveryDate": "2025-03-11",
+                        "TermsOfDeliveryId": "EXW",
+                        "TotalCostsAmount": 0,
+                        "VatNumber": "NL 812517611B01",
+                        "promocode": ""
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid input"
-          },
-          "422": {
-            "description": "Validation exception"
-          }
-        }
-      }
-    },
-    "/store/order/{orderId}": {
-      "get": {
-        "tags": [
-          "store"
-        ],
-        "summary": "Find purchase order by ID",
-        "description": "For valid response try integer IDs with value <= 5 or > 10. Other values will generate exceptions.",
-        "operationId": "getOrderById",
-        "parameters": [
-          {
-            "name": "orderId",
-            "in": "path",
-            "description": "ID of order that needs to be fetched",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Order"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid ID supplied"
-          },
-          "404": {
-            "description": "Order not found"
+            "description": ""
           }
         }
       },
-      "delete": {
+      "post": {
         "tags": [
-          "store"
+          "SalesOrders"
         ],
-        "summary": "Delete purchase order by ID",
-        "description": "For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors",
-        "operationId": "deleteOrder",
+        "summary": "Data - SalesOrder",
+        "description": "Data - SalesOrder",
+        "operationId": "dataSalesorder",
         "parameters": [
           {
-            "name": "orderId",
-            "in": "path",
-            "description": "ID of the order that needs to be deleted",
-            "required": true,
+            "name": "Appserver",
+            "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int64"
+              "type": "string",
+              "example": "yes"
             }
           }
         ],
-        "responses": {
-          "400": {
-            "description": "Invalid ID supplied"
-          },
-          "404": {
-            "description": "Order not found"
-          }
-        }
-      }
-    },
-    "/user": {
-      "post": {
-        "tags": [
-          "user"
-        ],
-        "summary": "Create user",
-        "description": "This can only be done by the logged in user.",
-        "operationId": "createUser",
         "requestBody": {
-          "description": "Created user object",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/User"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "$ref": "#/components/schemas/User"
-              }
-            }
-          }
-        },
-        "responses": {
-          "default": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/User"
+                "type": "object",
+                "properties": {
+                  "SalesOrderAddresses": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "AddressId": {
+                          "type": "number",
+                          "example": 93
+                        },
+                        "AddressLine1": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "AddressLine2": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "AddressLine3": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "AddressName1": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "AddressName2": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "AddressName3": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "AddressTypeId": {
+                          "type": "string",
+                          "example": "BUYER"
+                        },
+                        "CityName": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "CompanyId": {
+                          "type": "string",
+                          "example": "DI1"
+                        },
+                        "CountryId": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "DepartmentId": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "DepartmentName": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "EanCode": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "EmailAddress": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "FaxNumber1": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "FirstName": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "LanguageId": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "Languagecode": {
+                          "type": "string",
+                          "nullable": true,
+                          "example": "NL"
+                        },
+                        "LastName": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "MobilePhoneNumber": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "PersonId": {
+                          "type": "number",
+                          "example": 2
+                        },
+                        "PhoneNumber1": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "PostCode": {
+                          "nullable": true,
+                          "example": null
+                        }
+                      }
+                    },
+                    "example": [
+                      {
+                        "AddressId": 93,
+                        "AddressLine1": null,
+                        "AddressLine2": null,
+                        "AddressLine3": null,
+                        "AddressName1": null,
+                        "AddressName2": null,
+                        "AddressName3": null,
+                        "AddressTypeId": "BUYER",
+                        "CityName": null,
+                        "CompanyId": "DI1",
+                        "CountryId": null,
+                        "DepartmentId": null,
+                        "DepartmentName": null,
+                        "EanCode": null,
+                        "EmailAddress": null,
+                        "FaxNumber1": null,
+                        "FirstName": null,
+                        "LanguageId": null,
+                        "Languagecode": "NL",
+                        "LastName": null,
+                        "MobilePhoneNumber": null,
+                        "PersonId": 2,
+                        "PhoneNumber1": null,
+                        "PostCode": null
+                      },
+                      {
+                        "AddressId": 119,
+                        "AddressLine1": null,
+                        "AddressLine2": null,
+                        "AddressLine3": null,
+                        "AddressName1": null,
+                        "AddressName2": null,
+                        "AddressName3": null,
+                        "AddressTypeId": "DELIVERY",
+                        "CityName": null,
+                        "CompanyId": "DI1",
+                        "CountryId": null,
+                        "DepartmentId": null,
+                        "DepartmentName": null,
+                        "EanCode": null,
+                        "EmailAddress": null,
+                        "FaxNumber1": null,
+                        "FirstName": null,
+                        "LanguageId": null,
+                        "Languagecode": "NL",
+                        "LastName": null,
+                        "MobilePhoneNumber": null,
+                        "PersonId": 0,
+                        "PhoneNumber1": null,
+                        "PostCode": null
+                      },
+                      {
+                        "AddressId": 93,
+                        "AddressLine1": null,
+                        "AddressLine2": null,
+                        "AddressLine3": null,
+                        "AddressName1": null,
+                        "AddressName2": null,
+                        "AddressName3": null,
+                        "AddressTypeId": "INVOICE",
+                        "CityName": null,
+                        "CompanyId": "DI1",
+                        "CountryId": null,
+                        "DepartmentId": null,
+                        "DepartmentName": null,
+                        "EanCode": null,
+                        "EmailAddress": null,
+                        "FaxNumber1": null,
+                        "FirstName": null,
+                        "LanguageId": null,
+                        "Languagecode": "NL",
+                        "LastName": null,
+                        "MobilePhoneNumber": null,
+                        "PersonId": 0,
+                        "PhoneNumber1": null,
+                        "PostCode": null
+                      },
+                      {
+                        "AddressId": 0,
+                        "AddressLine1": null,
+                        "AddressLine2": null,
+                        "AddressLine3": null,
+                        "AddressName1": null,
+                        "AddressName2": null,
+                        "AddressName3": null,
+                        "AddressTypeId": "WAREHOUSE",
+                        "CityName": null,
+                        "CompanyId": "DI1",
+                        "CountryId": null,
+                        "DepartmentId": null,
+                        "DepartmentName": null,
+                        "EanCode": null,
+                        "EmailAddress": null,
+                        "FaxNumber1": null,
+                        "FirstName": null,
+                        "LanguageId": null,
+                        "Languagecode": null,
+                        "LastName": null,
+                        "MobilePhoneNumber": null,
+                        "PersonId": 0,
+                        "PhoneNumber1": null,
+                        "PostCode": null
+                      }
+                    ]
+                  },
+                  "SalesOrderLines": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "CompanyId": {
+                          "type": "string",
+                          "example": "DI1"
+                        },
+                        "ItemDescription1": {
+                          "type": "string",
+                          "example": "omschrijving1 van merctruck"
+                        },
+                        "ItemDescription2": {
+                          "type": "string",
+                          "example": "omschrijving2 van merctruck"
+                        },
+                        "ItemId": {
+                          "type": "string",
+                          "example": "merctruck"
+                        },
+                        "LotNumber": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "NetLineAmount": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "NetSalesPrice": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "NumberOfRequiredUnits": {
+                          "type": "number",
+                          "example": 2
+                        },
+                        "OrderLineId": {
+                          "type": "number",
+                          "example": 10
+                        },
+                        "RequestedDeliveryDate": {
+                          "type": "string",
+                          "example": "2025-01-30"
+                        },
+                        "SalesUnitId": {
+                          "type": "string",
+                          "example": "PCE"
+                        },
+                        "TariffPrice": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "TariffPriceUnitId": {
+                          "type": "string",
+                          "example": ""
+                        }
+                      }
+                    },
+                    "example": [
+                      {
+                        "CompanyId": "DI1",
+                        "ItemDescription1": "omschrijving1 van merctruck",
+                        "ItemDescription2": "omschrijving2 van merctruck",
+                        "ItemId": "merctruck",
+                        "LotNumber": null,
+                        "NetLineAmount": 0,
+                        "NetSalesPrice": 0,
+                        "NumberOfRequiredUnits": 2,
+                        "OrderLineId": 10,
+                        "RequestedDeliveryDate": "2025-01-30",
+                        "SalesUnitId": "PCE",
+                        "TariffPrice": 0,
+                        "TariffPriceUnitId": ""
+                      },
+                      {
+                        "CompanyId": "DI1",
+                        "ItemDescription1": "BOORKOP M.SLEUT. 115 16MM 5/8X16  72829",
+                        "ItemDescription2": "ROHM 2009",
+                        "ItemId": "74180030",
+                        "LotNumber": null,
+                        "NetLineAmount": 0,
+                        "NetSalesPrice": 0,
+                        "NumberOfRequiredUnits": 1,
+                        "OrderLineId": 20,
+                        "RequestedDeliveryDate": "2025-01-30",
+                        "SalesUnitId": "PCE",
+                        "TariffPrice": 0,
+                        "TariffPriceUnitId": ""
+                      }
+                    ]
+                  },
+                  "SalesOrderPayments": {
+                    "type": "array",
+                    "items": {},
+                    "example": []
+                  },
+                  "SalesOrderTexts": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "CompanyId": {
+                          "type": "string",
+                          "example": "DI1"
+                        },
+                        "SequenceNumber": {
+                          "type": "number",
+                          "example": 1
+                        },
+                        "TextDetail": {
+                          "type": "string",
+                          "example": "referentie2"
+                        }
+                      }
+                    },
+                    "example": [
+                      {
+                        "CompanyId": "DI1",
+                        "SequenceNumber": 1,
+                        "TextDetail": "referentie2"
+                      }
+                    ]
+                  },
+                  "SalesOrders": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "BackOrdersTreatment": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "CompanyId": {
+                          "type": "string",
+                          "example": "DI1"
+                        },
+                        "CurrencyId": {
+                          "type": "string",
+                          "example": "EUR"
+                        },
+                        "DocumentOrigin": {
+                          "type": "string",
+                          "example": "ePO"
+                        },
+                        "ExternalReference": {
+                          "type": "string",
+                          "example": "referentie"
+                        },
+                        "IsCollectedByCustomer": {
+                          "type": "boolean",
+                          "example": false
+                        },
+                        "OrderDate": {
+                          "type": "string",
+                          "example": "2025-01-29"
+                        },
+                        "RequestDeliveryDate": {
+                          "type": "string",
+                          "example": "2025-01-30"
+                        },
+                        "TermsOfDeliveryId": {
+                          "type": "string",
+                          "example": "FRC"
+                        },
+                        "TransportMethodId": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "Username": {
+                          "type": "string",
+                          "example": "dsuser"
+                        },
+                        "WarehouseId": {
+                          "nullable": true,
+                          "example": null
+                        }
+                      }
+                    },
+                    "example": [
+                      {
+                        "BackOrdersTreatment": null,
+                        "CompanyId": "DI1",
+                        "CurrencyId": "EUR",
+                        "DocumentOrigin": "ePO",
+                        "ExternalReference": "referentie",
+                        "IsCollectedByCustomer": false,
+                        "OrderDate": "2025-01-29",
+                        "RequestDeliveryDate": "2025-01-30",
+                        "TermsOfDeliveryId": "FRC",
+                        "TransportMethodId": null,
+                        "Username": "dsuser",
+                        "WarehouseId": null
+                      }
+                    ]
+                  }
                 }
               },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/User"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/user/createWithList": {
-      "post": {
-        "tags": [
-          "user"
-        ],
-        "summary": "Creates list of users with given input array",
-        "description": "Creates list of users with given input array",
-        "operationId": "createUsersWithListInput",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/User"
+              "examples": {
+                "Data - SalesOrder": {
+                  "value": {
+                    "SalesOrderAddresses": [
+                      {
+                        "AddressId": 93,
+                        "AddressLine1": null,
+                        "AddressLine2": null,
+                        "AddressLine3": null,
+                        "AddressName1": null,
+                        "AddressName2": null,
+                        "AddressName3": null,
+                        "AddressTypeId": "BUYER",
+                        "CityName": null,
+                        "CompanyId": "DI1",
+                        "CountryId": null,
+                        "DepartmentId": null,
+                        "DepartmentName": null,
+                        "EanCode": null,
+                        "EmailAddress": null,
+                        "FaxNumber1": null,
+                        "FirstName": null,
+                        "LanguageId": null,
+                        "Languagecode": "NL",
+                        "LastName": null,
+                        "MobilePhoneNumber": null,
+                        "PersonId": 2,
+                        "PhoneNumber1": null,
+                        "PostCode": null
+                      },
+                      {
+                        "AddressId": 119,
+                        "AddressLine1": null,
+                        "AddressLine2": null,
+                        "AddressLine3": null,
+                        "AddressName1": null,
+                        "AddressName2": null,
+                        "AddressName3": null,
+                        "AddressTypeId": "DELIVERY",
+                        "CityName": null,
+                        "CompanyId": "DI1",
+                        "CountryId": null,
+                        "DepartmentId": null,
+                        "DepartmentName": null,
+                        "EanCode": null,
+                        "EmailAddress": null,
+                        "FaxNumber1": null,
+                        "FirstName": null,
+                        "LanguageId": null,
+                        "Languagecode": "NL",
+                        "LastName": null,
+                        "MobilePhoneNumber": null,
+                        "PersonId": 0,
+                        "PhoneNumber1": null,
+                        "PostCode": null
+                      },
+                      {
+                        "AddressId": 93,
+                        "AddressLine1": null,
+                        "AddressLine2": null,
+                        "AddressLine3": null,
+                        "AddressName1": null,
+                        "AddressName2": null,
+                        "AddressName3": null,
+                        "AddressTypeId": "INVOICE",
+                        "CityName": null,
+                        "CompanyId": "DI1",
+                        "CountryId": null,
+                        "DepartmentId": null,
+                        "DepartmentName": null,
+                        "EanCode": null,
+                        "EmailAddress": null,
+                        "FaxNumber1": null,
+                        "FirstName": null,
+                        "LanguageId": null,
+                        "Languagecode": "NL",
+                        "LastName": null,
+                        "MobilePhoneNumber": null,
+                        "PersonId": 0,
+                        "PhoneNumber1": null,
+                        "PostCode": null
+                      },
+                      {
+                        "AddressId": 0,
+                        "AddressLine1": null,
+                        "AddressLine2": null,
+                        "AddressLine3": null,
+                        "AddressName1": null,
+                        "AddressName2": null,
+                        "AddressName3": null,
+                        "AddressTypeId": "WAREHOUSE",
+                        "CityName": null,
+                        "CompanyId": "DI1",
+                        "CountryId": null,
+                        "DepartmentId": null,
+                        "DepartmentName": null,
+                        "EanCode": null,
+                        "EmailAddress": null,
+                        "FaxNumber1": null,
+                        "FirstName": null,
+                        "LanguageId": null,
+                        "Languagecode": null,
+                        "LastName": null,
+                        "MobilePhoneNumber": null,
+                        "PersonId": 0,
+                        "PhoneNumber1": null,
+                        "PostCode": null
+                      }
+                    ],
+                    "SalesOrderLines": [
+                      {
+                        "CompanyId": "DI1",
+                        "ItemDescription1": "omschrijving1 van merctruck",
+                        "ItemDescription2": "omschrijving2 van merctruck",
+                        "ItemId": "merctruck",
+                        "LotNumber": null,
+                        "NetLineAmount": 0,
+                        "NetSalesPrice": 0,
+                        "NumberOfRequiredUnits": 2,
+                        "OrderLineId": 10,
+                        "RequestedDeliveryDate": "2025-01-30",
+                        "SalesUnitId": "PCE",
+                        "TariffPrice": 0,
+                        "TariffPriceUnitId": ""
+                      },
+                      {
+                        "CompanyId": "DI1",
+                        "ItemDescription1": "BOORKOP M.SLEUT. 115 16MM 5/8X16  72829",
+                        "ItemDescription2": "ROHM 2009",
+                        "ItemId": "74180030",
+                        "LotNumber": null,
+                        "NetLineAmount": 0,
+                        "NetSalesPrice": 0,
+                        "NumberOfRequiredUnits": 1,
+                        "OrderLineId": 20,
+                        "RequestedDeliveryDate": "2025-01-30",
+                        "SalesUnitId": "PCE",
+                        "TariffPrice": 0,
+                        "TariffPriceUnitId": ""
+                      }
+                    ],
+                    "SalesOrderPayments": [],
+                    "SalesOrderTexts": [
+                      {
+                        "CompanyId": "DI1",
+                        "SequenceNumber": 1,
+                        "TextDetail": "referentie2"
+                      }
+                    ],
+                    "SalesOrders": [
+                      {
+                        "BackOrdersTreatment": null,
+                        "CompanyId": "DI1",
+                        "CurrencyId": "EUR",
+                        "DocumentOrigin": "ePO",
+                        "ExternalReference": "referentie",
+                        "IsCollectedByCustomer": false,
+                        "OrderDate": "2025-01-29",
+                        "RequestDeliveryDate": "2025-01-30",
+                        "TermsOfDeliveryId": "FRC",
+                        "TransportMethodId": null,
+                        "Username": "dsuser",
+                        "WarehouseId": null
+                      }
+                    ]
+                  }
+                },
+                "Data - SalesOrder AppServer": {
+                  "value": {
+                    "SalesOrderAddresses": [
+                      {
+                        "AddressId": 93,
+                        "AddressLine1": null,
+                        "AddressLine2": null,
+                        "AddressLine3": null,
+                        "AddressName1": null,
+                        "AddressName2": null,
+                        "AddressName3": null,
+                        "AddressTypeId": "BUYER",
+                        "CityName": null,
+                        "CompanyId": "DI1",
+                        "CountryId": null,
+                        "DepartmentId": null,
+                        "DepartmentName": null,
+                        "EanCode": null,
+                        "EmailAddress": null,
+                        "FaxNumber1": null,
+                        "FirstName": null,
+                        "LanguageId": null,
+                        "Languagecode": "NL",
+                        "LastName": null,
+                        "MobilePhoneNumber": null,
+                        "PersonId": 2,
+                        "PhoneNumber1": null,
+                        "PostCode": null
+                      },
+                      {
+                        "AddressId": 119,
+                        "AddressLine1": null,
+                        "AddressLine2": null,
+                        "AddressLine3": null,
+                        "AddressName1": null,
+                        "AddressName2": null,
+                        "AddressName3": null,
+                        "AddressTypeId": "DELIVERY",
+                        "CityName": null,
+                        "CompanyId": "DI1",
+                        "CountryId": null,
+                        "DepartmentId": null,
+                        "DepartmentName": null,
+                        "EanCode": null,
+                        "EmailAddress": null,
+                        "FaxNumber1": null,
+                        "FirstName": null,
+                        "LanguageId": null,
+                        "Languagecode": "NL",
+                        "LastName": null,
+                        "MobilePhoneNumber": null,
+                        "PersonId": 0,
+                        "PhoneNumber1": null,
+                        "PostCode": null
+                      },
+                      {
+                        "AddressId": 93,
+                        "AddressLine1": null,
+                        "AddressLine2": null,
+                        "AddressLine3": null,
+                        "AddressName1": null,
+                        "AddressName2": null,
+                        "AddressName3": null,
+                        "AddressTypeId": "INVOICE",
+                        "CityName": null,
+                        "CompanyId": "DI1",
+                        "CountryId": null,
+                        "DepartmentId": null,
+                        "DepartmentName": null,
+                        "EanCode": null,
+                        "EmailAddress": null,
+                        "FaxNumber1": null,
+                        "FirstName": null,
+                        "LanguageId": null,
+                        "Languagecode": "NL",
+                        "LastName": null,
+                        "MobilePhoneNumber": null,
+                        "PersonId": 0,
+                        "PhoneNumber1": null,
+                        "PostCode": null
+                      },
+                      {
+                        "AddressId": 0,
+                        "AddressLine1": null,
+                        "AddressLine2": null,
+                        "AddressLine3": null,
+                        "AddressName1": null,
+                        "AddressName2": null,
+                        "AddressName3": null,
+                        "AddressTypeId": "WAREHOUSE",
+                        "CityName": null,
+                        "CompanyId": "DI1",
+                        "CountryId": null,
+                        "DepartmentId": null,
+                        "DepartmentName": null,
+                        "EanCode": null,
+                        "EmailAddress": null,
+                        "FaxNumber1": null,
+                        "FirstName": null,
+                        "LanguageId": null,
+                        "Languagecode": null,
+                        "LastName": null,
+                        "MobilePhoneNumber": null,
+                        "PersonId": 0,
+                        "PhoneNumber1": null,
+                        "PostCode": null
+                      }
+                    ],
+                    "SalesOrderLines": [
+                      {
+                        "CompanyId": "DI1",
+                        "ItemDescription1": "omschrijving1 van merctruck",
+                        "ItemDescription2": "omschrijving2 van merctruck",
+                        "ItemId": "merctruck",
+                        "LotNumber": null,
+                        "NetLineAmount": 0,
+                        "NetSalesPrice": 0,
+                        "NumberOfRequiredUnits": 2,
+                        "OrderLineId": 10,
+                        "RequestedDeliveryDate": "2025-01-30",
+                        "SalesUnitId": "PCE",
+                        "TariffPrice": 0,
+                        "TariffPriceUnitId": ""
+                      },
+                      {
+                        "CompanyId": "DI1",
+                        "ItemDescription1": "BOORKOP M.SLEUT. 115 16MM 5/8X16  72829",
+                        "ItemDescription2": "ROHM 2009",
+                        "ItemId": "74180030",
+                        "LotNumber": null,
+                        "NetLineAmount": 0,
+                        "NetSalesPrice": 0,
+                        "NumberOfRequiredUnits": 1,
+                        "OrderLineId": 20,
+                        "RequestedDeliveryDate": "2025-01-30",
+                        "SalesUnitId": "PCE",
+                        "TariffPrice": 0,
+                        "TariffPriceUnitId": ""
+                      }
+                    ],
+                    "SalesOrderPayments": [],
+                    "SalesOrderTexts": [
+                      {
+                        "CompanyId": "DI1",
+                        "SequenceNumber": 1,
+                        "TextDetail": "referentie2"
+                      }
+                    ],
+                    "SalesOrders": [
+                      {
+                        "BackOrdersTreatment": null,
+                        "CompanyId": "DI1",
+                        "CurrencyId": "EUR",
+                        "DocumentOrigin": "ePO",
+                        "ExternalReference": "referentie",
+                        "IsCollectedByCustomer": false,
+                        "OrderDate": "2025-01-29",
+                        "RequestDeliveryDate": "2025-01-30",
+                        "TermsOfDeliveryId": "FRC",
+                        "TransportMethodId": null,
+                        "Username": "dsuser",
+                        "WarehouseId": null
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -719,513 +1146,2489 @@
         },
         "responses": {
           "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/User"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/User"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "successful operation"
+            "description": ""
           }
         }
       }
     },
-    "/user/login": {
+    "/meta/salesorders": {
       "get": {
         "tags": [
-          "user"
+          "SalesOrders"
         ],
-        "summary": "Logs user into the system",
-        "description": "",
-        "operationId": "loginUser",
+        "summary": "Meta - SalesOrders",
+        "description": "Meta - SalesOrders",
+        "operationId": "metaSalesorders",
         "parameters": [
           {
-            "name": "username",
+            "name": "mode",
             "in": "query",
-            "description": "The user name for login",
-            "required": false,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "dev"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/001/salescosts": {
+      "get": {
+        "tags": [
+          "SalesCosts"
+        ],
+        "summary": "Data - SalesCosts (firm 001 order 16)",
+        "description": "Data - SalesCosts (firm 001 order 16)",
+        "operationId": "dataSalescostsFirm001Order16",
+        "parameters": [
+          {
+            "name": "costsidlist",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "22"
+            }
+          },
+          {
+            "name": "TotalGoodsNetAmount",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "9"
+            }
+          },
+          {
+            "name": "AddressId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "93"
+            }
+          },
+          {
+            "name": "OriginId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "EPO"
+            }
+          },
+          {
+            "name": "VatSystemId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "21"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/001/salesorders/16/salesorderlines": {
+      "get": {
+        "tags": [
+          "SalesOrderlines"
+        ],
+        "summary": "Data - SalesOrderLines (firm 001 order 16)",
+        "description": "Data - SalesOrderLines (firm 001 order 16)",
+        "operationId": "dataSalesorderlinesFirm001Order16",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/meta/salesorderlines/": {
+      "get": {
+        "tags": [
+          "SalesOrderlines"
+        ],
+        "summary": "Meta - SalesOrderlines",
+        "description": "Meta - SalesOrderlines",
+        "operationId": "metaSalesorderlines",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/001/salesorderlines": {
+      "get": {
+        "tags": [
+          "SalesOrderlines"
+        ],
+        "summary": "Data - Salesorderlines Id (firm 100 order 16)",
+        "description": "Data - Salesorderlines Id (firm 100 order 16)",
+        "operationId": "dataSalesorderlinesIdFirm100Order16",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "30783030-3030-3030-3030-3030323364643064"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/001/salesoffers": {
+      "get": {
+        "tags": [
+          "SalesOffers"
+        ],
+        "summary": "Data - SalesOffers Id",
+        "description": "Data - SalesOffers Id",
+        "operationId": "dataSalesoffersId",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "30783030-3030-3030-3030-3030326238376465"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SalesOffers"
+        ],
+        "summary": "Data - Salesoffers",
+        "description": "Data - Salesoffers",
+        "operationId": "dataSalesoffers",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "SalesOffers": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "DeliveryAddressId": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "ExternalReference": {
+                          "type": "string",
+                          "example": "Test2"
+                        },
+                        "InternalDepartmentId": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "InvoiceAddressId": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "OfferAddressId": {
+                          "type": "number",
+                          "example": 10
+                        },
+                        "OfferAddressPersonName": {
+                          "type": "string",
+                          "example": ""
+                        },
+                        "OriginId": {
+                          "type": "string",
+                          "example": "\n\n"
+                        },
+                        "SalesOfferLines": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "ItemDescription": {
+                                "type": "string",
+                                "example": "TEST HEPI "
+                              },
+                              "ItemId": {
+                                "type": "string",
+                                "example": "TESTHEPI"
+                              },
+                              "NetLineAmountVatExcluded": {
+                                "type": "number",
+                                "example": 450
+                              },
+                              "NetSalesPrice": {
+                                "type": "number",
+                                "example": 0.015
+                              },
+                              "NetSalesPriceUnitId": {
+                                "type": "string",
+                                "example": "PCE"
+                              },
+                              "NumberOfUnitsInSalesOffer": {
+                                "type": "number",
+                                "example": 30000
+                              },
+                              "OfferLineId": {
+                                "type": "number",
+                                "example": 10
+                              },
+                              "OfferLineStatusId": {
+                                "type": "string",
+                                "example": "\n\nAfgesloten"
+                              },
+                              "TariffPrice": {
+                                "type": "number",
+                                "example": 0.015
+                              },
+                              "TariffPriceUnitId": {
+                                "type": "string",
+                                "example": ""
+                              }
+                            }
+                          },
+                          "example": [
+                            {
+                              "ItemDescription": "TEST HEPI ",
+                              "ItemId": "TESTHEPI",
+                              "NetLineAmountVatExcluded": 450,
+                              "NetSalesPrice": 0.015,
+                              "NetSalesPriceUnitId": "PCE",
+                              "NumberOfUnitsInSalesOffer": 30000,
+                              "OfferLineId": 10,
+                              "OfferLineStatusId": "\n\nAfgesloten",
+                              "TariffPrice": 0.015,
+                              "TariffPriceUnitId": ""
+                            }
+                          ]
+                        },
+                        "TotalAmountVat": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "TotalAmountVatExcluded": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "TotalGoodsCostsVatAmount": {
+                          "type": "number",
+                          "example": 450
+                        }
+                      }
+                    },
+                    "example": [
+                      {
+                        "DeliveryAddressId": 0,
+                        "ExternalReference": "Test2",
+                        "InternalDepartmentId": "",
+                        "InvoiceAddressId": 0,
+                        "OfferAddressId": 10,
+                        "OfferAddressPersonName": "",
+                        "OriginId": "\n\n",
+                        "SalesOfferLines": [
+                          {
+                            "ItemDescription": "TEST HEPI ",
+                            "ItemId": "TESTHEPI",
+                            "NetLineAmountVatExcluded": 450,
+                            "NetSalesPrice": 0.015,
+                            "NetSalesPriceUnitId": "PCE",
+                            "NumberOfUnitsInSalesOffer": 30000,
+                            "OfferLineId": 10,
+                            "OfferLineStatusId": "\n\nAfgesloten",
+                            "TariffPrice": 0.015,
+                            "TariffPriceUnitId": ""
+                          }
+                        ],
+                        "TotalAmountVat": 0,
+                        "TotalAmountVatExcluded": 0,
+                        "TotalGoodsCostsVatAmount": 450
+                      }
+                    ]
+                  }
+                }
+              },
+              "examples": {
+                "Data - Salesoffers": {
+                  "value": {
+                    "SalesOffers": [
+                      {
+                        "DeliveryAddressId": 0,
+                        "ExternalReference": "Test2",
+                        "InternalDepartmentId": "",
+                        "InvoiceAddressId": 0,
+                        "OfferAddressId": 10,
+                        "OfferAddressPersonName": "",
+                        "OriginId": "\n\n",
+                        "SalesOfferLines": [
+                          {
+                            "ItemDescription": "TEST HEPI ",
+                            "ItemId": "TESTHEPI",
+                            "NetLineAmountVatExcluded": 450,
+                            "NetSalesPrice": 0.015,
+                            "NetSalesPriceUnitId": "PCE",
+                            "NumberOfUnitsInSalesOffer": 30000,
+                            "OfferLineId": 10,
+                            "OfferLineStatusId": "\n\nAfgesloten",
+                            "TariffPrice": 0.015,
+                            "TariffPriceUnitId": ""
+                          }
+                        ],
+                        "TotalAmountVat": 0,
+                        "TotalAmountVatExcluded": 0,
+                        "TotalGoodsCostsVatAmount": 450
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/001/salesoffers/33/salesofferlines": {
+      "get": {
+        "tags": [
+          "SalesOffers"
+        ],
+        "summary": "Data - SalesOffers 33",
+        "description": "Data - SalesOffers 33",
+        "operationId": "dataSalesoffers33",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/001/SalesOfferLines": {
+      "get": {
+        "tags": [
+          "SalesOfferLines"
+        ],
+        "summary": "Data - SalesOfferLines Id",
+        "description": "Data - SalesOfferLines Id",
+        "operationId": "dataSalesofferlinesId",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "30783030-3030-3030-3030-3030313038316338"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/001/SalesOffers/2/Salesofferlines/10": {
+      "get": {
+        "tags": [
+          "SalesOfferLines"
+        ],
+        "summary": "Data - SalesOfferLines 2/10",
+        "description": "Data - SalesOfferLines 2/10",
+        "operationId": "dataSalesofferlines210",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/01/salesinvoices": {
+      "get": {
+        "tags": [
+          "SalesInvoices"
+        ],
+        "summary": "Data - SalesInvoices",
+        "description": "Data - SalesInvoices",
+        "operationId": "dataSalesinvoices",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "5"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "30783030-3030-3030-3030-3030333832653839"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/01/salesinvoices/4001212": {
+      "get": {
+        "tags": [
+          "SalesInvoices"
+        ],
+        "summary": "Data - SalesInvoices 4001212",
+        "description": "Data - SalesInvoices 4001212",
+        "operationId": "dataSalesinvoices4001212",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/01/salesinvoices/4001212/salesinvoicelines/107": {
+      "get": {
+        "tags": [
+          "SalesInvoiceLines"
+        ],
+        "summary": "Data - SalesInvoicelines",
+        "description": "Data - SalesInvoicelines",
+        "operationId": "dataSalesinvoicelines",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/01/salesinvoicelines": {
+      "get": {
+        "tags": [
+          "SalesInvoiceLines"
+        ],
+        "summary": "Data - SalesInvoicelines Id",
+        "description": "Data - SalesInvoicelines Id",
+        "operationId": "dataSalesinvoicelinesId",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "30783030-3030-3030-3030-3030316666643030"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/100/customers": {
+      "get": {
+        "tags": [
+          "Customers"
+        ],
+        "summary": "Data - Customers (firm 100 limit 5)",
+        "description": "Data - Customers (firm 100 limit 5)",
+        "operationId": "dataCustomersFirm100Limit5",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "5"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "30783030-3030-3030-3030-3030373661613936"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/001/customerorderaddresses": {
+      "post": {
+        "tags": [
+          "Customers"
+        ],
+        "summary": "Data - CustomerOrderAddresses",
+        "description": "Data - CustomerOrderAddresses",
+        "operationId": "dataCustomerorderaddresses",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "AddressLine1": {
+                    "type": "string",
+                    "example": "Jan Straat 5"
+                  },
+                  "AddressName": {
+                    "type": "string",
+                    "example": "test"
+                  },
+                  "BirthDate": {
+                    "type": "string",
+                    "example": "15/01/1979"
+                  },
+                  "Blocked": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "BusinessNumber": {
+                    "type": "string",
+                    "example": "46556465"
+                  },
+                  "CityName": {
+                    "type": "string",
+                    "example": "Wevelgem"
+                  },
+                  "CountryId": {
+                    "type": "string",
+                    "example": "BE"
+                  },
+                  "Email": {
+                    "type": "string",
+                    "example": "steve.vercaemere@kerridgecs.com"
+                  },
+                  "EmailInternal": {
+                    "type": "string",
+                    "example": "steve.vercaemere@kerridgecs.com"
+                  },
+                  "FirstName": {
+                    "type": "string",
+                    "example": "Steve"
+                  },
+                  "FunctionId": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "Group1Id": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "LanguageCode": {
+                    "type": "string",
+                    "example": "nl"
+                  },
+                  "LastName": {
+                    "type": "string",
+                    "example": "Vercaemere"
+                  },
+                  "Login": {
+                    "type": "string",
+                    "example": "test"
+                  },
+                  "Newsletter": {
+                    "type": "boolean",
+                    "example": true
+                  },
+                  "NumberOfEmployees": {
+                    "type": "string",
+                    "example": "5"
+                  },
+                  "OrderAddressId": {
+                    "type": "number",
+                    "example": 439
+                  },
+                  "Password": {
+                    "type": "string",
+                    "example": "test"
+                  },
+                  "PostCode": {
+                    "type": "string",
+                    "example": "8560"
+                  },
+                  "Telephone": {
+                    "type": "string",
+                    "example": "+3256123640"
+                  },
+                  "VatNumber": {
+                    "type": "string",
+                    "example": "465465415465"
+                  },
+                  "VatSystemId": {
+                    "type": "string",
+                    "example": "1"
+                  },
+                  "Website": {
+                    "type": "string",
+                    "example": "http://info.kerridgecs.com"
+                  },
+                  "departement": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "jur_vorm": {
+                    "type": "string",
+                    "example": "BV"
+                  },
+                  "pers_fax": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "pers_mobile": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "pers_telefoon": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "pers_volgnummer": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "prosp_sector": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "vertegenwoordiger": {
+                    "type": "string",
+                    "example": "jan"
+                  }
+                }
+              },
+              "examples": {
+                "Data - CustomerOrderAddresses": {
+                  "value": {
+                    "AddressLine1": "Jan Straat 5",
+                    "AddressName": "test",
+                    "BirthDate": "15/01/1979",
+                    "Blocked": false,
+                    "BusinessNumber": "46556465",
+                    "CityName": "Wevelgem",
+                    "CountryId": "BE",
+                    "Email": "steve.vercaemere@kerridgecs.com",
+                    "EmailInternal": "steve.vercaemere@kerridgecs.com",
+                    "FirstName": "Steve",
+                    "FunctionId": "",
+                    "Group1Id": "",
+                    "LanguageCode": "nl",
+                    "LastName": "Vercaemere",
+                    "Login": "test",
+                    "Newsletter": true,
+                    "NumberOfEmployees": "5",
+                    "OrderAddressId": 439,
+                    "Password": "test",
+                    "PostCode": "8560",
+                    "Telephone": "+3256123640",
+                    "VatNumber": "465465415465",
+                    "VatSystemId": "1",
+                    "Website": "http://info.kerridgecs.com",
+                    "departement": "",
+                    "jur_vorm": "BV",
+                    "pers_fax": "",
+                    "pers_mobile": "",
+                    "pers_telefoon": "",
+                    "pers_volgnummer": 0,
+                    "prosp_sector": "",
+                    "vertegenwoordiger": "jan"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/meta/company/001/customerorderaddresses": {
+      "post": {
+        "tags": [
+          "Customers"
+        ],
+        "summary": "Meta - CustomerOrderAddresses",
+        "description": "Meta - CustomerOrderAddresses",
+        "operationId": "metaCustomerorderaddresses",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/001/purchaseorders": {
+      "get": {
+        "tags": [
+          "Purchases",
+          "PurchaseOrders"
+        ],
+        "summary": "Data - PurchaseOrders",
+        "description": "Data - PurchaseOrders",
+        "operationId": "dataPurchaseorders",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "5"
+            }
+          },
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "30783030-3030-3030-3030-3030323837353834"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "30783030-3030-3030-3030-3030303763313030"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/001/purchaseorders/3/purchaseorderlines": {
+      "get": {
+        "tags": [
+          "Purchases",
+          "PurchaseOrders"
+        ],
+        "summary": "Data - PurchaseOrders-3-Orderlines",
+        "description": "Data - PurchaseOrders-3-Orderlines",
+        "operationId": "dataPurchaseorders3Orderlines",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/001/purchaseorders/3": {
+      "get": {
+        "tags": [
+          "Purchases",
+          "PurchaseOrders"
+        ],
+        "summary": "Data - PurchaseOrders-3",
+        "description": "Data - PurchaseOrders-3",
+        "operationId": "dataPurchaseorders3",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/001/purchasecosts": {
+      "get": {
+        "tags": [
+          "Purchases",
+          "PurchaseCosts"
+        ],
+        "summary": "Data - PurchaseCosts",
+        "description": "Data - PurchaseCosts",
+        "operationId": "dataPurchasecosts",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "10"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "5"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/meta/purchasecosts": {
+      "get": {
+        "tags": [
+          "Purchases",
+          "PurchaseCosts"
+        ],
+        "summary": "Meta - PurchaseCosts",
+        "description": "Meta - PurchaseCosts",
+        "operationId": "metaPurchasecosts",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/01/articles/GHI_1/stock": {
+      "get": {
+        "tags": [
+          "Articles",
+          "Stock"
+        ],
+        "summary": "ArticlesStock",
+        "description": "ArticlesStock",
+        "operationId": "articlesstock",
+        "parameters": [
+          {
+            "name": "ArticleList",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "GHI_1,GHI_4"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/01/articles/ghi_1/stock": {
+      "get": {
+        "tags": [
+          "Articles",
+          "Stock"
+        ],
+        "summary": "ArticlesStock 2BA",
+        "description": "ArticlesStock 2BA",
+        "operationId": "articlesstock2ba",
+        "parameters": [
+          {
+            "name": "2ba",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "true"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/01/articlesstock": {
+      "get": {
+        "tags": [
+          "Articles",
+          "Stock"
+        ],
+        "summary": "ArticlesStock 2BA Bulk",
+        "description": "ArticlesStock 2BA Bulk",
+        "operationId": "articlesstock2baBulk",
+        "parameters": [
+          {
+            "name": "2ba",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "true"
+            }
+          },
+          {
+            "name": "ArticleList",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "GHI_1,GHI_4"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/01/articles/ghi_1/price": {
+      "get": {
+        "tags": [
+          "Articles",
+          "Prices"
+        ],
+        "summary": "ArticlesPrice 2BA",
+        "description": "ArticlesPrice 2BA",
+        "operationId": "articlesprice2ba",
+        "parameters": [
+          {
+            "name": "2ba",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "yes"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/01/articlesprice": {
+      "get": {
+        "tags": [
+          "Articles",
+          "Prices"
+        ],
+        "summary": "ArticlesPrice bulk",
+        "description": "ArticlesPrice bulk",
+        "operationId": "articlespriceBulk",
+        "parameters": [
+          {
+            "name": "ArticleList",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "GHI_1,GHI_4"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/01/articles": {
+      "get": {
+        "tags": [
+          "Articles"
+        ],
+        "summary": "Articles",
+        "description": "Articles",
+        "operationId": "articles",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "5"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/01/articles/FDD_ARTSER_20210906": {
+      "get": {
+        "tags": [
+          "Articles"
+        ],
+        "summary": "Articles FDD_ARTSER_20210906",
+        "description": "Articles FDD_ARTSER_20210906",
+        "operationId": "articlesFddArtser20210906",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/DI1/articles/GHI_1": {
+      "get": {
+        "tags": [
+          "Articles"
+        ],
+        "summary": "Articles DRS71072101",
+        "description": "Articles DRS71072101",
+        "operationId": "articlesDrs71072101",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/DI1/articles/ghi_1/tierprice/fddf4d": {
+      "get": {
+        "tags": [
+          "Articles",
+          "TierPrices"
+        ],
+        "summary": "ArticlesTierPrice",
+        "description": "ArticlesTierPrice",
+        "operationId": "articlestierprice",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/meta/quotes": {
+      "get": {
+        "tags": [
+          "Quotes"
+        ],
+        "summary": "Meta - Quotes",
+        "description": "Meta - Quotes",
+        "operationId": "metaQuotes",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/meta/quotelines": {
+      "get": {
+        "tags": [
+          "Quotes"
+        ],
+        "summary": "Meta - Quotelines",
+        "description": "Meta - Quotelines",
+        "operationId": "metaQuotelines",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/100/quotes": {
+      "get": {
+        "tags": [
+          "Quotes"
+        ],
+        "summary": "Data - Quotes (firm 100 Id)",
+        "description": "Data - Quotes (firm 100 Id)",
+        "operationId": "dataQuotesFirm100Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "30783030-3030-3030-3030-3030326334303837"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/100/quotelines": {
+      "get": {
+        "tags": [
+          "Quotes"
+        ],
+        "summary": "Data - Quotelines (firm 100 limit 5)",
+        "description": "Data - Quotelines (firm 100 limit 5)",
+        "operationId": "dataQuotelinesFirm100Limit5",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "5"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "30783030-3030-3030-3030-3030313139633862"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/01/contacts": {
+      "get": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Data - Contacts (firm 100 limit 5)",
+        "description": "Data - Contacts (firm 100 limit 5)",
+        "operationId": "dataContactsFirm100Limit5",
+        "parameters": [
+          {
+            "name": "WebUserId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "gunter.hillen@infomat.eu_8"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/100/contacts": {
+      "post": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Data - Contacts (firm 100)",
+        "description": "Data - Contacts (firm 100)",
+        "operationId": "dataContactsFirm100",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "5"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "adresnummer": {
+                    "type": "number",
+                    "example": 14
+                  },
+                  "beslissingsmacht": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "bezoekfrequentie": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "blokkeer_e_com": {
+                    "nullable": true,
+                    "example": null
+                  },
+                  "deletecode": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "dept_code": {
+                    "type": "string",
+                    "example": "\""
+                  },
+                  "dummy_char_1": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "dummy_char_2": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "dummy_char_3": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "dummy_char_4": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "dummy_char_5": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "dummy_char_6": {
+                    "nullable": true,
+                    "example": null
+                  },
+                  "dummy_date_1": {
+                    "nullable": true,
+                    "example": null
+                  },
+                  "dummy_date_2": {
+                    "nullable": true,
+                    "example": null
+                  },
+                  "dummy_date_3": {
+                    "nullable": true,
+                    "example": null
+                  },
+                  "dummy_date_4": {
+                    "nullable": true,
+                    "example": null
+                  },
+                  "dummy_date_5": {
+                    "nullable": true,
+                    "example": null
+                  },
+                  "dummy_date_6": {
+                    "nullable": true,
+                    "example": null
+                  },
+                  "dummy_dec_1": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "dummy_dec_2": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "dummy_dec_3": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "dummy_dec_4": {
+                    "nullable": true,
+                    "example": null
+                  },
+                  "dummy_dec_5": {
+                    "nullable": true,
+                    "example": null
+                  },
+                  "dummy_dec_6": {
+                    "nullable": true,
+                    "example": null
+                  },
+                  "dummy_log_1": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "dummy_log_2": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "dummy_log_3": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "dummy_log_4": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "dummy_log_5": {
+                    "nullable": true,
+                    "example": null
+                  },
+                  "dummy_log_6": {
+                    "nullable": true,
+                    "example": null
+                  },
+                  "email_adres": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "ext_Guid": {
+                    "nullable": true,
+                    "example": null
+                  },
+                  "fax": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "functie": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "gsm_nummer": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "interne_user": {
+                    "nullable": true,
+                    "example": null
+                  },
+                  "klant_fiche_bh": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "kredietlimiet": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "lever_fiche_bh": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "mailstop": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "managementsniveau": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "naam_adres": {
+                    "type": "string",
+                    "example": "CHRISTIAAN DIERCKX "
+                  },
+                  "naam_contactpersoon": {
+                    "type": "string",
+                    "example": "***"
+                  },
+                  "naam_dept": {
+                    "type": "string",
+                    "example": "aer"
+                  },
+                  "persoon_volgnummer": {
+                    "type": "number",
+                    "example": 709
+                  },
+                  "programma_creatie": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "programma_laatste_wijz": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "std_firma_shop": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "telefoon": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "tgl_cataloog": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "tijd_creatie": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "user_login": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "user_password": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "vertegenwoordiger": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "vervanger": {
+                    "type": "string",
+                    "example": ""
+                  }
+                }
+              },
+              "examples": {
+                "Data - Contacts (firm 100)": {
+                  "value": {
+                    "adresnummer": 14,
+                    "beslissingsmacht": "",
+                    "bezoekfrequentie": "",
+                    "blokkeer_e_com": null,
+                    "deletecode": "",
+                    "dept_code": "\"",
+                    "dummy_char_1": "",
+                    "dummy_char_2": "",
+                    "dummy_char_3": "",
+                    "dummy_char_4": "",
+                    "dummy_char_5": "",
+                    "dummy_char_6": null,
+                    "dummy_date_1": null,
+                    "dummy_date_2": null,
+                    "dummy_date_3": null,
+                    "dummy_date_4": null,
+                    "dummy_date_5": null,
+                    "dummy_date_6": null,
+                    "dummy_dec_1": 0,
+                    "dummy_dec_2": 0,
+                    "dummy_dec_3": 0,
+                    "dummy_dec_4": null,
+                    "dummy_dec_5": null,
+                    "dummy_dec_6": null,
+                    "dummy_log_1": false,
+                    "dummy_log_2": false,
+                    "dummy_log_3": false,
+                    "dummy_log_4": false,
+                    "dummy_log_5": null,
+                    "dummy_log_6": null,
+                    "email_adres": "",
+                    "ext_Guid": null,
+                    "fax": "",
+                    "functie": "",
+                    "gsm_nummer": "",
+                    "interne_user": null,
+                    "klant_fiche_bh": false,
+                    "kredietlimiet": 0,
+                    "lever_fiche_bh": false,
+                    "mailstop": false,
+                    "managementsniveau": "",
+                    "naam_adres": "CHRISTIAAN DIERCKX ",
+                    "naam_contactpersoon": "***",
+                    "naam_dept": "aer",
+                    "persoon_volgnummer": 709,
+                    "programma_creatie": "",
+                    "programma_laatste_wijz": "",
+                    "std_firma_shop": "",
+                    "telefoon": "",
+                    "tgl_cataloog": false,
+                    "tijd_creatie": 0,
+                    "user_login": "",
+                    "user_password": "",
+                    "vertegenwoordiger": 0,
+                    "vervanger": ""
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/100/privatepersons": {
+      "get": {
+        "tags": [
+          "PrivatePersons"
+        ],
+        "summary": "Data - PrivatePersons (firm 100 limit 5)",
+        "description": "Data - PrivatePersons (firm 100 limit 5)",
+        "operationId": "dataPrivatepersonsFirm100Limit5",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "5"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "PrivatePersons"
+        ],
+        "summary": "Data - PrivatePersons (firm 100)",
+        "description": "Data - PrivatePersons (firm 100)",
+        "operationId": "dataPrivatepersonsFirm100",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "aanspreektitel": {
+                    "type": "string",
+                    "example": "02"
+                  },
+                  "adreslijn1": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "adreslijn2": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "deletecode": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "email_adres": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "fax_prive": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "geboortedatum": {
+                    "nullable": true,
+                    "example": null
+                  },
+                  "gsm_nummer": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "handtekening": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "initialen": {
+                    "type": "string",
+                    "example": "FVDV"
+                  },
+                  "landcode": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "localiteit": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "mailstop": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "naam_familie": {
+                    "type": "string",
+                    "example": "VAN DER VEKEN2"
+                  },
+                  "naam_voornaam": {
+                    "type": "string",
+                    "example": "FREDDY"
+                  },
+                  "postcode": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "taalcode": {
+                    "type": "string",
+                    "example": "NL"
+                  },
+                  "telefoon_prive": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "vestiging": {
+                    "type": "string",
+                    "example": ""
+                  }
+                }
+              },
+              "examples": {
+                "Data - PrivatePersons (firm 100)": {
+                  "value": {
+                    "aanspreektitel": "02",
+                    "adreslijn1": "",
+                    "adreslijn2": "",
+                    "deletecode": "",
+                    "email_adres": "",
+                    "fax_prive": "",
+                    "geboortedatum": null,
+                    "gsm_nummer": "",
+                    "handtekening": "",
+                    "initialen": "FVDV",
+                    "landcode": "",
+                    "localiteit": "",
+                    "mailstop": false,
+                    "naam_familie": "VAN DER VEKEN2",
+                    "naam_voornaam": "FREDDY",
+                    "postcode": "",
+                    "taalcode": "NL",
+                    "telefoon_prive": "",
+                    "vestiging": ""
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/01/addresses": {
+      "get": {
+        "tags": [
+          "Addresses"
+        ],
+        "summary": "Data - Adresses (firm 01 limit 5)",
+        "description": "Data - Adresses (firm 01 limit 5)",
+        "operationId": "dataAdressesFirm01Limit5",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "5"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Addresses"
+        ],
+        "summary": "Data - Adresses (firm 01)",
+        "description": "Data - Adresses (firm 01)",
+        "operationId": "dataAdressesFirm01",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "30783030-3030-3030-3030-3030303031323161"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "addresses": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "addressname1": {
+                          "type": "string",
+                          "example": "Infomat4789789"
+                        },
+                        "addressname2": {
+                          "type": "string",
+                          "example": "test9"
+                        }
+                      }
+                    },
+                    "example": [
+                      {
+                        "addressname1": "Infomat4789789",
+                        "addressname2": "test9"
+                      }
+                    ]
+                  }
+                }
+              },
+              "examples": {
+                "Data - Adresses (firm 01)": {
+                  "value": {
+                    "addresses": [
+                      {
+                        "addressname1": "Infomat4789789",
+                        "addressname2": "test9"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/100/addresses": {
+      "post": {
+        "tags": [
+          "Addresses"
+        ],
+        "summary": "Data - Adresses (firm 100)",
+        "description": "Data - Adresses (firm 100)",
+        "operationId": "dataAdressesFirm100",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "EORI_nr": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "FieldName": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "aanspreektitel": {
+                    "type": "string",
+                    "example": "01"
+                  },
+                  "aanspreektitel_particulier": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "adreslijn1": {
+                    "type": "string",
+                    "example": "DYNAMICALAAN 92"
+                  },
+                  "adreslijn2": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "adreslijn3": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "adresnaam1": {
+                    "type": "string",
+                    "example": "BERT VANMECHELEN789"
+                  },
+                  "adresnaam2": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "adresnaam3": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "afstand_km": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "breedtegraad": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "consolidatieadresnummer": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "deletecode": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "ean_code": {
+                    "type": "string",
+                    "example": "9782708106925"
+                  },
+                  "email_adres": {
+                    "type": "string",
+                    "example": "NYSG@SYSTEMAT.BE,geert.nys@systemat.com"
+                  },
+                  "ext_Guid": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "externe_id": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "flag_12": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "flag_13": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "flag_14": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "flag_divers": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "flag_kredietverzekeraar": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "flag_vertegenwoordiger": {
+                    "type": "boolean",
+                    "example": true
+                  },
+                  "flag_werknemer": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "initialen": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "land_regio": {
+                    "type": "string",
+                    "example": "MC"
+                  },
+                  "landcode": {
+                    "type": "string",
+                    "example": "BE"
+                  },
+                  "lengtegraad": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "localiteit": {
+                    "type": "string",
+                    "example": "WILRIJK (ANTWERPEN)"
+                  },
+                  "mailstop": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "paper_copy": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "postcode": {
+                    "type": "string",
+                    "example": "2610"
+                  },
+                  "programma_creatie": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "programma_laatste_wijz": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "selectiecode1": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "selectiecode2": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "selectiecode3": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "selectiecode4": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "selectiecode5": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "spec_loc_id": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "staat": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "status_majuscule": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "sub_regio": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "taalcode": {
+                    "type": "string",
+                    "example": "nl"
+                  },
+                  "telefaxnummer1": {
+                    "type": "string",
+                    "example": "038285368"
+                  },
+                  "telefaxnummer2": {
+                    "type": "string",
+                    "example": "047902390"
+                  },
+                  "telefoonnummer1": {
+                    "type": "string",
+                    "example": "03/820.79.71"
+                  },
+                  "telefoonnummer2": {
+                    "type": "string",
+                    "example": "038206000"
+                  },
+                  "tgl_generic": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "tijd_creatie": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "url": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "verplaatsing_kost": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "verplaatsing_tijd": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "vest_nummer": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "vestiging": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "voice_response_system": {
+                    "type": "string",
+                    "example": ""
+                  },
+                  "zoeknaam1": {
+                    "type": "string",
+                    "example": "BERT7"
+                  },
+                  "zoeknaam2": {
+                    "type": "string",
+                    "example": ""
+                  }
+                }
+              },
+              "examples": {
+                "Data - Adresses (firm 100)": {
+                  "value": {
+                    "EORI_nr": "",
+                    "FieldName": "",
+                    "aanspreektitel": "01",
+                    "aanspreektitel_particulier": "",
+                    "adreslijn1": "DYNAMICALAAN 92",
+                    "adreslijn2": "",
+                    "adreslijn3": "",
+                    "adresnaam1": "BERT VANMECHELEN789",
+                    "adresnaam2": "",
+                    "adresnaam3": "",
+                    "afstand_km": 0,
+                    "breedtegraad": 0,
+                    "consolidatieadresnummer": 0,
+                    "deletecode": "",
+                    "ean_code": "9782708106925",
+                    "email_adres": "NYSG@SYSTEMAT.BE,geert.nys@systemat.com",
+                    "ext_Guid": "",
+                    "externe_id": "",
+                    "flag_12": false,
+                    "flag_13": false,
+                    "flag_14": false,
+                    "flag_divers": false,
+                    "flag_kredietverzekeraar": false,
+                    "flag_vertegenwoordiger": true,
+                    "flag_werknemer": false,
+                    "initialen": "",
+                    "land_regio": "MC",
+                    "landcode": "BE",
+                    "lengtegraad": 0,
+                    "localiteit": "WILRIJK (ANTWERPEN)",
+                    "mailstop": false,
+                    "paper_copy": false,
+                    "postcode": "2610",
+                    "programma_creatie": "",
+                    "programma_laatste_wijz": "",
+                    "selectiecode1": "",
+                    "selectiecode2": "",
+                    "selectiecode3": "",
+                    "selectiecode4": "",
+                    "selectiecode5": "",
+                    "spec_loc_id": 0,
+                    "staat": "",
+                    "status_majuscule": "",
+                    "sub_regio": "",
+                    "taalcode": "nl",
+                    "telefaxnummer1": "038285368",
+                    "telefaxnummer2": "047902390",
+                    "telefoonnummer1": "03/820.79.71",
+                    "telefoonnummer2": "038206000",
+                    "tgl_generic": false,
+                    "tijd_creatie": 0,
+                    "url": "",
+                    "verplaatsing_kost": 0,
+                    "verplaatsing_tijd": 0,
+                    "vest_nummer": "",
+                    "vestiging": "",
+                    "voice_response_system": "",
+                    "zoeknaam1": "BERT7",
+                    "zoeknaam2": ""
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/001/addresses": {
+      "get": {
+        "tags": [
+          "Addresses"
+        ],
+        "summary": "Data - Addresses",
+        "description": "Data - Addresses",
+        "operationId": "dataAddresses",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "5"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/meta/addresses": {
+      "get": {
+        "tags": [
+          "Addresses"
+        ],
+        "summary": "Meta - Addresses",
+        "description": "Meta - Addresses",
+        "operationId": "metaAddresses",
+        "parameters": [
+          {
+            "name": "mode",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "dev"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/01/users": {
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Data - User",
+        "description": "Data - User",
+        "operationId": "dataUser",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "DefaultCompany": {
+                    "type": "string",
+                    "example": "01"
+                  },
+                  "Email": {
+                    "type": "string",
+                    "example": "false@false.com"
+                  },
+                  "FirstName": {
+                    "type": "string",
+                    "example": "First"
+                  },
+                  "LastName": {
+                    "type": "string",
+                    "example": "referentie"
+                  },
+                  "User": {
+                    "type": "string",
+                    "example": "test"
+                  }
+                }
+              },
+              "examples": {
+                "Data - User": {
+                  "value": {
+                    "DefaultCompany": "01",
+                    "Email": "false@false.com",
+                    "FirstName": "First",
+                    "LastName": "referentie",
+                    "User": "test"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/DI1/validateuser": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Validate User",
+        "description": "Validate User",
+        "operationId": "validateUser",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "gunter"
             }
           },
           {
             "name": "password",
             "in": "query",
-            "description": "The password for login in clear text",
-            "required": false,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "7569"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "successful operation",
-            "headers": {
-              "X-Rate-Limit": {
-                "description": "calls per hour allowed by the user",
-                "schema": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              },
-              "X-Expires-After": {
-                "description": "date in UTC when token expires",
-                "schema": {
-                  "type": "string",
-                  "format": "date-time"
-                }
-              }
-            },
-            "content": {
-              "application/xml": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid username/password supplied"
+            "description": ""
           }
         }
       }
     },
-    "/user/logout": {
+    "/data/company": {
       "get": {
         "tags": [
-          "user"
+          "Company"
         ],
-        "summary": "Logs out current logged in user session",
-        "description": "",
-        "operationId": "logoutUser",
-        "parameters": [],
+        "summary": "Data Company",
+        "description": "Data Company",
+        "operationId": "dataCompany",
         "responses": {
-          "default": {
-            "description": "successful operation"
+          "200": {
+            "description": ""
           }
         }
       }
     },
-    "/user/{username}": {
+    "/data/company/01": {
       "get": {
         "tags": [
-          "user"
+          "Company"
         ],
-        "summary": "Get user by user name",
-        "description": "",
-        "operationId": "getUserByName",
+        "summary": "Data Company 01",
+        "description": "Data Company 01",
+        "operationId": "dataCompany01",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/object/company/DI1/objects": {
+      "get": {
+        "tags": [
+          "Objects"
+        ],
+        "summary": "Object Object",
+        "description": "Object Object",
+        "operationId": "objectObject",
         "parameters": [
           {
-            "name": "username",
-            "in": "path",
-            "description": "The name that needs to be fetched. Use user1 for testing. ",
-            "required": true,
+            "name": "id",
+            "in": "query",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "30783030-3030-3030-3030-3030383337366331"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/User"
-                }
-              },
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/User"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid username supplied"
-          },
-          "404": {
-            "description": "User not found"
+            "description": ""
           }
         }
-      },
-      "put": {
+      }
+    },
+    "/data/company/01/objects/SALESORDER/69853": {
+      "get": {
         "tags": [
-          "user"
+          "Objects"
         ],
-        "summary": "Update user",
-        "description": "This can only be done by the logged in user.",
-        "operationId": "updateUser",
-        "parameters": [
-          {
-            "name": "username",
-            "in": "path",
-            "description": "name that need to be deleted",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "Update an existent user in the store",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/User"
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/User"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "$ref": "#/components/schemas/User"
-              }
-            }
-          }
-        },
+        "summary": "Data Object",
+        "description": "Data Object",
+        "operationId": "dataObject",
         "responses": {
-          "default": {
-            "description": "successful operation"
+          "200": {
+            "description": ""
           }
         }
-      },
-      "delete": {
+      }
+    },
+    "/meta/company/01/objects": {
+      "get": {
         "tags": [
-          "user"
+          "Objects"
         ],
-        "summary": "Delete user",
-        "description": "This can only be done by the logged in user.",
-        "operationId": "deleteUser",
+        "summary": "Meta Object",
+        "description": "Meta Object",
+        "operationId": "metaObject",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/100/returnannouncements": {
+      "get": {
+        "tags": [
+          "ReturnAnnouncements"
+        ],
+        "summary": "Data - ReturnAnnouncements (firm 100 limit 5)",
+        "description": "Data - ReturnAnnouncements (firm 100 limit 5)",
+        "operationId": "dataReturnannouncementsFirm100Limit5",
         "parameters": [
           {
-            "name": "username",
-            "in": "path",
-            "description": "The name that needs to be deleted",
-            "required": true,
+            "name": "limit",
+            "in": "query",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "example": "5"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "30783030-3030-3030-3030-3030326164313030"
             }
           }
         ],
         "responses": {
-          "400": {
-            "description": "Invalid username supplied"
-          },
-          "404": {
-            "description": "User not found"
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/100/returnannouncements/13": {
+      "get": {
+        "tags": [
+          "ReturnAnnouncements"
+        ],
+        "summary": "Data - ReturnAnnouncements (firm 100 - 13)",
+        "description": "Data - ReturnAnnouncements (firm 100 - 13)",
+        "operationId": "dataReturnannouncementsFirm10013",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/meta/returnannouncements": {
+      "get": {
+        "tags": [
+          "ReturnAnnouncements"
+        ],
+        "summary": "Meta - ReturnAnnouncements",
+        "description": "Meta - ReturnAnnouncements",
+        "operationId": "metaReturnannouncements",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/data/company/100/returnannouncements/18": {
+      "get": {
+        "tags": [
+          "ReturnAnnouncementlines"
+        ],
+        "summary": "ReturnAnnouncementlines",
+        "description": "ReturnAnnouncementlines",
+        "operationId": "returnannouncementlines",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/meta/returnannouncementlines": {
+      "get": {
+        "tags": [
+          "ReturnAnnouncementlines"
+        ],
+        "summary": "Meta - ReturnAnnouncementlines",
+        "description": "Meta - ReturnAnnouncementlines",
+        "operationId": "metaReturnannouncementlines",
+        "responses": {
+          "200": {
+            "description": ""
           }
         }
       }
     }
   },
   "components": {
-    "schemas": {
-      "Order": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64",
-            "example": 10
-          },
-          "petId": {
-            "type": "integer",
-            "format": "int64",
-            "example": 198772
-          },
-          "quantity": {
-            "type": "integer",
-            "format": "int32",
-            "example": 7
-          },
-          "shipDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "status": {
-            "type": "string",
-            "description": "Order Status",
-            "example": "approved",
-            "enum": [
-              "placed",
-              "approved",
-              "delivered"
-            ]
-          },
-          "complete": {
-            "type": "boolean"
-          }
-        },
-        "xml": {
-          "name": "order"
-        }
-      },
-      "Customer": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64",
-            "example": 100000
-          },
-          "username": {
-            "type": "string",
-            "example": "fehguy"
-          },
-          "address": {
-            "type": "array",
-            "xml": {
-              "name": "addresses",
-              "wrapped": true
-            },
-            "items": {
-              "$ref": "#/components/schemas/Address"
-            }
-          }
-        },
-        "xml": {
-          "name": "customer"
-        }
-      },
-      "Address": {
-        "type": "object",
-        "properties": {
-          "street": {
-            "type": "string",
-            "example": "437 Lytton"
-          },
-          "city": {
-            "type": "string",
-            "example": "Palo Alto"
-          },
-          "state": {
-            "type": "string",
-            "example": "CA"
-          },
-          "zip": {
-            "type": "string",
-            "example": "94301"
-          }
-        },
-        "xml": {
-          "name": "address"
-        }
-      },
-      "Category": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64",
-            "example": 1
-          },
-          "name": {
-            "type": "string",
-            "example": "Dogs"
-          }
-        },
-        "xml": {
-          "name": "category"
-        }
-      },
-      "User": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64",
-            "example": 10
-          },
-          "username": {
-            "type": "string",
-            "example": "theUser"
-          },
-          "firstName": {
-            "type": "string",
-            "example": "John"
-          },
-          "lastName": {
-            "type": "string",
-            "example": "James"
-          },
-          "email": {
-            "type": "string",
-            "example": "john@email.com"
-          },
-          "password": {
-            "type": "string",
-            "example": "12345"
-          },
-          "phone": {
-            "type": "string",
-            "example": "12345"
-          },
-          "userStatus": {
-            "type": "integer",
-            "description": "User Status",
-            "format": "int32",
-            "example": 1
-          }
-        },
-        "xml": {
-          "name": "user"
-        }
-      },
-      "Tag": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "xml": {
-          "name": "tag"
-        }
-      },
-      "Pet": {
-        "required": [
-          "name",
-          "photoUrls"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64",
-            "example": 10
-          },
-          "name": {
-            "type": "string",
-            "example": "doggie"
-          },
-          "category": {
-            "$ref": "#/components/schemas/Category"
-          },
-          "photoUrls": {
-            "type": "array",
-            "xml": {
-              "wrapped": true
-            },
-            "items": {
-              "type": "string",
-              "xml": {
-                "name": "photoUrl"
-              }
-            }
-          },
-          "tags": {
-            "type": "array",
-            "xml": {
-              "wrapped": true
-            },
-            "items": {
-              "$ref": "#/components/schemas/Tag"
-            }
-          },
-          "status": {
-            "type": "string",
-            "description": "pet status in the store",
-            "enum": [
-              "available",
-              "pending",
-              "sold"
-            ]
-          }
-        },
-        "xml": {
-          "name": "pet"
-        }
-      },
-      "ApiResponse": {
-        "type": "object",
-        "properties": {
-          "code": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "type": {
-            "type": "string"
-          },
-          "message": {
-            "type": "string"
-          }
-        },
-        "xml": {
-          "name": "##default"
-        }
-      }
-    },
-    "requestBodies": {
-      "Pet": {
-        "description": "Pet object that needs to be added to the store",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/Pet"
-            }
-          },
-          "application/xml": {
-            "schema": {
-              "$ref": "#/components/schemas/Pet"
-            }
-          }
-        }
-      },
-      "UserArray": {
-        "description": "List of user object",
-        "content": {
-          "application/json": {
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/User"
-              }
-            }
-          }
-        }
-      }
-    },
     "securitySchemes": {
-      "petstore_auth": {
-        "type": "oauth2",
-        "flows": {
-          "implicit": {
-            "authorizationUrl": "https://petstore3.swagger.io/oauth/authorize",
-            "scopes": {
-              "write:pets": "modify pets in your account",
-              "read:pets": "read your pets"
-            }
-          }
-        }
-      },
-      "api_key": {
-        "type": "apiKey",
-        "name": "api_key",
-        "in": "header"
+      "basicAuth": {
+        "type": "http",
+        "scheme": "basic"
       }
     }
-  }
+  },
+  "security": [
+    {
+      "basicAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "SalesOrders"
+    },
+    {
+      "name": "SalesCosts"
+    },
+    {
+      "name": "SalesOrderlines"
+    },
+    {
+      "name": "SalesOffers"
+    },
+    {
+      "name": "SalesOfferLines"
+    },
+    {
+      "name": "SalesInvoices"
+    },
+    {
+      "name": "SalesInvoiceLines"
+    },
+    {
+      "name": "Customers"
+    },
+    {
+      "name": "Purchases"
+    },
+    {
+      "name": "PurchaseOrders"
+    },
+    {
+      "name": "PurchaseCosts"
+    },
+    {
+      "name": "Articles"
+    },
+    {
+      "name": "Stock"
+    },
+    {
+      "name": "Prices"
+    },
+    {
+      "name": "TierPrices"
+    },
+    {
+      "name": "Quotes"
+    },
+    {
+      "name": "Contacts"
+    },
+    {
+      "name": "PrivatePersons"
+    },
+    {
+      "name": "Addresses"
+    },
+    {
+      "name": "Users"
+    },
+    {
+      "name": "Company"
+    },
+    {
+      "name": "Objects"
+    },
+    {
+      "name": "ReturnAnnouncements"
+    },
+    {
+      "name": "ReturnAnnouncementlines"
+    }
+  ]
 }
