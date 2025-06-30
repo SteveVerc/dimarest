@@ -16,8 +16,8 @@
         "tags": [
           "SalesOrders"
         ],
-        "summary": "Data - SalesOrders (firm 001 limit 5)",
-        "description": "Data - SalesOrders (firm 001 limit 5)",
+        "summary": "SalesOrders",
+        "description": "SalesOrders",
         "operationId": "dataSalesordersFirm001Limit5",
         "parameters": [
           {                     
@@ -56,8 +56,8 @@
         "tags": [
           "SalesOrders"
         ],
-        "summary": "Data - SalesOrder Update",
-        "description": "Data - SalesOrder Update",
+        "summary": "SalesOrder Update",
+        "description": "SalesOrder Update",
         "operationId": "dataSalesorderUpdate",
         "parameters": [
           {
