@@ -11,7 +11,7 @@
     }
   ],
   "paths": {
-    "/data/company/001/salesorders": {
+    "/data/company/{company}/salesorders": {
       "get": {
         "tags": [
           "SalesOrders"
@@ -20,6 +20,15 @@
         "description": "Data - SalesOrders (firm 001 limit 5)",
         "operationId": "dataSalesordersFirm001Limit5",
         "parameters": [
+          {                     
+              "name": "company",
+              "in": "path",
+              "required": true,
+              "schema": {
+                  "type": "string",
+                  "example": "001"
+              }
+          },
           {
             "name": "limit",
             "in": "query",
