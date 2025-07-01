@@ -33,13 +33,13 @@
       "name": "SalesOffers"
     },
     {
-      "name": "SalesOfferLines"
+      "name": "SalesOfferlines"
     },
     {
       "name": "SalesInvoices"
     },
     {
-      "name": "SalesInvoiceLines"
+      "name": "SalesInvoicelines"
     },
     {
       "name": "SalesOrderlines"
@@ -105,6 +105,7 @@
         "tags": [
           "SalesOrders"
         ],
+        "description": "Retrieve salesorder",
         "parameters": [
           {
             "name": "id",
@@ -112,7 +113,25 @@
             "schema": {
               "type": "string"
             },
-            "example": null
+            "description": "Retrieve full record by guid"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": 10,
+            "description": "Pagesize"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": 1,
+            "description": "Start"
           },
           {
             "name": "company",
@@ -429,7 +448,17 @@
         "tags": [
           "SalesOrders"
         ],
-        "summary": "Scheme",
+        "summary": "retrieve scheme",
+        "parameters": [
+          {
+            "name": "mode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "dev"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Successful response",
@@ -859,7 +888,7 @@
     "/data/company/{company}/salesinvoices/{id1}/salesinvoicelines/{id2}": {
       "get": {
         "tags": [
-          "SalesInvoiceLines"
+          "SalesInvoicelines"
         ],
         "parameters": [
           {
@@ -903,7 +932,7 @@
     "/data/company/{company}/salesinvoicelines": {
       "get": {
         "tags": [
-          "SalesInvoiceLines"
+          "SalesInvoicelines"
         ],
         "parameters": [
           {
