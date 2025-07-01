@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": "http://beapsprogres01.kerridgecs.local:8070/web/api/v1"
+      "url": "http://beapsprogres01.kerridgecs.local:9095/web/api/v1"
     }
   ],
   "components": {
