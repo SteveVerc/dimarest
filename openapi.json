@@ -99,7 +99,7 @@
         "tags": [
           "SalesOrders"
         ],
-        "summary": "SalesOrders by Id",
+        "summary": "SalesOrders",
         "parameters": [
           {
             "name": "id",
@@ -426,7 +426,7 @@
         "tags": [
           "SalesOrders"
         ],
-        "summary": "SalesOrders",
+        "summary": "Schema",
         "responses": {
           "200": {
             "description": "Successful response",
