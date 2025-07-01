@@ -105,7 +105,6 @@
         "tags": [
           "SalesOrders"
         ],
-        "summary": "SalesOrders",
         "parameters": [
           {
             "name": "id",
@@ -113,7 +112,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "30783030-3030-3030-3030-3030336564383832"
+            "example": null
           },
           {
             "name": "company",
@@ -138,7 +137,6 @@
         "tags": [
           "SalesOrders"
         ],
-        "summary": "SalesOrder",
         "requestBody": {
           "content": {
             "application/json": {
@@ -336,7 +334,6 @@
         "tags": [
           "SalesOrders"
         ],
-        "summary": "SalesOrder",
         "requestBody": {
           "content": {
             "application/json": {
@@ -432,7 +429,7 @@
         "tags": [
           "SalesOrders"
         ],
-        "summary": "Schema",
+        "summary": "Scheme",
         "responses": {
           "200": {
             "description": "Successful response",
@@ -448,7 +445,6 @@
         "tags": [
           "SalesCosts"
         ],
-        "summary": "SalesCosts",
         "parameters": [
           {
             "name": "costsidlist",
@@ -515,8 +511,15 @@
         "tags": [
           "SalesOffers"
         ],
-        "summary": "SalesOffers",
         "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": null
+          },
           {
             "name": "company",
             "in": "path",
@@ -540,7 +543,6 @@
         "tags": [
           "SalesOffers"
         ],
-        "summary": "Salesoffers",
         "requestBody": {
           "content": {
             "application/json": {
@@ -601,12 +603,46 @@
         }
       }
     },
-    "/data/company/{company}/salesoffers/{id1}/salesofferlines": {
+    "/data/company/{company}/salesoffers/{id1}": {
       "get": {
         "tags": [
           "SalesOffers"
         ],
-        "summary": "SalesOffers",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/salesoffers/{id1}/SalesOfferlines": {
+      "get": {
+        "tags": [
+          "SalesOfferlines"
+        ],
         "parameters": [
           {
             "name": "company",
@@ -637,12 +673,11 @@
         }
       }
     },
-    "/data/company/{company}/SalesOfferLines": {
+    "/data/company/{company}/SalesOfferlines": {
       "get": {
         "tags": [
-          "SalesOfferLines"
+          "SalesOfferlines"
         ],
-        "summary": "SalesOfferLines Id",
         "parameters": [
           {
             "name": "id",
@@ -650,7 +685,8 @@
             "schema": {
               "type": "string"
             },
-            "example": "30783030-3030-3030-3030-3030313038316338"
+            "example": "30783030-3030-3030-3030-3030313038316338",
+            "required": true
           },
           {
             "name": "company",
@@ -672,12 +708,11 @@
         }
       }
     },
-    "/data/company/{company}/SalesOffers/{id1}/SalesOfferLines": {
+    "/data/company/{company}/SalesOffers/{id1}/SalesOfferlines": {
       "get": {
         "tags": [
-          "SalesOfferLines"
+          "SalesOfferlines"
         ],
-        "summary": "SalesOfferLines by primekey",
         "parameters": [
           {
             "name": "company",
@@ -708,12 +743,55 @@
         }
       }
     },
+    "/data/company/{company}/SalesOffers/{id1}/SalesOfferLines/{id2}": {
+      "get": {
+        "tags": [
+          "SalesOfferlines"
+        ],
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100546
+          },
+          {
+            "name": "id2",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 10
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
     "/data/company/{company}/salesinvoices": {
       "get": {
         "tags": [
           "SalesInvoices"
         ],
-        "summary": "SalesInvoices Id",
         "parameters": [
           {
             "name": "id",
@@ -748,7 +826,6 @@
         "tags": [
           "SalesInvoices"
         ],
-        "summary": "SalesInvoices primekey",
         "parameters": [
           {
             "name": "company",
@@ -784,7 +861,6 @@
         "tags": [
           "SalesInvoiceLines"
         ],
-        "summary": "SalesInvoicelines",
         "parameters": [
           {
             "name": "company",
@@ -829,7 +905,6 @@
         "tags": [
           "SalesInvoiceLines"
         ],
-        "summary": "SalesInvoicelines Id",
         "parameters": [
           {
             "name": "id",
@@ -837,7 +912,8 @@
             "schema": {
               "type": "string"
             },
-            "example": "30783030-3030-3030-3030-3030316666643030"
+            "example": "30783030-3030-3030-3030-3030316666643030",
+            "required": true
           },
           {
             "name": "company",
@@ -862,9 +938,8 @@
     "/data/company/{company}/salesorders/{id1}": {
       "get": {
         "tags": [
-          "SalesOrderlines"
+          "SalesOrders"
         ],
-        "summary": "SalesOrderLines",
         "parameters": [
           {
             "name": "company",
@@ -900,7 +975,7 @@
         "tags": [
           "SalesOrderlines"
         ],
-        "summary": "SalesOrderlines (meta)",
+        "summary": "Scheme",
         "responses": {
           "200": {
             "description": "Successful response",
@@ -916,7 +991,6 @@
         "tags": [
           "SalesOrderlines"
         ],
-        "summary": "Salesorderlines by  Id",
         "parameters": [
           {
             "name": "id",
@@ -951,7 +1025,6 @@
         "tags": [
           "Customers"
         ],
-        "summary": "Customers by Id",
         "parameters": [
           {
             "name": "id",
@@ -986,7 +1059,6 @@
         "tags": [
           "Customers"
         ],
-        "summary": "CustomerOrderAddresses",
         "requestBody": {
           "content": {
             "application/json": {
@@ -994,15 +1066,15 @@
                 "type": "object",
                 "example": {
                   "AddressName": "test",
-                  "FirstName": "Steve",
-                  "LastName": "Vercaemere",
+                  "FirstName": "S**ve",
+                  "LastName": "Ver*****e",
                   "AddressLine1": "Jan Straat 5",
-                  "CityName": "Wevelgem",
-                  "PostCode": "8560",
+                  "CityName": "W**em",
+                  "PostCode": "8**0",
                   "CountryId": "BE",
                   "LanguageCode": "nl",
                   "Telephone": "+3256123640",
-                  "Email": "steve.vercaemere@kerridgecs.com",
+                  "Email": "s**e.ver****e@kerridgecs.com",
                   "Website": "http://info.kerridgecs.com",
                   "Login": "test",
                   "Password": "test",
@@ -1014,9 +1086,9 @@
                   "NumberOfEmployees": "5",
                   "prosp_sector": "",
                   "jur_vorm": "BV",
-                  "EmailInternal": "steve.vercaemere@kerridgecs.com",
+                  "EmailInternal": "s**ve.v****mere@kerridgecs.com",
                   "departement": "",
-                  "BirthDate": "15/01/1979",
+                  "BirthDate": "15/01/1950",
                   "FunctionId": "",
                   "pers_fax": "",
                   "pers_mobile": "",
@@ -1056,7 +1128,7 @@
         "tags": [
           "Customers"
         ],
-        "summary": "CustomerOrderAddresses (meta)",
+        "summary": "Scheme",
         "requestBody": {
           "content": {}
         },
@@ -1086,7 +1158,6 @@
         "tags": [
           "Endpoints"
         ],
-        "summary": "EndPoints",
         "parameters": [
           {
             "name": "company",
@@ -1113,7 +1184,6 @@
         "tags": [
           "PurchaseOrders"
         ],
-        "summary": "PurchaseOrders by Id",
         "parameters": [
           {
             "name": "id",
@@ -1148,7 +1218,6 @@
         "tags": [
           "PurchaseOrderlines"
         ],
-        "summary": "PurchaseOrderlines",
         "parameters": [
           {
             "name": "company",
@@ -1184,7 +1253,6 @@
         "tags": [
           "PurchaseOrders"
         ],
-        "summary": "PurchaseOrders 3",
         "parameters": [
           {
             "name": "company",
@@ -1220,7 +1288,6 @@
         "tags": [
           "PurchaseCosts"
         ],
-        "summary": "PurchaseCosts",
         "parameters": [
           {
             "name": "limit",
@@ -1279,7 +1346,6 @@
         "tags": [
           "ArticlesStock"
         ],
-        "summary": "ArticlesStock bulk",
         "parameters": [
           {
             "name": "2ba",
@@ -1331,7 +1397,6 @@
         "tags": [
           "ArticlesStock"
         ],
-        "summary": "ArticlesStock 2BA Bulk",
         "parameters": [
           {
             "name": "2ba",
@@ -1372,9 +1437,8 @@
     "/data/company/{company}/articles/{id1}/price": {
       "get": {
         "tags": [
-          "ArticlePrices"
+          "ArticlesPrices"
         ],
-        "summary": "ArticlesPrice",
         "parameters": [
           {
             "name": "company",
@@ -1410,7 +1474,6 @@
         "tags": [
           "ArticlesPrices"
         ],
-        "summary": "ArticlesPrice bulk",
         "parameters": [
           {
             "name": "ArticleList",
@@ -1445,7 +1508,6 @@
         "tags": [
           "Articles"
         ],
-        "summary": "Articles",
         "parameters": [
           {
             "name": "limit",
@@ -1480,7 +1542,6 @@
         "tags": [
           "Articles"
         ],
-        "summary": "Articles",
         "parameters": [
           {
             "name": "company",
@@ -1516,7 +1577,6 @@
         "tags": [
           "ArticlesTierPrices"
         ],
-        "summary": "ArticlesTierPrice",
         "parameters": [
           {
             "name": "company",
@@ -1561,7 +1621,6 @@
         "tags": [
           "Contacts"
         ],
-        "summary": "Contacts  (webuserid)",
         "parameters": [
           {
             "name": "WebUserId",
@@ -1594,7 +1653,6 @@
         "tags": [
           "Contacts"
         ],
-        "summary": "Contacts",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1686,7 +1744,6 @@
         "tags": [
           "PrivatePersons"
         ],
-        "summary": "PrivatePersons",
         "parameters": [
           {
             "name": "limit",
@@ -1719,7 +1776,6 @@
         "tags": [
           "PrivatePersons"
         ],
-        "summary": "PrivatePersons",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1776,7 +1832,6 @@
         "tags": [
           "Addresses"
         ],
-        "summary": "Addresses",
         "parameters": [
           {
             "name": "limit",
@@ -1809,7 +1864,6 @@
         "tags": [
           "Addresses"
         ],
-        "summary": "Adresses",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1904,7 +1958,6 @@
         "tags": [
           "Addresses"
         ],
-        "summary": "Adresses",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1955,7 +2008,7 @@
         "tags": [
           "Addresses"
         ],
-        "summary": "Addresses (meta)",
+        "summary": "Scheme",
         "responses": {
           "200": {
             "description": "Successful response",
@@ -1971,7 +2024,6 @@
         "tags": [
           "Users"
         ],
-        "summary": "User",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2014,7 +2066,6 @@
         "tags": [
           "Users"
         ],
-        "summary": "Validate User",
         "parameters": [
           {
             "name": "login",
@@ -2057,7 +2108,6 @@
         "tags": [
           "Company"
         ],
-        "summary": "Company",
         "responses": {
           "200": {
             "description": "Successful response",
@@ -2073,7 +2123,6 @@
         "tags": [
           "Company"
         ],
-        "summary": "Company by primekey",
         "parameters": [
           {
             "name": "company",
@@ -2100,7 +2149,6 @@
         "tags": [
           "Objects"
         ],
-        "summary": "Data",
         "parameters": [
           {
             "name": "company",
@@ -2145,7 +2193,6 @@
         "tags": [
           "Objects"
         ],
-        "summary": "Meta",
         "parameters": [
           {
             "name": "company",
@@ -2172,7 +2219,6 @@
         "tags": [
           "Objects"
         ],
-        "summary": "Object  by Id",
         "parameters": [
           {
             "name": "id",
@@ -2207,7 +2253,6 @@
         "tags": [
           "ReturnAnnouncements"
         ],
-        "summary": "ReturnAnnouncements by Id",
         "parameters": [
           {
             "name": "id",
@@ -2242,7 +2287,6 @@
         "tags": [
           "ReturnAnnouncements"
         ],
-        "summary": "ReturnAnnouncements",
         "parameters": [
           {
             "name": "company",
@@ -2278,7 +2322,6 @@
         "tags": [
           "ReturnAnnouncements"
         ],
-        "summary": "ReturnAnnouncements",
         "responses": {
           "200": {
             "description": "Successful response",
@@ -2294,7 +2337,6 @@
         "tags": [
           "ReturnAnnouncementlines"
         ],
-        "summary": "ReturnAnnouncementlines",
         "parameters": [
           {
             "name": "company",
@@ -2339,7 +2381,6 @@
         "tags": [
           "ReturnAnnouncementlines"
         ],
-        "summary": "ReturnAnnouncementlines",
         "parameters": [
           {
             "name": "company",
@@ -2375,7 +2416,6 @@
         "tags": [
           "ReturnAnnouncementlines"
         ],
-        "summary": "ReturnAnnouncementlines",
         "responses": {
           "200": {
             "description": "Successful response",
@@ -2391,7 +2431,6 @@
         "tags": [
           "RepresentativeCustomer"
         ],
-        "summary": "RepresentativeCustomer",
         "parameters": [
           {
             "name": "company",
