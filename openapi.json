@@ -1,1639 +1,2426 @@
-openapi: 3.0.0
-info:
-  title: Dimarest V1
-  version: 1.0.0
-servers:
-  - url: http://beapsprogres01.kerridgecs.local:9095/web/api/v1
-components:
-  securitySchemes:
-    basicAuth:
-      type: http
-      scheme: basic
-security:
-  - basicAuth: []
-tags:
-  - name: SalesOrders
-  - name: SalesCosts
-  - name: SalesOffers
-  - name: SalesOfferLines
-  - name: SalesInvoices
-  - name: SalesInvoiceLines
-  - name: SalesOrderlines
-  - name: Customers
-  - name: Endpoints
-  - name: PurchaseOrders
-  - name: PurchaseOrderlines
-  - name: PurchaseCosts
-  - name: Articles
-  - name: ArticlesStock
-  - name: ArticlesPrices
-  - name: ArticlesTierPrices
-  - name: Contacts
-  - name: PrivatePersons
-  - name: Addresses
-  - name: Users
-  - name: Company
-  - name: Objects
-  - name: ReturnAnnouncements
-  - name: ReturnAnnouncementlines
-  - name: RepresentativeCustomer
-paths:
-  /data/company/{company}/salesorders:
-    get:
-      tags:
-        - SalesOrders
-      summary: SalesOrders
-      parameters:
-        - name: id
-          in: query
-          schema:
-            type: string
-          example: 30783030-3030-3030-3030-3030336564383832
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-    post:
-      tags:
-        - SalesOrders
-      summary: SalesOrder
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                SalesOrders:
-                  - CompanyId: DI1
-                    ExternalReference: referentie
-                    OrderDate: '2025-01-29'
-                    RequestDeliveryDate: '2025-01-30'
-                    IsCollectedByCustomer: false
-                    TermsOfDeliveryId: FRC
-                    WarehouseId: null
-                    TransportMethodId: null
-                    CurrencyId: EUR
-                    DocumentOrigin: ePO
-                    Username: dsuser
-                    BackOrdersTreatment: null
-                SalesOrderAddresses:
-                  - CompanyId: DI1
-                    AddressTypeId: BUYER
-                    AddressId: 93
-                    AddressLine1: null
-                    AddressLine2: null
-                    AddressLine3: null
-                    AddressName1: null
-                    AddressName2: null
-                    AddressName3: null
-                    CityName: null
-                    CountryId: null
-                    DepartmentId: null
-                    DepartmentName: null
-                    EanCode: null
-                    EmailAddress: null
-                    FaxNumber1: null
-                    FirstName: null
-                    LanguageId: null
-                    LastName: null
-                    MobilePhoneNumber: null
-                    PersonId: 2
-                    PhoneNumber1: null
-                    PostCode: null
-                    Languagecode: NL
-                  - CompanyId: DI1
-                    AddressTypeId: DELIVERY
-                    AddressId: 119
-                    AddressLine1: null
-                    AddressLine2: null
-                    AddressLine3: null
-                    AddressName1: null
-                    AddressName2: null
-                    AddressName3: null
-                    CityName: null
-                    CountryId: null
-                    DepartmentId: null
-                    DepartmentName: null
-                    EanCode: null
-                    EmailAddress: null
-                    FaxNumber1: null
-                    FirstName: null
-                    LanguageId: null
-                    LastName: null
-                    MobilePhoneNumber: null
-                    PersonId: 0
-                    PhoneNumber1: null
-                    PostCode: null
-                    Languagecode: NL
-                  - CompanyId: DI1
-                    AddressTypeId: INVOICE
-                    AddressId: 93
-                    AddressLine1: null
-                    AddressLine2: null
-                    AddressLine3: null
-                    AddressName1: null
-                    AddressName2: null
-                    AddressName3: null
-                    CityName: null
-                    CountryId: null
-                    DepartmentId: null
-                    DepartmentName: null
-                    EanCode: null
-                    EmailAddress: null
-                    FaxNumber1: null
-                    FirstName: null
-                    LanguageId: null
-                    LastName: null
-                    MobilePhoneNumber: null
-                    PersonId: 0
-                    PhoneNumber1: null
-                    PostCode: null
-                    Languagecode: NL
-                  - CompanyId: DI1
-                    AddressTypeId: WAREHOUSE
-                    AddressId: 0
-                    AddressLine1: null
-                    AddressLine2: null
-                    AddressLine3: null
-                    AddressName1: null
-                    AddressName2: null
-                    AddressName3: null
-                    CityName: null
-                    CountryId: null
-                    DepartmentId: null
-                    DepartmentName: null
-                    EanCode: null
-                    EmailAddress: null
-                    FaxNumber1: null
-                    FirstName: null
-                    LanguageId: null
-                    LastName: null
-                    MobilePhoneNumber: null
-                    PersonId: 0
-                    PhoneNumber1: null
-                    PostCode: null
-                    Languagecode: null
-                SalesOrderLines:
-                  - CompanyId: DI1
-                    OrderLineId: 10
-                    ItemId: merctruck
-                    ItemDescription1: omschrijving1 van merctruck
-                    ItemDescription2: omschrijving2 van merctruck
-                    NumberOfRequiredUnits: 2
-                    SalesUnitId: PCE
-                    RequestedDeliveryDate: '2025-01-30'
-                    TariffPrice: 0
-                    TariffPriceUnitId: ''
-                    NetSalesPrice: 0
-                    NetLineAmount: 0
-                    LotNumber: null
-                  - CompanyId: DI1
-                    OrderLineId: 20
-                    ItemId: '74180030'
-                    ItemDescription1: BOORKOP M.SLEUT. 115 16MM 5/8X16  72829
-                    ItemDescription2: ROHM 2009
-                    NumberOfRequiredUnits: 1
-                    SalesUnitId: PCE
-                    RequestedDeliveryDate: '2025-01-30'
-                    TariffPrice: 0
-                    TariffPriceUnitId: ''
-                    NetSalesPrice: 0
-                    NetLineAmount: 0
-                    LotNumber: null
-                SalesOrderTexts:
-                  - CompanyId: DI1
-                    SequenceNumber: 1
-                    TextDetail: referentie2
-                SalesOrderPayments: []
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-    put:
-      tags:
-        - SalesOrders
-      summary: SalesOrder
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                SalesOrders:
-                  - CompanyId: '{{company}}'
-                    ProvidedDeliveryDate: '2010-03-15'
-                    OrderReference: ''
-                    OrderAddressPersonName: ''
-                    OriginId: |+
-
-
-                    InternalDepartmentId: ''
-                    OrderAddressName1: B**** UBENS
-                    OrderAddressName2: ''
-                    OrderAddressName3: ''
-                    OrderAddressLine1: POSTBUS **
-                    OrderAddressLine2: ''
-                    OrderAddressLine3: ''
-                    OrderAddressPostCode: '**00 AA'
-                    OrderAddressCityName: '**HEN'
-                    OrderAddressCountryId: |-
-
-
-                      Nederland
-                    OrderAddressTelephoneNumber1: ''
-                    OrderAddressId: 10
-                    DeliveryAddressName1: BU*NS
-                    DeliveryAddressName2: ''
-                    DeliveryAddressName3: ''
-                    DeliveryAddressLine1: POST**3
-                    DeliveryAddressLine2: ''
-                    DeliveryAddressLine3: ''
-                    DeliveryAddressPostCode: 7**A
-                    DeliveryAddressCityName: ZU***N
-                    DeliveryAddressCountryId: |-
-
-
-                      Nederland
-                    DeliveryAddressTelephoneNumber1: ''
-                    DeliveryAddressId: 10
-                    InvoiceAddressName1: BU***S
-                    InvoiceAddressName2: ''
-                    InvoiceAddressName3: ''
-                    InvoiceAddressLine1: P**S 33
-                    InvoiceAddressLine2: ''
-                    InvoiceAddressLine3: ''
-                    InvoiceAddressPostCode: 7**A
-                    InvoiceAddressCityName: ZU***N
-                    InvoiceAddressCountryId: |-
-
-
-                      Nederland
-                    VatNumber: NL 81*****01
-                    InvoiceAddressTelephoneNumber1: ''
-                    InvoiceAddressId: 10
-                    TotalCostsAmount: 0
-                    ProjectDiscountPercentage: 0
-                    ProjectDiscountAmount: 0
-                    RequestedDeliveryDate: '2025-03-11'
-                    TermsOfDeliveryId: EXW
-                    promocode: ''
-      parameters:
-        - name: id
-          in: query
-          schema:
-            type: string
-          example: 30783030-3030-3030-3030-3030336564383832
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /meta/salesorders:
-    get:
-      tags:
-        - SalesOrders
-      summary: Schema
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  
-  /data/company/{company}/salescosts:
-    get:
-      tags:
-        - SalesCosts
-      summary: SalesCosts
-      parameters:
-        - name: costsidlist
-          in: query
-          schema:
-            type: integer
-          example: '22'
-        - name: TotalGoodsNetAmount
-          in: query
-          schema:
-            type: integer
-          example: '9'
-        - name: AddressId
-          in: query
-          schema:
-            type: integer
-          example: '93'
-        - name: OriginId
-          in: query
-          schema:
-            type: string
-          example: EPO
-        - name: VatSystemId
-          in: query
-          schema:
-            type: integer
-          example: '21'
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/salesoffers:
-    get:
-      tags:
-        - SalesOffers
-      summary: SalesOffers
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-    post:
-      tags:
-        - SalesOffers 
-      summary: Salesoffers
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                SalesOffers:
-                  - ExternalReference: Test2
-                    OfferAddressPersonName: ''
-                    OriginId: |+
-
-
-                    InternalDepartmentId: ''
-                    TotalAmountVatExcluded: 0
-                    TotalAmountVat: 0
-                    TotalGoodsCostsVatAmount: 450
-                    OfferAddressId: 10
-                    DeliveryAddressId: 0
-                    InvoiceAddressId: 0
-                    SalesOfferLines:
-                      - OfferLineId: 10
-                        ItemId: TESTHEPI
-                        ItemDescription: 'TEST HEPI '
-                        OfferLineStatusId: |-
-
-
-                          Afgesloten
-                        NumberOfUnitsInSalesOffer: 30000
-                        TariffPrice: 0.015
-                        TariffPriceUnitId: ''
-                        NetSalesPrice: 0.015
-                        NetSalesPriceUnitId: PCE
-                        NetLineAmountVatExcluded: 450
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/salesoffers/{id1}/salesofferlines:
-    get:
-      tags:
-        - SalesOffers
-      summary: SalesOffers
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-        - name: id1
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 33
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/SalesOfferLines:
-    get:
-      tags:
-        - SalesOfferLines
-      summary: SalesOfferLines Id
-      parameters:
-        - name: id
-          in: query
-          schema:
-            type: string
-          example: 30783030-3030-3030-3030-3030313038316338
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/SalesOffers/{id1}/SalesOfferLines:
-    get:
-      tags:
-        - SalesOfferLines
-      summary: SalesOfferLines by primekey
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-        - name: id1
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100546
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/salesinvoices:
-    get:
-      tags:
-        - SalesInvoices
-      summary: SalesInvoices Id
-      parameters:
-        - name: id
-          in: query
-          schema:
-            type: string
-          example: 30783030-3030-3030-3030-3030333832653839
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/salesinvoices/{id1}:
-    get:
-      tags:
-        - SalesInvoices
-      summary: SalesInvoices primekey
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-        - name: id1
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 4001212
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/salesinvoices/{id1}/salesinvoicelines/{id2}:
-    get:
-      tags:
-        - SalesInvoiceLines
-      summary: SalesInvoicelines
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-        - name: id1
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 4001212
-        - name: id2
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/salesinvoicelines:
-    get:
-      tags:
-        - SalesInvoiceLines
-      summary: SalesInvoicelines Id
-      parameters:
-        - name: id
-          in: query
-          schema:
-            type: string
-          example: 30783030-3030-3030-3030-3030316666643030
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/salesorders/{id1}:
-    get:
-      tags:
-        - SalesOrderlines
-      summary: SalesOrderLines
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-        - name: id1
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 38739
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /meta/salesorderlines/:
-    get:
-      tags:
-        - SalesOrderlines
-      summary: SalesOrderlines (meta)
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/salesorderlines:
-    get:
-      tags:
-        - SalesOrderlines
-      summary: Salesorderlines by  Id
-      parameters:
-        - name: id
-          in: query
-          schema:
-            type: string
-          example: 30783030-3030-3030-3030-3030323364643061
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/customers:
-    get:
-      tags:
-        - Customers
-      summary: Customers by Id
-      parameters:
-        - name: id
-          in: query
-          schema:
-            type: string
-          example: 30783030-3030-3030-3030-3030373639363035
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/customerorderaddresses:
-    post:
-      tags:
-        - Customers 
-      summary: CustomerOrderAddresses
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                AddressName: test
-                FirstName: Steve
-                LastName: Vercaemere
-                AddressLine1: Jan Straat 5
-                CityName: Wevelgem
-                PostCode: '8560'
-                CountryId: BE
-                LanguageCode: nl
-                Telephone: '+3256123640'
-                Email: steve.vercaemere@kerridgecs.com
-                Website: http://info.kerridgecs.com
-                Login: test
-                Password: test
-                vertegenwoordiger: jan
-                VatNumber: '465465415465'
-                BusinessNumber: '46556465'
-                VatSystemId: '1'
-                Group1Id: ''
-                NumberOfEmployees: '5'
-                prosp_sector: ''
-                jur_vorm: BV
-                EmailInternal: steve.vercaemere@kerridgecs.com
-                departement: ''
-                BirthDate: 15/01/1979
-                FunctionId: ''
-                pers_fax: ''
-                pers_mobile: ''
-                pers_telefoon: ''
-                pers_volgnummer: 0
-                Newsletter: true
-                Blocked: false
-                OrderAddressId: 439
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /meta/company/{company}/customerorderaddresses:
-    post:
-      tags:
-        - Customers 
-      summary: CustomerOrderAddresses (meta)
-      requestBody:
-        content: {}
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/endpoints:
-    get:
-      tags:
-        - Endpoints
-      summary: EndPoints
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/purchaseorders:
-    get:
-      tags:
-        - PurchaseOrders
-      summary: PurchaseOrders by Id
-      parameters:
-        - name: id
-          in: query
-          schema:
-            type: string
-          example: 30783030-3030-3030-3030-3030303763313030
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/purchaseorders/{id1}/purchaseorderlines:
-    get:
-      tags:
-        - PurchaseOrderlines
-      summary: PurchaseOrderlines
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-        - name: id1
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 3
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/purchaseorders/{id1}:
-    get:
-      tags:
-        - PurchaseOrders
-      summary: PurchaseOrders 3
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-        - name: id1
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 3
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/purchasecosts:
-    get:
-      tags:
-        - PurchaseCosts
-      summary: PurchaseCosts
-      parameters:
-        - name: limit
-          in: query
-          schema:
-            type: integer
-          example: '10'
-        - name: offset
-          in: query
-          schema:
-            type: integer
-          example: '5'
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /meta/purchasecosts:
-    get:
-      tags:
-        - PurchaseCosts
-      summary: PurchaseCosts (meta)
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/articles/{id1}/stock:
-    get:
-      tags:
-        - ArticlesStock
-      summary: ArticlesStock bulk
-      parameters:
-        - name: 2ba
-          in: query
-          schema:
-            type: boolean
-          example: 'true'
-        - name: ArticleList
-          in: query
-          schema:
-            type: string
-          example: GHI_1,GHI_4
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-        - name: id1
-          in: path
-          schema:
-            type: string
-          required: true
-          example: GHI_1
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/articlesstock:
-    get:
-      tags:
-        - ArticlesStock
-      summary: ArticlesStock 2BA Bulk
-      parameters:
-        - name: 2ba
-          in: query
-          schema:
-            type: boolean
-          example: 'true'
-        - name: ArticleList
-          in: query
-          schema:
-            type: string
-          example: GHI_1,GHI_4
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/articles/{id1}/price:
-    get:
-      tags:
-        - ArticlePrices
-      summary: ArticlesPrice
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-        - name: id1
-          in: path
-          schema:
-            type: string
-          required: true
-          example: ghi_1
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/articlesprice:
-    get:
-      tags:
-        - ArticlesPrices
-      summary: ArticlesPrice bulk
-      parameters:
-        - name: ArticleList
-          in: query
-          schema:
-            type: string
-          example: GHI_1,GHI_4
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/articles:
-    get:
-      tags:
-        - Articles
-      summary: Articles
-      parameters:
-        - name: limit
-          in: query
-          schema:
-            type: integer
-          example: '5'
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/articles/{id1}:
-    get:
-      tags:
-        - Articles
-      summary: Articles
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-        - name: id1
-          in: path
-          schema:
-            type: string
-          required: true
-          example: ghi_1
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/articles/{id1}/tierprice/{id2}:
-    get:
-      tags:
-        - ArticlesTierPrices
-      summary: ArticlesTierPrice
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-        - name: id1
-          in: path
-          schema:
-            type: string
-          required: true
-          example: ghi_1
-        - name: id2
-          in: path
-          schema:
-            type: string
-          required: true
-          example: fddf4d
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/contacts:
-    get:
-      tags:
-        - Contacts
-      summary: Contacts  (webuserid)
-      parameters:
-        - name: WebUserId
-          in: query
-          schema:
-            type: string
-          example: '****@infomat.eu_8'
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-    post:
-      tags:
-        - Contacts 
-      summary: Contacts
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                adresnummer: 14
-                dept_code: '"'
-                persoon_volgnummer: 709
-                functie: ''
-                telefoon: ''
-                fax: ''
-                email_adres: ''
-                managementsniveau: ''
-                beslissingsmacht: ''
-                bezoekfrequentie: ''
-                vervanger: ''
-                mailstop: false
-                naam_adres: 'CHR***AAN ***RCKX '
-                naam_contactpersoon: '***'
-                naam_dept: aer
-                vertegenwoordiger: 0
-                deletecode: ''
-                dummy_log_1: false
-                dummy_log_2: false
-                dummy_log_3: false
-                dummy_date_1: null
-                dummy_date_2: null
-                dummy_date_3: null
-                dummy_char_1: ''
-                dummy_char_2: ''
-                dummy_char_3: ''
-                dummy_dec_1: 0
-                dummy_dec_2: 0
-                dummy_dec_3: 0
-                tijd_creatie: 0
-                programma_creatie: ''
-                programma_laatste_wijz: ''
-                dummy_log_4: false
-                dummy_log_5: null
-                dummy_log_6: null
-                dummy_date_4: null
-                dummy_date_5: null
-                dummy_date_6: null
-                dummy_char_4: ''
-                dummy_char_5: ''
-                dummy_char_6: null
-                dummy_dec_4: null
-                dummy_dec_5: null
-                dummy_dec_6: null
-                tgl_cataloog: false
-                gsm_nummer: ''
-                user_login: ''
-                user_password: ''
-                interne_user: null
-                klant_fiche_bh: false
-                lever_fiche_bh: false
-                std_firma_shop: ''
-                ext_Guid: null
-                kredietlimiet: 0
-                blokkeer_e_com: null
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/privatepersons:
-    get:
-      tags:
-        - PrivatePersons
-      summary: PrivatePersons
-      parameters:
-        - name: limit
-          in: query
-          schema:
-            type: integer
-          example: '5'
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-    post:
-      tags:
-        - PrivatePersons 
-      summary: PrivatePersons
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                deletecode: ''
-                vestiging: ''
-                aanspreektitel: '02'
-                adreslijn1: ''
-                adreslijn2: ''
-                email_adres: ''
-                geboortedatum: null
-                gsm_nummer: ''
-                handtekening: ''
-                initialen: FVDV
-                landcode: ''
-                localiteit: ''
-                naam_familie: '****VE**N2'
-                naam_voornaam: 'F***DY'
-                postcode: ''
-                taalcode: NL
-                telefoon_prive: ''
-                fax_prive: ''
-                mailstop: false
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/addresses:
-    get:
-      tags:
-        - Addresses
-      summary: Addresses
-      parameters:
-        - name: limit
-          in: query
-          schema:
-            type: integer
-          example: '5'
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-    post:
-      tags:
-        - Addresses 
-      summary: Adresses
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                adresnaam1: B**T VANME******
-                adresnaam2: ''
-                adresnaam3: ''
-                adreslijn1: DYNAM*****
-                adreslijn2: ''
-                adreslijn3: ''
-                postcode: '2610'
-                localiteit: W****K (ANTWERPEN)
-                landcode: BE
-                telefoonnummer1: 03/***.79.71
-                telefoonnummer2: '0382*****'
-                telefaxnummer1: '0382*****'
-                telefaxnummer2: '0479*****'
-                taalcode: nl
-                ean_code: '97827081*****'
-                selectiecode1: ''
-                selectiecode2: ''
-                selectiecode3: ''
-                selectiecode4: ''
-                selectiecode5: ''
-                aanspreektitel: '01'
-                zoeknaam1: BER*7
-                zoeknaam2: ''
-                staat: ''
-                consolidatieadresnummer: 0
-                initialen: ''
-                flag_vertegenwoordiger: true
-                flag_divers: false
-                flag_kredietverzekeraar: false
-                deletecode: ''
-                vestiging: ''
-                flag_werknemer: false
-                flag_12: false
-                flag_13: false
-                flag_14: false
-                voice_response_system: ''
-                email_adres: NYSG@SY***********@sy***mat.com
-                url: ''
-                aanspreektitel_particulier: ''
-                land_regio: MC
-                sub_regio: ''
-                mailstop: false
-                vest_nummer: ''
-                tijd_creatie: 0
-                programma_creatie: ''
-                programma_laatste_wijz: ''
-                paper_copy: false
-                afstand_km: 0
-                status_majuscule: ''
-                tgl_generic: false
-                breedtegraad: 0
-                lengtegraad: 0
-                FieldName: ''
-                verplaatsing_kost: 0
-                verplaatsing_tijd: 0
-                EORI_nr: ''
-                externe_id: ''
-                spec_loc_id: 0
-                ext_Guid: ''
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-    put:
-      tags:
-        - Addresses 
-      summary: Adresses
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                addresses:
-                  - addressname1: Infomat4789789
-                    addressname2: test5000
-      parameters:
-        - name: Id
-          in: query
-          schema:
-            type: string
-          example: 30783030-3030-3030-3030-3030303031323161
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /meta/addresses:
-    get:
-      tags:
-        - Addresses 
-      summary: Addresses (meta)
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/users:
-    put:
-      tags:
-        - Users
-      summary: User
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                User: test
-                LastName: referentie
-                FirstName: First
-                DefaultCompany: '01'
-                Email: false@false.com
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/validateuser:
-    get:
-      tags:
-        - Users
-      summary: Validate User
-      parameters:
-        - name: login
-          in: query
-          schema:
-            type: string
-          example: gunter
-        - name: password
-          in: query
-          schema:
-            type: integer
-          example: '7569'
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company:
-    get:
-      tags:
-        - Company
-      summary: Company
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}:
-    get:
-      tags:
-        - Company
-      summary: Company by primekey
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/objects/{type}/{id1}:
-    get:
-      tags:
-        - Objects
-      summary: Data
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-        - name: type
-          in: path
-          schema:
-            type: string
-          required: true
-          example: SALESORDER
-        - name: id1
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 69853
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /meta/company/{company}/objects:
-    get:
-      tags:
-        - Objects 
-      summary: Meta
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /object/company/{company}/objects:
-    get:
-      tags:
-        - Objects
-      summary: Object  by Id
-      parameters:
-        - name: id
-          in: query
-          schema:
-            type: string
-          example: 30783030-3030-3030-3030-3030383337366331
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/returnannouncements:
-    get:
-      tags:
-        - ReturnAnnouncements
-      summary: ReturnAnnouncements by Id
-      parameters:
-        - name: id
-          in: query
-          schema:
-            type: string
-          example: 30783030-3030-3030-3030-3030326164313030
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/returnannouncements/{id1}:
-    get:
-      tags:
-        - ReturnAnnouncements
-      summary: ReturnAnnouncements
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-        - name: id1
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 13
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /meta/returnannouncements:
-    get:
-      tags:
-        - ReturnAnnouncements 
-      summary: ReturnAnnouncements
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/returnannouncements/{id1}/ReturnAnnouncementlines/{id2}:
-    get:
-      tags:
-        - ReturnAnnouncementlines
-      summary: ReturnAnnouncementlines
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-        - name: id1
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-        - name: id2
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/returnannouncements/{id1}/ReturnAnnouncementlines:
-    get:
-      tags:
-        - ReturnAnnouncementlines
-      summary: ReturnAnnouncementlines
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-        - name: id1
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /meta/returnannouncementlines:
-    get:
-      tags:
-        - ReturnAnnouncementlines 
-      summary: ReturnAnnouncementlines
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/Representative/{id1}/Customers/:
-    get:
-      tags:
-        - RepresentativeCustomer
-      summary: RepresentativeCustomer
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-        - name: id1
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 50
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Dimarest V1",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://beapsprogres01.kerridgecs.local:9095/web/api/v1"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "basicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+  },
+  "security": [
+    {
+      "basicAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "SalesOrders"
+    },
+    {
+      "name": "SalesCosts"
+    },
+    {
+      "name": "SalesOffers"
+    },
+    {
+      "name": "SalesOfferLines"
+    },
+    {
+      "name": "SalesInvoices"
+    },
+    {
+      "name": "SalesInvoiceLines"
+    },
+    {
+      "name": "SalesOrderlines"
+    },
+    {
+      "name": "Customers"
+    },
+    {
+      "name": "Endpoints"
+    },
+    {
+      "name": "PurchaseOrders"
+    },
+    {
+      "name": "PurchaseOrderlines"
+    },
+    {
+      "name": "PurchaseCosts"
+    },
+    {
+      "name": "Articles"
+    },
+    {
+      "name": "ArticlesStock"
+    },
+    {
+      "name": "ArticlesPrices"
+    },
+    {
+      "name": "ArticlesTierPrices"
+    },
+    {
+      "name": "Contacts"
+    },
+    {
+      "name": "PrivatePersons"
+    },
+    {
+      "name": "Addresses"
+    },
+    {
+      "name": "Users"
+    },
+    {
+      "name": "Company"
+    },
+    {
+      "name": "Objects"
+    },
+    {
+      "name": "ReturnAnnouncements"
+    },
+    {
+      "name": "ReturnAnnouncementlines"
+    },
+    {
+      "name": "RepresentativeCustomer"
+    }
+  ],
+  "paths": {
+    "/data/company/{company}/salesorders": {
+      "get": {
+        "tags": [
+          "SalesOrders"
+        ],
+        "summary": "SalesOrders",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "30783030-3030-3030-3030-3030336564383832"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SalesOrders"
+        ],
+        "summary": "SalesOrder",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "SalesOrders": [
+                    {
+                      "CompanyId": "DI1",
+                      "ExternalReference": "referentie",
+                      "OrderDate": "2025-01-29",
+                      "RequestDeliveryDate": "2025-01-30",
+                      "IsCollectedByCustomer": false,
+                      "TermsOfDeliveryId": "FRC",
+                      "WarehouseId": null,
+                      "TransportMethodId": null,
+                      "CurrencyId": "EUR",
+                      "DocumentOrigin": "ePO",
+                      "Username": "dsuser",
+                      "BackOrdersTreatment": null
+                    }
+                  ],
+                  "SalesOrderAddresses": [
+                    {
+                      "CompanyId": "DI1",
+                      "AddressTypeId": "BUYER",
+                      "AddressId": 93,
+                      "AddressLine1": null,
+                      "AddressLine2": null,
+                      "AddressLine3": null,
+                      "AddressName1": null,
+                      "AddressName2": null,
+                      "AddressName3": null,
+                      "CityName": null,
+                      "CountryId": null,
+                      "DepartmentId": null,
+                      "DepartmentName": null,
+                      "EanCode": null,
+                      "EmailAddress": null,
+                      "FaxNumber1": null,
+                      "FirstName": null,
+                      "LanguageId": null,
+                      "LastName": null,
+                      "MobilePhoneNumber": null,
+                      "PersonId": 2,
+                      "PhoneNumber1": null,
+                      "PostCode": null,
+                      "Languagecode": "NL"
+                    },
+                    {
+                      "CompanyId": "DI1",
+                      "AddressTypeId": "DELIVERY",
+                      "AddressId": 119,
+                      "AddressLine1": null,
+                      "AddressLine2": null,
+                      "AddressLine3": null,
+                      "AddressName1": null,
+                      "AddressName2": null,
+                      "AddressName3": null,
+                      "CityName": null,
+                      "CountryId": null,
+                      "DepartmentId": null,
+                      "DepartmentName": null,
+                      "EanCode": null,
+                      "EmailAddress": null,
+                      "FaxNumber1": null,
+                      "FirstName": null,
+                      "LanguageId": null,
+                      "LastName": null,
+                      "MobilePhoneNumber": null,
+                      "PersonId": 0,
+                      "PhoneNumber1": null,
+                      "PostCode": null,
+                      "Languagecode": "NL"
+                    },
+                    {
+                      "CompanyId": "DI1",
+                      "AddressTypeId": "INVOICE",
+                      "AddressId": 93,
+                      "AddressLine1": null,
+                      "AddressLine2": null,
+                      "AddressLine3": null,
+                      "AddressName1": null,
+                      "AddressName2": null,
+                      "AddressName3": null,
+                      "CityName": null,
+                      "CountryId": null,
+                      "DepartmentId": null,
+                      "DepartmentName": null,
+                      "EanCode": null,
+                      "EmailAddress": null,
+                      "FaxNumber1": null,
+                      "FirstName": null,
+                      "LanguageId": null,
+                      "LastName": null,
+                      "MobilePhoneNumber": null,
+                      "PersonId": 0,
+                      "PhoneNumber1": null,
+                      "PostCode": null,
+                      "Languagecode": "NL"
+                    },
+                    {
+                      "CompanyId": "DI1",
+                      "AddressTypeId": "WAREHOUSE",
+                      "AddressId": 0,
+                      "AddressLine1": null,
+                      "AddressLine2": null,
+                      "AddressLine3": null,
+                      "AddressName1": null,
+                      "AddressName2": null,
+                      "AddressName3": null,
+                      "CityName": null,
+                      "CountryId": null,
+                      "DepartmentId": null,
+                      "DepartmentName": null,
+                      "EanCode": null,
+                      "EmailAddress": null,
+                      "FaxNumber1": null,
+                      "FirstName": null,
+                      "LanguageId": null,
+                      "LastName": null,
+                      "MobilePhoneNumber": null,
+                      "PersonId": 0,
+                      "PhoneNumber1": null,
+                      "PostCode": null,
+                      "Languagecode": null
+                    }
+                  ],
+                  "SalesOrderLines": [
+                    {
+                      "CompanyId": "DI1",
+                      "OrderLineId": 10,
+                      "ItemId": "merctruck",
+                      "ItemDescription1": "omschrijving1 van merctruck",
+                      "ItemDescription2": "omschrijving2 van merctruck",
+                      "NumberOfRequiredUnits": 2,
+                      "SalesUnitId": "PCE",
+                      "RequestedDeliveryDate": "2025-01-30",
+                      "TariffPrice": 0,
+                      "TariffPriceUnitId": "",
+                      "NetSalesPrice": 0,
+                      "NetLineAmount": 0,
+                      "LotNumber": null
+                    },
+                    {
+                      "CompanyId": "DI1",
+                      "OrderLineId": 20,
+                      "ItemId": "74180030",
+                      "ItemDescription1": "BOORKOP M.SLEUT. 115 16MM 5/8X16  72829",
+                      "ItemDescription2": "ROHM 2009",
+                      "NumberOfRequiredUnits": 1,
+                      "SalesUnitId": "PCE",
+                      "RequestedDeliveryDate": "2025-01-30",
+                      "TariffPrice": 0,
+                      "TariffPriceUnitId": "",
+                      "NetSalesPrice": 0,
+                      "NetLineAmount": 0,
+                      "LotNumber": null
+                    }
+                  ],
+                  "SalesOrderTexts": [
+                    {
+                      "CompanyId": "DI1",
+                      "SequenceNumber": 1,
+                      "TextDetail": "referentie2"
+                    }
+                  ],
+                  "SalesOrderPayments": []
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "SalesOrders"
+        ],
+        "summary": "SalesOrder",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "SalesOrders": [
+                    {
+                      "CompanyId": "{{company}}",
+                      "ProvidedDeliveryDate": "2010-03-15",
+                      "OrderReference": "",
+                      "OrderAddressPersonName": "",
+                      "OriginId": "\n\n",
+                      "InternalDepartmentId": "",
+                      "OrderAddressName1": "B**** UBENS",
+                      "OrderAddressName2": "",
+                      "OrderAddressName3": "",
+                      "OrderAddressLine1": "POSTBUS **",
+                      "OrderAddressLine2": "",
+                      "OrderAddressLine3": "",
+                      "OrderAddressPostCode": "**00 AA",
+                      "OrderAddressCityName": "**HEN",
+                      "OrderAddressCountryId": "\n\nNederland",
+                      "OrderAddressTelephoneNumber1": "",
+                      "OrderAddressId": 10,
+                      "DeliveryAddressName1": "BU*NS",
+                      "DeliveryAddressName2": "",
+                      "DeliveryAddressName3": "",
+                      "DeliveryAddressLine1": "POST**3",
+                      "DeliveryAddressLine2": "",
+                      "DeliveryAddressLine3": "",
+                      "DeliveryAddressPostCode": "7**A",
+                      "DeliveryAddressCityName": "ZU***N",
+                      "DeliveryAddressCountryId": "\n\nNederland",
+                      "DeliveryAddressTelephoneNumber1": "",
+                      "DeliveryAddressId": 10,
+                      "InvoiceAddressName1": "BU***S",
+                      "InvoiceAddressName2": "",
+                      "InvoiceAddressName3": "",
+                      "InvoiceAddressLine1": "P**S 33",
+                      "InvoiceAddressLine2": "",
+                      "InvoiceAddressLine3": "",
+                      "InvoiceAddressPostCode": "7**A",
+                      "InvoiceAddressCityName": "ZU***N",
+                      "InvoiceAddressCountryId": "\n\nNederland",
+                      "VatNumber": "NL 81*****01",
+                      "InvoiceAddressTelephoneNumber1": "",
+                      "InvoiceAddressId": 10,
+                      "TotalCostsAmount": 0,
+                      "ProjectDiscountPercentage": 0,
+                      "ProjectDiscountAmount": 0,
+                      "RequestedDeliveryDate": "2025-03-11",
+                      "TermsOfDeliveryId": "EXW",
+                      "promocode": ""
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "30783030-3030-3030-3030-3030336564383832"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/meta/salesorders": {
+      "get": {
+        "tags": [
+          "SalesOrders"
+        ],
+        "summary": "Schema",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/salescosts": {
+      "get": {
+        "tags": [
+          "SalesCosts"
+        ],
+        "summary": "SalesCosts",
+        "parameters": [
+          {
+            "name": "costsidlist",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "example": "22"
+          },
+          {
+            "name": "TotalGoodsNetAmount",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "example": "9"
+          },
+          {
+            "name": "AddressId",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "example": "93"
+          },
+          {
+            "name": "OriginId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "EPO"
+          },
+          {
+            "name": "VatSystemId",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "example": "21"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/salesoffers": {
+      "get": {
+        "tags": [
+          "SalesOffers"
+        ],
+        "summary": "SalesOffers",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SalesOffers"
+        ],
+        "summary": "Salesoffers",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "SalesOffers": [
+                    {
+                      "ExternalReference": "Test2",
+                      "OfferAddressPersonName": "",
+                      "OriginId": "\n\n",
+                      "InternalDepartmentId": "",
+                      "TotalAmountVatExcluded": 0,
+                      "TotalAmountVat": 0,
+                      "TotalGoodsCostsVatAmount": 450,
+                      "OfferAddressId": 10,
+                      "DeliveryAddressId": 0,
+                      "InvoiceAddressId": 0,
+                      "SalesOfferLines": [
+                        {
+                          "OfferLineId": 10,
+                          "ItemId": "TESTHEPI",
+                          "ItemDescription": "TEST HEPI ",
+                          "OfferLineStatusId": "\n\nAfgesloten",
+                          "NumberOfUnitsInSalesOffer": 30000,
+                          "TariffPrice": 0.015,
+                          "TariffPriceUnitId": "",
+                          "NetSalesPrice": 0.015,
+                          "NetSalesPriceUnitId": "PCE",
+                          "NetLineAmountVatExcluded": 450
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/salesoffers/{id1}/salesofferlines": {
+      "get": {
+        "tags": [
+          "SalesOffers"
+        ],
+        "summary": "SalesOffers",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 33
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/SalesOfferLines": {
+      "get": {
+        "tags": [
+          "SalesOfferLines"
+        ],
+        "summary": "SalesOfferLines Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "30783030-3030-3030-3030-3030313038316338"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/SalesOffers/{id1}/SalesOfferLines": {
+      "get": {
+        "tags": [
+          "SalesOfferLines"
+        ],
+        "summary": "SalesOfferLines by primekey",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100546
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/salesinvoices": {
+      "get": {
+        "tags": [
+          "SalesInvoices"
+        ],
+        "summary": "SalesInvoices Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "30783030-3030-3030-3030-3030333832653839"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/salesinvoices/{id1}": {
+      "get": {
+        "tags": [
+          "SalesInvoices"
+        ],
+        "summary": "SalesInvoices primekey",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 4001212
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/salesinvoices/{id1}/salesinvoicelines/{id2}": {
+      "get": {
+        "tags": [
+          "SalesInvoiceLines"
+        ],
+        "summary": "SalesInvoicelines",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 4001212
+          },
+          {
+            "name": "id2",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/salesinvoicelines": {
+      "get": {
+        "tags": [
+          "SalesInvoiceLines"
+        ],
+        "summary": "SalesInvoicelines Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "30783030-3030-3030-3030-3030316666643030"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/salesorders/{id1}": {
+      "get": {
+        "tags": [
+          "SalesOrderlines"
+        ],
+        "summary": "SalesOrderLines",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 38739
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/meta/salesorderlines/": {
+      "get": {
+        "tags": [
+          "SalesOrderlines"
+        ],
+        "summary": "SalesOrderlines (meta)",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/salesorderlines": {
+      "get": {
+        "tags": [
+          "SalesOrderlines"
+        ],
+        "summary": "Salesorderlines by  Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "30783030-3030-3030-3030-3030323364643061"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/customers": {
+      "get": {
+        "tags": [
+          "Customers"
+        ],
+        "summary": "Customers by Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "30783030-3030-3030-3030-3030373639363035"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/customerorderaddresses": {
+      "post": {
+        "tags": [
+          "Customers"
+        ],
+        "summary": "CustomerOrderAddresses",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "AddressName": "test",
+                  "FirstName": "Steve",
+                  "LastName": "Vercaemere",
+                  "AddressLine1": "Jan Straat 5",
+                  "CityName": "Wevelgem",
+                  "PostCode": "8560",
+                  "CountryId": "BE",
+                  "LanguageCode": "nl",
+                  "Telephone": "+3256123640",
+                  "Email": "steve.vercaemere@kerridgecs.com",
+                  "Website": "http://info.kerridgecs.com",
+                  "Login": "test",
+                  "Password": "test",
+                  "vertegenwoordiger": "jan",
+                  "VatNumber": "465465415465",
+                  "BusinessNumber": "46556465",
+                  "VatSystemId": "1",
+                  "Group1Id": "",
+                  "NumberOfEmployees": "5",
+                  "prosp_sector": "",
+                  "jur_vorm": "BV",
+                  "EmailInternal": "steve.vercaemere@kerridgecs.com",
+                  "departement": "",
+                  "BirthDate": "15/01/1979",
+                  "FunctionId": "",
+                  "pers_fax": "",
+                  "pers_mobile": "",
+                  "pers_telefoon": "",
+                  "pers_volgnummer": 0,
+                  "Newsletter": true,
+                  "Blocked": false,
+                  "OrderAddressId": 439
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/meta/company/{company}/customerorderaddresses": {
+      "post": {
+        "tags": [
+          "Customers"
+        ],
+        "summary": "CustomerOrderAddresses (meta)",
+        "requestBody": {
+          "content": {}
+        },
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/endpoints": {
+      "get": {
+        "tags": [
+          "Endpoints"
+        ],
+        "summary": "EndPoints",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/purchaseorders": {
+      "get": {
+        "tags": [
+          "PurchaseOrders"
+        ],
+        "summary": "PurchaseOrders by Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "30783030-3030-3030-3030-3030303763313030"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/purchaseorders/{id1}/purchaseorderlines": {
+      "get": {
+        "tags": [
+          "PurchaseOrderlines"
+        ],
+        "summary": "PurchaseOrderlines",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 3
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/purchaseorders/{id1}": {
+      "get": {
+        "tags": [
+          "PurchaseOrders"
+        ],
+        "summary": "PurchaseOrders 3",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 3
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/purchasecosts": {
+      "get": {
+        "tags": [
+          "PurchaseCosts"
+        ],
+        "summary": "PurchaseCosts",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "example": "10"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "example": "5"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/meta/purchasecosts": {
+      "get": {
+        "tags": [
+          "PurchaseCosts"
+        ],
+        "summary": "PurchaseCosts (meta)",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/articles/{id1}/stock": {
+      "get": {
+        "tags": [
+          "ArticlesStock"
+        ],
+        "summary": "ArticlesStock bulk",
+        "parameters": [
+          {
+            "name": "2ba",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            },
+            "example": "true"
+          },
+          {
+            "name": "ArticleList",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "GHI_1,GHI_4"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "GHI_1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/articlesstock": {
+      "get": {
+        "tags": [
+          "ArticlesStock"
+        ],
+        "summary": "ArticlesStock 2BA Bulk",
+        "parameters": [
+          {
+            "name": "2ba",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            },
+            "example": "true"
+          },
+          {
+            "name": "ArticleList",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "GHI_1,GHI_4"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/articles/{id1}/price": {
+      "get": {
+        "tags": [
+          "ArticlePrices"
+        ],
+        "summary": "ArticlesPrice",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "ghi_1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/articlesprice": {
+      "get": {
+        "tags": [
+          "ArticlesPrices"
+        ],
+        "summary": "ArticlesPrice bulk",
+        "parameters": [
+          {
+            "name": "ArticleList",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "GHI_1,GHI_4"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/articles": {
+      "get": {
+        "tags": [
+          "Articles"
+        ],
+        "summary": "Articles",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "example": "5"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/articles/{id1}": {
+      "get": {
+        "tags": [
+          "Articles"
+        ],
+        "summary": "Articles",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "ghi_1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/articles/{id1}/tierprice/{id2}": {
+      "get": {
+        "tags": [
+          "ArticlesTierPrices"
+        ],
+        "summary": "ArticlesTierPrice",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "ghi_1"
+          },
+          {
+            "name": "id2",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "fddf4d"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/contacts": {
+      "get": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Contacts  (webuserid)",
+        "parameters": [
+          {
+            "name": "WebUserId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "****@infomat.eu_8"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Contacts",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "adresnummer": 14,
+                  "dept_code": "\"",
+                  "persoon_volgnummer": 709,
+                  "functie": "",
+                  "telefoon": "",
+                  "fax": "",
+                  "email_adres": "",
+                  "managementsniveau": "",
+                  "beslissingsmacht": "",
+                  "bezoekfrequentie": "",
+                  "vervanger": "",
+                  "mailstop": false,
+                  "naam_adres": "CHR***AAN ***RCKX ",
+                  "naam_contactpersoon": "***",
+                  "naam_dept": "aer",
+                  "vertegenwoordiger": 0,
+                  "deletecode": "",
+                  "dummy_log_1": false,
+                  "dummy_log_2": false,
+                  "dummy_log_3": false,
+                  "dummy_date_1": null,
+                  "dummy_date_2": null,
+                  "dummy_date_3": null,
+                  "dummy_char_1": "",
+                  "dummy_char_2": "",
+                  "dummy_char_3": "",
+                  "dummy_dec_1": 0,
+                  "dummy_dec_2": 0,
+                  "dummy_dec_3": 0,
+                  "tijd_creatie": 0,
+                  "programma_creatie": "",
+                  "programma_laatste_wijz": "",
+                  "dummy_log_4": false,
+                  "dummy_log_5": null,
+                  "dummy_log_6": null,
+                  "dummy_date_4": null,
+                  "dummy_date_5": null,
+                  "dummy_date_6": null,
+                  "dummy_char_4": "",
+                  "dummy_char_5": "",
+                  "dummy_char_6": null,
+                  "dummy_dec_4": null,
+                  "dummy_dec_5": null,
+                  "dummy_dec_6": null,
+                  "tgl_cataloog": false,
+                  "gsm_nummer": "",
+                  "user_login": "",
+                  "user_password": "",
+                  "interne_user": null,
+                  "klant_fiche_bh": false,
+                  "lever_fiche_bh": false,
+                  "std_firma_shop": "",
+                  "ext_Guid": null,
+                  "kredietlimiet": 0,
+                  "blokkeer_e_com": null
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/privatepersons": {
+      "get": {
+        "tags": [
+          "PrivatePersons"
+        ],
+        "summary": "PrivatePersons",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "example": "5"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "PrivatePersons"
+        ],
+        "summary": "PrivatePersons",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "deletecode": "",
+                  "vestiging": "",
+                  "aanspreektitel": "02",
+                  "adreslijn1": "",
+                  "adreslijn2": "",
+                  "email_adres": "",
+                  "geboortedatum": null,
+                  "gsm_nummer": "",
+                  "handtekening": "",
+                  "initialen": "FVDV",
+                  "landcode": "",
+                  "localiteit": "",
+                  "naam_familie": "****VE**N2",
+                  "naam_voornaam": "F***DY",
+                  "postcode": "",
+                  "taalcode": "NL",
+                  "telefoon_prive": "",
+                  "fax_prive": "",
+                  "mailstop": false
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/addresses": {
+      "get": {
+        "tags": [
+          "Addresses"
+        ],
+        "summary": "Addresses",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "example": "5"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Addresses"
+        ],
+        "summary": "Adresses",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "adresnaam1": "B**T VANME******",
+                  "adresnaam2": "",
+                  "adresnaam3": "",
+                  "adreslijn1": "DYNAM*****",
+                  "adreslijn2": "",
+                  "adreslijn3": "",
+                  "postcode": "2610",
+                  "localiteit": "W****K (ANTWERPEN)",
+                  "landcode": "BE",
+                  "telefoonnummer1": "03/***.79.71",
+                  "telefoonnummer2": "0382*****",
+                  "telefaxnummer1": "0382*****",
+                  "telefaxnummer2": "0479*****",
+                  "taalcode": "nl",
+                  "ean_code": "97827081*****",
+                  "selectiecode1": "",
+                  "selectiecode2": "",
+                  "selectiecode3": "",
+                  "selectiecode4": "",
+                  "selectiecode5": "",
+                  "aanspreektitel": "01",
+                  "zoeknaam1": "BER*7",
+                  "zoeknaam2": "",
+                  "staat": "",
+                  "consolidatieadresnummer": 0,
+                  "initialen": "",
+                  "flag_vertegenwoordiger": true,
+                  "flag_divers": false,
+                  "flag_kredietverzekeraar": false,
+                  "deletecode": "",
+                  "vestiging": "",
+                  "flag_werknemer": false,
+                  "flag_12": false,
+                  "flag_13": false,
+                  "flag_14": false,
+                  "voice_response_system": "",
+                  "email_adres": "NYSG@SY***********@sy***mat.com",
+                  "url": "",
+                  "aanspreektitel_particulier": "",
+                  "land_regio": "MC",
+                  "sub_regio": "",
+                  "mailstop": false,
+                  "vest_nummer": "",
+                  "tijd_creatie": 0,
+                  "programma_creatie": "",
+                  "programma_laatste_wijz": "",
+                  "paper_copy": false,
+                  "afstand_km": 0,
+                  "status_majuscule": "",
+                  "tgl_generic": false,
+                  "breedtegraad": 0,
+                  "lengtegraad": 0,
+                  "FieldName": "",
+                  "verplaatsing_kost": 0,
+                  "verplaatsing_tijd": 0,
+                  "EORI_nr": "",
+                  "externe_id": "",
+                  "spec_loc_id": 0,
+                  "ext_Guid": ""
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Addresses"
+        ],
+        "summary": "Adresses",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "addresses": [
+                    {
+                      "addressname1": "Infomat4789789",
+                      "addressname2": "test5000"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "30783030-3030-3030-3030-3030303031323161"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/meta/addresses": {
+      "get": {
+        "tags": [
+          "Addresses"
+        ],
+        "summary": "Addresses (meta)",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/users": {
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "User",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "User": "test",
+                  "LastName": "referentie",
+                  "FirstName": "First",
+                  "DefaultCompany": "01",
+                  "Email": "false@false.com"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/validateuser": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Validate User",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "gunter"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "example": "7569"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company": {
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Company",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}": {
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Company by primekey",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/objects/{type}/{id1}": {
+      "get": {
+        "tags": [
+          "Objects"
+        ],
+        "summary": "Data",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          },
+          {
+            "name": "type",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "SALESORDER"
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 69853
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/meta/company/{company}/objects": {
+      "get": {
+        "tags": [
+          "Objects"
+        ],
+        "summary": "Meta",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/object/company/{company}/objects": {
+      "get": {
+        "tags": [
+          "Objects"
+        ],
+        "summary": "Object  by Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "30783030-3030-3030-3030-3030383337366331"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/returnannouncements": {
+      "get": {
+        "tags": [
+          "ReturnAnnouncements"
+        ],
+        "summary": "ReturnAnnouncements by Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "30783030-3030-3030-3030-3030326164313030"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/returnannouncements/{id1}": {
+      "get": {
+        "tags": [
+          "ReturnAnnouncements"
+        ],
+        "summary": "ReturnAnnouncements",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 13
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/meta/returnannouncements": {
+      "get": {
+        "tags": [
+          "ReturnAnnouncements"
+        ],
+        "summary": "ReturnAnnouncements",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/returnannouncements/{id1}/ReturnAnnouncementlines/{id2}": {
+      "get": {
+        "tags": [
+          "ReturnAnnouncementlines"
+        ],
+        "summary": "ReturnAnnouncementlines",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          },
+          {
+            "name": "id2",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/returnannouncements/{id1}/ReturnAnnouncementlines": {
+      "get": {
+        "tags": [
+          "ReturnAnnouncementlines"
+        ],
+        "summary": "ReturnAnnouncementlines",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/meta/returnannouncementlines": {
+      "get": {
+        "tags": [
+          "ReturnAnnouncementlines"
+        ],
+        "summary": "ReturnAnnouncementlines",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/Representative/{id1}/Customers/": {
+      "get": {
+        "tags": [
+          "RepresentativeCustomer"
+        ],
+        "summary": "RepresentativeCustomer",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 100
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 50
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}
