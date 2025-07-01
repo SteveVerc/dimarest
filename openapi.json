@@ -51,7 +51,13 @@
       "name": "Endpoints"
     },
     {
-      "name": "Purchases"
+      "name": "PurchaseOrders"
+    },
+    {
+      "name": "PurchaseOrderlines"
+    },
+    {
+      "name": "PurchaseCosts"
     },
     {
       "name": "Articles"
@@ -1140,7 +1146,7 @@
     "/data/company/{company}/purchaseorders/{id1}/purchaseorderlines": {
       "get": {
         "tags": [
-          "PurchaseOrders"
+          "PurchaseOrderlines"
         ],
         "summary": "PurchaseOrderlines",
         "parameters": [
@@ -1607,7 +1613,7 @@
                   "bezoekfrequentie": "",
                   "vervanger": "",
                   "mailstop": false,
-                  "naam_adres": "CHRISTIAAN ***RCKX ",
+                  "naam_adres": "CHR***AAN ***RCKX ",
                   "naam_contactpersoon": "***",
                   "naam_dept": "aer",
                   "vertegenwoordiger": 0,
