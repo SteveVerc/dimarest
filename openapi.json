@@ -116,7 +116,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -314,7 +314,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -345,38 +345,38 @@
                       "OrderAddressPersonName": "",
                       "OriginId": "\n\n",
                       "InternalDepartmentId": "",
-                      "OrderAddressName1": "BUHRMANN UBENS",
+                      "OrderAddressName1": "B**** UBENS",
                       "OrderAddressName2": "",
                       "OrderAddressName3": "",
-                      "OrderAddressLine1": "POSTBUS 33",
+                      "OrderAddressLine1": "POSTBUS **",
                       "OrderAddressLine2": "",
                       "OrderAddressLine3": "",
-                      "OrderAddressPostCode": "7200 AA",
-                      "OrderAddressCityName": "ZUTPHEN",
+                      "OrderAddressPostCode": "**00 AA",
+                      "OrderAddressCityName": "**HEN",
                       "OrderAddressCountryId": "\n\nNederland",
                       "OrderAddressTelephoneNumber1": "",
                       "OrderAddressId": 10,
-                      "DeliveryAddressName1": "BUHRMANN UBENS",
+                      "DeliveryAddressName1": "BU*NS",
                       "DeliveryAddressName2": "",
                       "DeliveryAddressName3": "",
-                      "DeliveryAddressLine1": "POSTBUS 33",
+                      "DeliveryAddressLine1": "POST**3",
                       "DeliveryAddressLine2": "",
                       "DeliveryAddressLine3": "",
-                      "DeliveryAddressPostCode": "7200 AA",
-                      "DeliveryAddressCityName": "ZUTPHEN",
+                      "DeliveryAddressPostCode": "7**A",
+                      "DeliveryAddressCityName": "ZU***N",
                       "DeliveryAddressCountryId": "\n\nNederland",
                       "DeliveryAddressTelephoneNumber1": "",
                       "DeliveryAddressId": 10,
-                      "InvoiceAddressName1": "BUHRMANN UBENS",
+                      "InvoiceAddressName1": "BU***S",
                       "InvoiceAddressName2": "",
                       "InvoiceAddressName3": "",
-                      "InvoiceAddressLine1": "POSTBUS 33",
+                      "InvoiceAddressLine1": "P**S 33",
                       "InvoiceAddressLine2": "",
                       "InvoiceAddressLine3": "",
-                      "InvoiceAddressPostCode": "7200 AA",
-                      "InvoiceAddressCityName": "ZUTPHEN",
+                      "InvoiceAddressPostCode": "7**A",
+                      "InvoiceAddressCityName": "ZU***N",
                       "InvoiceAddressCountryId": "\n\nNederland",
-                      "VatNumber": "NL 812517611B01",
+                      "VatNumber": "NL 81*****01",
                       "InvoiceAddressTelephoneNumber1": "",
                       "InvoiceAddressId": 10,
                       "TotalCostsAmount": 0,
@@ -408,7 +408,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -491,7 +491,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -518,7 +518,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -582,7 +582,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -595,12 +595,12 @@
         }
       }
     },
-    "/data/company/{company}/salesoffers/33/salesofferlines": {
+    "/data/company/{company}/salesoffers/{id1}/salesofferlines": {
       "get": {
         "tags": [
           "SalesOffers"
         ],
-        "summary": "SalesOffers by primekey",
+        "summary": "SalesOffers",
         "parameters": [
           {
             "name": "company",
@@ -609,7 +609,16 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 33
           }
         ],
         "responses": {
@@ -644,7 +653,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -657,7 +666,7 @@
         }
       }
     },
-    "/data/company/{company}/SalesOffers/10546/SalesOfferLines": {
+    "/data/company/{company}/SalesOffers/{id1}/SalesOfferLines": {
       "get": {
         "tags": [
           "SalesOfferLines"
@@ -671,7 +680,16 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 10546
           }
         ],
         "responses": {
@@ -706,7 +724,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -719,7 +737,7 @@
         }
       }
     },
-    "/data/company/{company}/salesinvoices/4001212": {
+    "/data/company/{company}/salesinvoices/{id1}": {
       "get": {
         "tags": [
           "SalesInvoices"
@@ -733,7 +751,16 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 4001212
           }
         ],
         "responses": {
@@ -746,7 +773,7 @@
         }
       }
     },
-    "/data/company/{company}/salesinvoices/4001212/salesinvoicelines/10": {
+    "/data/company/{company}/salesinvoices/{id1}/salesinvoicelines/{id2}": {
       "get": {
         "tags": [
           "SalesInvoiceLines"
@@ -760,7 +787,25 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 4001212
+          },
+          {
+            "name": "id2",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 10
           }
         ],
         "responses": {
@@ -773,7 +818,7 @@
         }
       }
     },
-    "/data/company/01/salesinvoicelines": {
+    "/data/company/{company}/salesinvoicelines": {
       "get": {
         "tags": [
           "SalesInvoiceLines"
@@ -787,6 +832,15 @@
               "type": "string"
             },
             "example": "30783030-3030-3030-3030-3030316666643030"
+          },
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 10
           }
         ],
         "responses": {
@@ -799,7 +853,7 @@
         }
       }
     },
-    "/data/company/{company}/salesorders/38739": {
+    "/data/company/{company}/salesorders/{id1}": {
       "get": {
         "tags": [
           "SalesOrderlines"
@@ -813,7 +867,16 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 38739
           }
         ],
         "responses": {
@@ -864,7 +927,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -899,7 +962,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -969,7 +1032,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -999,7 +1062,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -1026,7 +1089,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -1061,7 +1124,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -1074,33 +1137,7 @@
         }
       }
     },
-    "/data/company/001/purchaseorders": {
-      "get": {
-        "tags": [
-          "PurchaseOrders"
-        ],
-        "summary": "PurchaseOrders by Id",
-        "parameters": [
-          {
-            "name": "Id",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            },
-            "example": "30783030-3030-3030-3030-3030323837353834"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "content": {
-              "application/json": {}
-            }
-          }
-        }
-      }
-    },
-    "/data/company/{company}/purchaseorders/3/purchaseorderlines": {
+    "/data/company/{company}/purchaseorders/{id1}/purchaseorderlines": {
       "get": {
         "tags": [
           "PurchaseOrders"
@@ -1114,7 +1151,16 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 3
           }
         ],
         "responses": {
@@ -1127,7 +1173,7 @@
         }
       }
     },
-    "/data/company/{company}/purchaseorders/3": {
+    "/data/company/{company}/purchaseorders/{id1}": {
       "get": {
         "tags": [
           "PurchaseOrders"
@@ -1141,7 +1187,16 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 3
           }
         ],
         "responses": {
@@ -1184,7 +1239,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -1213,13 +1268,21 @@
         }
       }
     },
-    "/data/company/{company}/articles/GHI_1/stock": {
+    "/data/company/{company}/articles/{id1}/stock": {
       "get": {
         "tags": [
           "ArticlesStock"
         ],
         "summary": "ArticlesStock bulk",
         "parameters": [
+          {
+            "name": "2ba",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            },
+            "example": "true"
+          },
           {
             "name": "ArticleList",
             "in": "query",
@@ -1235,42 +1298,16 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "content": {
-              "application/json": {}
-            }
-          }
-        }
-      }
-    },
-    "/data/company/{company}/articles/ghi_1/stock": {
-      "get": {
-        "tags": [
-          "ArticlesStock"
-        ],
-        "summary": "ArticlesStock 2BA",
-        "parameters": [
-          {
-            "name": "2ba",
-            "in": "query",
-            "schema": {
-              "type": "boolean"
-            },
-            "example": "true"
+            "example": 10
           },
           {
-            "name": "company",
+            "name": "id1",
             "in": "path",
             "schema": {
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": "GHI_1"
           }
         ],
         "responses": {
@@ -1313,7 +1350,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -1326,7 +1363,7 @@
         }
       }
     },
-    "/data/company/{company}/articles/ghi_1/price": {
+    "/data/company/{company}/articles/{id1}/price": {
       "get": {
         "tags": [
           "ArticlePrices"
@@ -1340,7 +1377,16 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "ghi_1"
           }
         ],
         "responses": {
@@ -1375,7 +1421,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -1410,7 +1456,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -1423,12 +1469,12 @@
         }
       }
     },
-    "/data/company/{company}/articles/FDD_ARTSER_20210906": {
+    "/data/company/{company}/articles/{id1}": {
       "get": {
         "tags": [
           "Articles"
         ],
-        "summary": "Articles FDD_ARTSER_20210906",
+        "summary": "Articles",
         "parameters": [
           {
             "name": "company",
@@ -1437,34 +1483,16 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "content": {
-              "application/json": {}
-            }
-          }
-        }
-      }
-    },
-    "/data/company/{company}/articles/GHI_1": {
-      "get": {
-        "tags": [
-          "Articles"
-        ],
-        "summary": "Articles DRS71072101",
-        "parameters": [
+            "example": 10
+          },
           {
-            "name": "company",
+            "name": "id1",
             "in": "path",
             "schema": {
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": "ghi_1"
           }
         ],
         "responses": {
@@ -1477,7 +1505,7 @@
         }
       }
     },
-    "/data/company/{company}/articles/ghi_1/tierprice/fddf4d": {
+    "/data/company/{company}/articles/{id1}/tierprice/{id2}": {
       "get": {
         "tags": [
           "ArticlesTierPrices"
@@ -1491,7 +1519,25 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "ghi_1"
+          },
+          {
+            "name": "id2",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "fddf4d"
           }
         ],
         "responses": {
@@ -1517,7 +1563,7 @@
             "schema": {
               "type": "string"
             },
-            "example": "gunter.hillen@infomat.eu_8"
+            "example": "****@infomat.eu_8"
           },
           {
             "name": "company",
@@ -1526,7 +1572,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -1651,7 +1697,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -1686,8 +1732,8 @@
                   "initialen": "FVDV",
                   "landcode": "",
                   "localiteit": "",
-                  "naam_familie": "VAN DER VEKEN2",
-                  "naam_voornaam": "FREDDY",
+                  "naam_familie": "****VE**N2",
+                  "naam_voornaam": "F***DY",
                   "postcode": "",
                   "taalcode": "NL",
                   "telefoon_prive": "",
@@ -1706,7 +1752,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -1741,7 +1787,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -1764,28 +1810,28 @@
               "schema": {
                 "type": "object",
                 "example": {
-                  "adresnaam1": "BERT VANMECHELEN789",
+                  "adresnaam1": "B**T VANME******",
                   "adresnaam2": "",
                   "adresnaam3": "",
-                  "adreslijn1": "DYNAMICALAAN 92",
+                  "adreslijn1": "DYNAM*****",
                   "adreslijn2": "",
                   "adreslijn3": "",
                   "postcode": "2610",
-                  "localiteit": "WILRIJK (ANTWERPEN)",
+                  "localiteit": "W****K (ANTWERPEN)",
                   "landcode": "BE",
-                  "telefoonnummer1": "03/820.79.71",
-                  "telefoonnummer2": "038206000",
-                  "telefaxnummer1": "038285368",
-                  "telefaxnummer2": "047902390",
+                  "telefoonnummer1": "03/***.79.71",
+                  "telefoonnummer2": "0382*****",
+                  "telefaxnummer1": "0382*****",
+                  "telefaxnummer2": "0479*****",
                   "taalcode": "nl",
-                  "ean_code": "9782708106925",
+                  "ean_code": "97827081*****",
                   "selectiecode1": "",
                   "selectiecode2": "",
                   "selectiecode3": "",
                   "selectiecode4": "",
                   "selectiecode5": "",
                   "aanspreektitel": "01",
-                  "zoeknaam1": "BERT7",
+                  "zoeknaam1": "BER*7",
                   "zoeknaam2": "",
                   "staat": "",
                   "consolidatieadresnummer": 0,
@@ -1800,7 +1846,7 @@
                   "flag_13": false,
                   "flag_14": false,
                   "voice_response_system": "",
-                  "email_adres": "NYSG@SYSTEMAT.BE,geert.nys@systemat.com",
+                  "email_adres": "NYSG@SY***********@sy***mat.com",
                   "url": "",
                   "aanspreektitel_particulier": "",
                   "land_regio": "MC",
@@ -1836,7 +1882,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -1944,7 +1990,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -1987,7 +2033,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -2030,7 +2076,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -2043,12 +2089,12 @@
         }
       }
     },
-    "/data/company/{company}/objects/SALESORDER/69853": {
+    "/data/company/{company}/objects/{type}/{id1}": {
       "get": {
         "tags": [
           "Objects"
         ],
-        "summary": "Object",
+        "summary": "Data",
         "parameters": [
           {
             "name": "company",
@@ -2057,7 +2103,25 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
+          },
+          {
+            "name": "type",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "SALESORDER"
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 69853
           }
         ],
         "responses": {
@@ -2075,7 +2139,7 @@
         "tags": [
           "Objects"
         ],
-        "summary": "Meta Object",
+        "summary": "Meta",
         "parameters": [
           {
             "name": "company",
@@ -2084,7 +2148,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -2119,7 +2183,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -2154,7 +2218,7 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
           }
         ],
         "responses": {
@@ -2167,12 +2231,12 @@
         }
       }
     },
-    "/data/company/{company}/returnannouncements/13": {
+    "/data/company/{company}/returnannouncements/{id1}": {
       "get": {
         "tags": [
           "ReturnAnnouncements"
         ],
-        "summary": "ReturnAnnouncements by primekey",
+        "summary": "ReturnAnnouncements",
         "parameters": [
           {
             "name": "company",
@@ -2181,7 +2245,16 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 13
           }
         ],
         "responses": {
@@ -2210,7 +2283,7 @@
         }
       }
     },
-    "/data/company/{company}/returnannouncements/18": {
+    "/data/company/{company}/returnannouncements/{id1}/ReturnAnnouncementlines/{id2}": {
       "get": {
         "tags": [
           "ReturnAnnouncementlines"
@@ -2224,7 +2297,61 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 10
+          },
+          {
+            "name": "id2",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 10
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/data/company/{company}/returnannouncements/{id1}/ReturnAnnouncementlines": {
+      "get": {
+        "tags": [
+          "ReturnAnnouncementlines"
+        ],
+        "summary": "ReturnAnnouncementlines",
+        "parameters": [
+          {
+            "name": "company",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 10
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 10
           }
         ],
         "responses": {
@@ -2253,7 +2380,7 @@
         }
       }
     },
-    "/data/company/{company}/Representative/50/Customers/": {
+    "/data/company/{company}/Representative/{id1}/Customers/": {
       "get": {
         "tags": [
           "RepresentativeCustomer"
@@ -2267,7 +2394,16 @@
               "type": "string"
             },
             "required": true,
-            "example": 100
+            "example": 10
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": 50
           }
         ],
         "responses": {
