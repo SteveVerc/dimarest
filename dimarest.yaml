@@ -182,7 +182,7 @@ tags:
   - name: RepresentativeCustomer
   - name: Schema's
 paths:
-  /meta/{enitity}:
+  /meta/{entity}:
     get:
       tags:
         - Schema's
@@ -192,7 +192,7 @@ paths:
                     - Mode : dev (to see the databasefields).
                    "
       parameters:
-        - name: enitity
+        - name: entity
           in: path
           schema:
             type: string
@@ -203,7 +203,6 @@ paths:
           in: query
           schema:
             type: string
-          example: dev
       #deprecated: true
       responses:
         '200':
