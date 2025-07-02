@@ -43,6 +43,10 @@ paths:
       tags:
         - SalesOrders
       summary: "Retrieve Scheme"
+      description: "- Retrieve the scheme (header).
+      
+                    - Mode : dev (to see the databasefields).
+                   "
       parameters:
         - name: mode
           in: query
@@ -59,6 +63,8 @@ paths:
       tags:
         - SalesOrders
       summary: "Retrieve SalesOrder"
+      description: "- Retrieve Salesorder by primary key (header).
+                   "
       parameters:
         - name: company
           in: path
@@ -82,7 +88,9 @@ paths:
       tags:
         - SalesOrders
       summary: "Retrieve SalesOrders"
-      description: "- Use the Id query parameter to get a full dataset of the record. 
+      description: "- Retrieve all SalesOrders with a default limit of 60 records (headers)
+
+                    - Use the Id query parameter to get a full dataset of the record (header & detail). 
       
                     - Use limit & offset for paging.
                    "
