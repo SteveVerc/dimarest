@@ -180,7 +180,7 @@ tags:
   - name: ReturnAnnouncementlines
   - name: RepresentativeCustomer
   - name: Endpoints
-  - name: Schema's
+  - name: Schemas
 paths:
   /meta/{endpoint}:
     get:
