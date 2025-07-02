@@ -23,6 +23,7 @@ components:
 security:
   - basicAuth: []
 tags:
+  - name: Ping
   - name: SalesOrders
   - name: SalesCosts
   - name: SalesOffers
@@ -49,6 +50,15 @@ tags:
   - name: ReturnAnnouncementlines
   - name: RepresentativeCustomer
 paths:
+  #/ping:
+  #  get:
+  #    tags:
+  #      - Ping
+  #    servers:
+  #      - url: http://beapsprogres01.kerridgecs.local:9095/web/api/v1
+  #    responses:
+  #      '200':
+  #        description: Successful response
   /meta/salesorders:
     get:
       tags:
@@ -64,6 +74,7 @@ paths:
           schema:
             type: string
           example: dev
+      #deprecated: true
       responses:
         '200':
           description: Successful response
