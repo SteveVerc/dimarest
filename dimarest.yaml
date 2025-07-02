@@ -23,7 +23,6 @@ components:
 security:
   - basicAuth: []
 tags:
-  #- name: Ping
   - name: SalesOrders
   - name: SalesCosts
   - name: SalesOffers
