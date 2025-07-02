@@ -185,7 +185,7 @@ paths:
   /meta/{endpoint}:
     get:
       tags:
-        - Schema's
+        - Schemas
       summary: "Retrieve Schema"
       description: "- Retrieve the Schema (header).
       
