@@ -38,6 +38,45 @@ tags:
   - name: ReturnAnnouncementlines
   - name: RepresentativeCustomer
 paths:
+  /meta/salesorders:
+    get:
+      tags:
+        - SalesOrders
+      summary: "Retrieve Scheme"
+      parameters:
+        - name: mode
+          in: query
+          schema:
+            type: string
+          example: dev
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/salesorders/{id1}:
+    get:
+      tags:
+        - SalesOrders
+      summary: "Retrieve SalesOrder"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+        - name: id1
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 38739
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /data/company/{company}/salesorders:
     get:
       tags:
@@ -320,22 +359,6 @@ paths:
             type: string
           required: true
           example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /meta/salesorders:
-    get:
-      tags:
-        - SalesOrders
-      summary: "Retrieve Scheme"
-      parameters:
-        - name: mode
-          in: query
-          schema:
-            type: string
-          example: dev
       responses:
         '200':
           description: Successful response
@@ -655,28 +678,6 @@ paths:
             type: string
           required: true
           example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/salesorders/{id1}:
-    get:
-      tags:
-        - SalesOrders
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-        - name: id1
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 38739
       responses:
         '200':
           description: Successful response
