@@ -9,16 +9,159 @@ components:
     basicAuth:
       type: http
       scheme: basic
+  schemas:
+    SalesOrders:
+      properties:
+        CompanyId:
+          type: string
+        Location:
+          type: string
+        SalesOrderId:
+          type: string
+        EntryDate:
+          type: string
+        DeliveryDateProvided:
+          type: string
+        OrderReference:
+          type: string
+        OrderAddressPersonName:
+          type: string
+        OriginId:
+          type: string
+        OrderType:
+          type: string
+        CurrencyCode:
+          type: string
+        OrderStatus:
+          type: string
+        Department:
+          type: string
+        TotalVatExcl:
+          type: string
+        TotalVat:
+          type: string
+        TotalOrderTTC:
+          type: string
+        OrderAddressName1:
+          type: string
+        OrderAddressName2:
+          type: string
+        OrderAddressName3:
+          type: string
+        OrderAddressLine1:
+          type: string
+        OrderAddressLine2:
+          type: string
+        OrderAddressLine3:
+          type: string
+        OrderZipcode:
+          type: string
+        OrderCity:
+          type: string
+        OrderCountry:
+          type: string
+        OrderPhoneNumber1:
+          type: string
+        OrderAddressId:
+          type: string
+        DeliveryAddressName1:
+          type: string
+        DeliveryAddressName2:
+          type: string
+        DeliveryAddressName3:
+          type: string
+        DeliveryAddressLine1:
+          type: string
+        DeliveryAddressLine2:
+          type: string
+        DeliveryAddressLine3:
+          type: string
+        DeliveryZipcode:
+          type: string
+        DeliveryCity:
+          type: string
+        DeliveryCountry:
+          type: string
+        DeliveryPhoneNumber1:
+          type: string
+        DeliveryAddressId:
+          type: string
+        CustomerAddressName1:
+          type: string
+        CustomerAddressName2:
+          type: string
+        CustomerAddressName3:
+          type: string
+        CustomerAddressLine1:
+          type: string
+        CustomerAddressLine2:
+          type: string
+        CustomerAddressLine3:
+          type: string
+        CustomerZipcode:
+          type: string
+        CustomerCity:
+          type: string
+        CustomerCountry:
+          type: string
+        VatNumber:
+          type: string
+        VatId:
+          type: string
+        VatRegime:
+          type: string
+        CustomerPhoneNumber1:
+          type: string
+        InvoiceAddressId:
+          type: string
+        TotalCostsOrder:
+          type: string
+        TotalNetGoods:
+          type: string
+        ProjectDiscountPercentage:
+          type: string
+        ProjectDiscountAmount:
+          type: string
+        DeliveryDateRequested:
+          type: string
+        DeliveryCondition:
+          type: string
+        TravelTime:
+          type: string
+        TransportAddressId:
+          type: string
+        Promocode:
+          type: string
+        TransportMethodId:
+          type: string
+        WarehouseId:
+          type: string
+        InternalReference:
+          type: string
+        ExternalReference:
+          type: string
+        DeliveryCollected:
+          type: string
+        BackOrdersTreatment:
+          type: string
+        Username:
+          type: string
+        Id:
+          type: string
+        Seq:
+          type: string
+        Path:
+          type: string
 security:
   - basicAuth: []
 tags:
   - name: SalesOrders
+  - name: SalesOrderlines
   - name: SalesCosts
   - name: SalesOffers
   - name: SalesOfferlines
   - name: SalesInvoices
   - name: SalesInvoicelines
-  - name: SalesOrderlines
   - name: Customers
   - name: Endpoints
   - name: PurchaseOrders
@@ -37,17 +180,25 @@ tags:
   - name: ReturnAnnouncements
   - name: ReturnAnnouncementlines
   - name: RepresentativeCustomer
+  - name: Schema's
 paths:
-  /meta/salesorders:
+  /meta/{enitity}:
     get:
       tags:
-        - SalesOrders
+        - Schema's
       summary: "Retrieve Schema"
       description: "- Retrieve the Schema (header).
       
                     - Mode : dev (to see the databasefields).
                    "
       parameters:
+        - name: enitity
+          in: path
+          schema:
+            type: string
+          example: salesorders
+          description: salesorders, salesoffers, ...
+          required: true
         - name: mode
           in: query
           schema:
@@ -695,16 +846,6 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /meta/salesorderlines/:
-    get:
-      tags:
-        - SalesOrderlines
-      summary: Schema
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
   /data/company/{company}/salesorderlines:
     get:
       tags:
@@ -789,25 +930,6 @@ paths:
                 Newsletter: true
                 Blocked: false
                 OrderAddressId: 439
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /meta/company/{company}/customerorderaddresses:
-    post:
-      tags:
-        - Customers 
-      summary: Schema
-      requestBody:
-        content: {}
       parameters:
         - name: company
           in: path
@@ -922,16 +1044,6 @@ paths:
             type: string
           required: true
           example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /meta/purchasecosts:
-    get:
-      tags:
-        - PurchaseCosts
-      summary: PurchaseCosts (meta)
       responses:
         '200':
           description: Successful response
@@ -1395,16 +1507,6 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /meta/addresses:
-    get:
-      tags:
-        - Addresses 
-      summary: Schema
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
   /data/company/{company}/users:
     put:
       tags:
@@ -1511,22 +1613,6 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /meta/company/{company}/objects:
-    get:
-      tags:
-        - Objects 
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
   /object/company/{company}/objects:
     get:
       tags:
@@ -1591,15 +1677,6 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /meta/returnannouncements:
-    get:
-      tags:
-        - ReturnAnnouncements 
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
   /data/company/{company}/returnannouncements/{id1}/ReturnAnnouncementlines/{id2}:
     get:
       tags:
@@ -1645,15 +1722,6 @@ paths:
             type: string
           required: true
           example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /meta/returnannouncementlines:
-    get:
-      tags:
-        - ReturnAnnouncementlines 
       responses:
         '200':
           description: Successful response
