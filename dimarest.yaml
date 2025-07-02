@@ -4,17 +4,6 @@ info:
   version: 1.0.0
 servers:
   - url: http://beapsprogres01.kerridgecs.local:9095/web/api/v1
-  #- url: http://{host}.kerridgecs.local:{port}/web/api/v1
-    #variables:
-    #    host:
-    #      enum:
-    #        - 'beapsprogres01'
-    #      default: beapsprogres01
-    #    port:
-    #      enum:
-    #        - '9843'
-    #        - '9095'
-    #      default: '9095'
 components:
   securitySchemes:
     basicAuth:
