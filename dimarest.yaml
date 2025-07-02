@@ -163,7 +163,6 @@ tags:
   - name: SalesInvoices
   - name: SalesInvoicelines
   - name: Customers
-  - name: Endpoints
   - name: PurchaseOrders
   - name: PurchaseOrderlines
   - name: PurchaseCosts
@@ -180,9 +179,10 @@ tags:
   - name: ReturnAnnouncements
   - name: ReturnAnnouncementlines
   - name: RepresentativeCustomer
+  - name: Endpoints
   - name: Schema's
 paths:
-  /meta/{entity}:
+  /meta/{endpoint}:
     get:
       tags:
         - Schema's
@@ -192,7 +192,7 @@ paths:
                     - Mode : dev (to see the databasefields).
                    "
       parameters:
-        - name: entity
+        - name: endpoint
           in: path
           schema:
             type: string
