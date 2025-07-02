@@ -4,6 +4,17 @@ info:
   version: 1.0.0
 servers:
   - url: http://beapsprogres01.kerridgecs.local:9095/web/api/v1
+  #- url: http://{host}.kerridgecs.local:{port}/web/api/v1
+    #variables:
+    #    host:
+    #      enum:
+    #        - 'beapsprogres01'
+    #      default: beapsprogres01
+    #    port:
+    #      enum:
+    #        - '9843'
+    #        - '9095'
+    #      default: '9095'
 components:
   securitySchemes:
     basicAuth:
@@ -42,8 +53,8 @@ paths:
     get:
       tags:
         - SalesOrders
-      summary: "Retrieve Scheme"
-      description: "- Retrieve the scheme (header).
+      summary: "Retrieve Schema"
+      description: "- Retrieve the Schema (header).
       
                     - Mode : dev (to see the databasefields).
                    "
@@ -127,6 +138,7 @@ paths:
       tags:
         - SalesOrders
       summary: "Create SalesOrder"
+      description: "Create a SalesOrder by uploading a jsonbody."
       requestBody:
         content:
           application/json:
@@ -291,6 +303,7 @@ paths:
       tags:
         - SalesOrders
       summary: "Update SalesOrder"
+      description: "Update a SalesOrder by uploading a jsonbody and providing the query id parameter (guid)."
       requestBody:
         content:
           application/json:
@@ -361,6 +374,7 @@ paths:
           schema:
             type: string
           example: 30783030-3030-3030-3030-3030336564383832
+          required: true
         - name: company
           in: path
           schema:
@@ -695,7 +709,7 @@ paths:
     get:
       tags:
         - SalesOrderlines
-      summary: Scheme
+      summary: Schema
       responses:
         '200':
           description: Successful response
@@ -801,7 +815,7 @@ paths:
     post:
       tags:
         - Customers 
-      summary: Scheme
+      summary: Schema
       requestBody:
         content: {}
       parameters:
@@ -1395,7 +1409,7 @@ paths:
     get:
       tags:
         - Addresses 
-      summary: Scheme
+      summary: Schema
       responses:
         '200':
           description: Successful response
