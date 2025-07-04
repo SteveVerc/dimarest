@@ -6222,6 +6222,7 @@ tags:
   - name: SalesOffers
   - name: SalesOfferlines
   - name: SalesInvoices
+  - name: SalesOrdersCalc
   - name: SalesInvoicelines
   - name: Customers
   - name: PurchaseOrders
@@ -6239,7 +6240,7 @@ tags:
   - name: Objects
   - name: ReturnAnnouncements
   - name: ReturnAnnouncementlines
-  - name: RepresentativeCustomer
+  - name: RepresentativeCustomers
   - name: PurchaseOrdercosts
   - name: PurchaseOrderlineAddress
   - name: PurchaseOrderlineLotnumbers
@@ -6247,10 +6248,7 @@ tags:
   - name: QuoteLines
   - name: Quotes
   - name: SalesOrdercosts
-  - name: customerorderaddresses
-  - name: representativecustomers
-  - name: salesorderscalc
-  - name: validateuser
+  - name: CustomerOrderAddresses
   - name: Endpoints
   - name: Schemas
 paths:
@@ -6285,10 +6283,8 @@ paths:
     get:
       tags:
         - SalesOrders
-      summary: "Retrieve SalesOrder by id"
+      summary: "Retrieve SalesOrder"
       description: "- Retrieve Salesorder by primary key (header).
-      
-                    - Only rowdata is displayed
                    "
       parameters:
         - name: company
@@ -7800,10 +7796,10 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /data/company/{company}/Representative/{id1}/Customers/:
+  /data/company/{company}/Representative/{id1}/Customers:
     get:
       tags:
-        - RepresentativeCustomer
+        - RepresentativeCustomers
       parameters:
         - name: company
           in: path
@@ -7941,27 +7937,10 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /data/company/{company}/representativecustomers:
-    get:
-      tags:
-        - representativecustomers
-      summary: "Retrieve representativecustomers"
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
   /data/company/{company}/salesorderscalc:
     get:
       tags:
-        - salesorderscalc
+        - SalesOrdersCalc
       summary: "Retrieve salesorderscalc"
       parameters:
         - name: company
