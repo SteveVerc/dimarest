@@ -6225,6 +6225,7 @@ tags:
   - name: SalesInvoices
   - name: SalesOrdersCalc
   - name: SalesInvoicelines
+  - name: SalesCosts
   - name: Customers
   - name: PurchaseOrders
   - name: PurchaseOrderlines
@@ -6236,6 +6237,7 @@ tags:
   - name: Contacts
   - name: PrivatePersons
   - name: Users
+  - name: ValidateUser
   - name: Company
   - name: Objects
   - name: ReturnAnnouncements
@@ -7606,7 +7608,7 @@ paths:
   /data/company/{company}/validateuser:
     get:
       tags:
-        - Users
+        - ValidateUser
       parameters:
         - name: login
           in: query
