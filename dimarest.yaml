@@ -10,7 +10,7 @@ components:
       type: http
       scheme: basic
   schemas:
-    addresses:
+    Addresses:
       properties:
         aanspreektitel:
           type: string
@@ -142,7 +142,7 @@ components:
           type: string
         zoeknaam2:
           type: string
-    articles:
+    Articles:
       properties:
         aangifteeenheid_intrastat:
           type: string
@@ -692,7 +692,7 @@ components:
           type: string
         zoeknaam:
           type: string
-    company:
+    Company:
       properties:
         aankoop_in_beschikbaar:
           type: string
@@ -1044,7 +1044,7 @@ components:
           type: integer
         wijze_artikelselectie:
           type: string
-    customers:
+    Customers:
       properties:
         aantal_magazijnen:
           type: integer
@@ -1324,134 +1324,6 @@ components:
           type: string
         waarschuwing:
           type: string
-    department:
-      properties:
-        adresnummer:
-          type: integer
-        adresnummer_dept:
-          type: integer
-        afdruk_zendnota_rl:
-          type: string
-        consolidatiedepartement:
-          type: string
-        c_access_group:
-          type: string
-        deletecode:
-          type: string
-        departement:
-          type: string
-        dept_code:
-          type: string
-        ecom_def_gebruiker:
-          type: string
-        email_adres:
-          type: string
-        fax:
-          type: string
-        firma_code:
-          type: string
-        haven_van_laden_lossen:
-          type: string
-        jrn_aankoopcreditnota:
-          type: string
-        jrn_aankoopfactuur:
-          type: string
-        jrn_kassa:
-          type: string
-        jrn_verkoopcreditnota:
-          type: string
-        jrn_verkoopfactuur:
-          type: string
-        mailstop:
-          type: string
-        memocode:
-          type: string
-        naam_departement:
-          type: string
-        programma_creatie:
-          type: string
-        programma_laatste_wijz:
-          type: string
-        p_access_group:
-          type: string
-        s_access_group:
-          type: string
-        telefoon:
-          type: string
-        tijd_creatie:
-          type: integer
-        u_access_group:
-          type: string
-        vertegenwoordiger:
-          type: integer
-        vest_nummer:
-          type: string
-    entities:
-      properties:
-        audit:
-          type: string
-        audit-extkeys:
-          type: string
-        audit-flds:
-          type: string
-        audit-type:
-          type: string
-        extra-run:
-          type: string
-        file:
-          type: string
-        file-oms:
-          type: string
-        kcs-prop:
-          type: string
-        keep-stat:
-          type: string
-        Name:
-          type: string
-        stat-extkeys:
-          type: string
-        stat-flds:
-          type: string
-        write-del-xml:
-          type: string
-        write-log:
-          type: string
-    entitiestranslation:
-      properties:
-        file:
-          type: string
-        kcsfile-oms:
-          type: string
-        kcsfile-rest:
-          type: string
-        kcsfile-tooltip:
-          type: string
-        tl-code:
-          type: integer
-    fields:
-      properties:
-        datatype:
-          type: string
-        fieldformat:
-          type: string
-        fieldname:
-          type: string
-        file:
-          type: string
-    fieldstranslation:
-      properties:
-        fieldname:
-          type: string
-        file:
-          type: string
-        kcsfield-oms:
-          type: string
-        kcsfield-rest:
-          type: string
-        kcsfield-tooltip:
-          type: string
-        tl-code:
-          type: integer
     objects:
       properties:
         adresnummer:
@@ -1640,7 +1512,7 @@ components:
           type: string
         zoekcode:
           type: string
-    privatepersons:
+    PrivatePersons:
       properties:
         aanspreektitel:
           type: string
@@ -1688,7 +1560,7 @@ components:
           type: integer
         volgnummer:
           type: integer
-    purchasecosts:
+    PurchaseCosts:
       properties:
         adresnummer_lev:
           type: integer
@@ -1736,10 +1608,6 @@ components:
           type: string
         DescDutch:
           type: string
-        programma_creatie:
-          type: string
-        programma_laatste_wijz:
-          type: string
         soort_kost:
           type: string
         systeemcode_kost:
@@ -1750,7 +1618,7 @@ components:
           type: string
         volgorde_berekening:
           type: integer
-    purchaseordercosts:
+    PurchaseOrdercosts:
       properties:
         automatisch_voorstellen:
           type: string
@@ -1810,7 +1678,7 @@ components:
           type: integer
         volgorde_berekening:
           type: integer
-    purchaseorderlineaddress:
+    PurchaseOrderlineAddress:
       properties:
         aankoopeenheid:
           type: string
@@ -1928,7 +1796,7 @@ components:
           type: integer
         zone:
           type: string
-    purchaseorderlinelotnos:
+    PurchaseOrderlineLotnumbers:
       properties:
         aantal_basiseenheden:
           type: number
@@ -1956,7 +1824,7 @@ components:
           type: string
         tijd_creatie:
           type: integer
-    purchaseorderlines:
+    PurchaseOrderlines:
       properties:
         aankoopeenheid:
           type: string
@@ -2244,7 +2112,7 @@ components:
           type: string
         zzzleverweek_herbevestigd:
           type: string
-    purchaseorderlinesuppliers:
+    PurchaseOrderlineSuppliers:
       properties:
         aantal:
           type: number
@@ -2350,7 +2218,7 @@ components:
           type: number
         volume_eh:
           type: string
-    purchaseorders:
+    PurchaseOrders:
       properties:
         aankoper_initialen:
           type: string
@@ -2670,7 +2538,7 @@ components:
           type: string
         zzzleverweek_herbevestigd:
           type: string
-    quotelines:
+    QuoteLines:
       properties:
         aankoopprijseenheid:
           type: string
@@ -3046,7 +2914,7 @@ components:
           type: string
         zztariefprijs_standaard:
           type: number
-    quotes:
+    Quotes:
       properties:
         aantal_verhuureenheden:
           type: number
@@ -3474,7 +3342,7 @@ components:
           type: string
         wrkfld_log_3:
           type: string
-    returnannouncementlines:
+    ReturnAnnouncementlines:
       properties:
         aankoopprijs:
           type: number
@@ -3638,7 +3506,7 @@ components:
           type: integer
         waarborg_typ:
           type: string
-    returnannouncements:
+    ReturnAnnouncements:
       properties:
         aanvrager:
           type: string
@@ -4798,7 +4666,7 @@ components:
           type: string
         wrkfld_log_3:
           type: string
-    salesordercosts:
+    SalesOrdercosts:
       properties:
         annulatie_cd:
           type: string
@@ -4892,7 +4760,7 @@ components:
           type: integer
         volgnummer_kostenl_offerte:
           type: integer
-    salesorderlines:
+    SalesOrderlines:
       properties:
         aankoopprijs:
           type: number
@@ -6344,58 +6212,6 @@ components:
           type: string
         zone:
           type: string
-    aankoopkosten_tarieven:
-      properties:
-        Amount:
-          type: number
-        code:
-          type: string
-        deletecode:
-          type: string
-        eenheid_staffel:
-          type: string
-        firma_code:
-          type: string
-        kostenlijnnr:
-          type: integer
-        percentage:
-          type: number
-        programma_creatie:
-          type: string
-        programma_laatste_wijz:
-          type: string
-        staffelaantal:
-          type: number
-        startdatum_geldigheid:
-          type: string
-        systeemcode_kost:
-          type: integer
-        tijd_creatie:
-          type: integer
-        type_kost:
-          type: string
-    afstanden:
-      properties:
-        afstand_km:
-          type: number
-        deletecode:
-          type: string
-        departement:
-          type: string
-        firma_code:
-          type: string
-        landcode:
-          type: string
-        postcode:
-          type: string
-        programma_creatie:
-          type: string
-        programma_laatste_wijz:
-          type: string
-        tijd_creatie:
-          type: integer
-        verplaatsing_tijd:
-          type: integer
 
 security:
   - basicAuth: []
@@ -6424,22 +6240,13 @@ tags:
   - name: ReturnAnnouncements
   - name: ReturnAnnouncementlines
   - name: RepresentativeCustomer
-  - name: department
-  - name: entities
-  - name: entitiestranslation
-  - name: fields
-  - name: fieldstranslation
-  - name: purchaseordercosts
-  - name: purchaseorderlineaddress
-  - name: purchaseorderlinelotnos
-  - name: purchaseorderlinesuppliers
-  - name: quotelines
-  - name: quotes
-  - name: salesordercosts
-  - name: aankoopkosten_tarieven
-  - name: afstanden
-  - name: articlesprice
-  - name: articlestierprice
+  - name: PurchaseOrdercosts
+  - name: PurchaseOrderlineAddress
+  - name: PurchaseOrderlineLotnumbers
+  - name: PurchaseOrderlineSuppliers
+  - name: QuoteLines
+  - name: Quotes
+  - name: SalesOrdercosts
   - name: customerorderaddresses
   - name: representativecustomers
   - name: salesorderscalc
@@ -6493,7 +6300,7 @@ paths:
           schema:
             type: string
           required: true
-          example: 5563
+          example: 38739
       responses:
         '200':
           description: Successful response
@@ -8013,96 +7820,11 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /data/company/{company}/department:
-    get:
-      tags:
-        - department
-      summary: "Retrieve department"
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/entities:
-    get:
-      tags:
-        - entities
-      summary: "Retrieve entities"
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/entitiestranslation:
-    get:
-      tags:
-        - entitiestranslation
-      summary: "Retrieve entitiestranslation"
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/fields:
-    get:
-      tags:
-        - fields
-      summary: "Retrieve fields"
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/fieldstranslation:
-    get:
-      tags:
-        - fieldstranslation
-      summary: "Retrieve fieldstranslation"
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
   /data/company/{company}/purchaseordercosts:
     get:
       tags:
-        - purchaseordercosts
-      summary: "Retrieve purchaseordercosts"
+        - PurchaseOrdercosts
+      summary: "Retrieve PurchaseOrdercosts"
       parameters:
         - name: company
           in: path
@@ -8118,8 +7840,8 @@ paths:
   /data/company/{company}/purchaseorderlineaddress:
     get:
       tags:
-        - purchaseorderlineaddress
-      summary: "Retrieve purchaseorderlineaddress"
+        - PurchaseOrderlineAddress
+      summary: "Retrieve PurchaseOrderlineAddress"
       parameters:
         - name: company
           in: path
@@ -8132,11 +7854,11 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /data/company/{company}/purchaseorderlinelotnos:
+  /data/company/{company}/purchaseorderlinelotnumbers:
     get:
       tags:
-        - purchaseorderlinelotnos
-      summary: "Retrieve purchaseorderlinelotnos"
+        - PurchaseOrderlineLotnumbers
+      summary: "Retrieve PurchaseOrderlineLotnumbers"
       parameters:
         - name: company
           in: path
@@ -8152,8 +7874,8 @@ paths:
   /data/company/{company}/purchaseorderlinesuppliers:
     get:
       tags:
-        - purchaseorderlinesuppliers
-      summary: "Retrieve purchaseorderlinesuppliers"
+        - PurchaseOrderlineSuppliers
+      summary: "Retrieve PurchaseOrderlineSuppliers"
       parameters:
         - name: company
           in: path
@@ -8169,8 +7891,8 @@ paths:
   /data/company/{company}/quotelines:
     get:
       tags:
-        - quotelines
-      summary: "Retrieve quotelines"
+        - QuoteLines
+      summary: "Retrieve QuoteLines"
       parameters:
         - name: company
           in: path
@@ -8186,8 +7908,8 @@ paths:
   /data/company/{company}/quotes:
     get:
       tags:
-        - quotes
-      summary: "Retrieve quotes"
+        - Quotes
+      summary: "Retrieve Quotes"
       parameters:
         - name: company
           in: path
@@ -8203,60 +7925,8 @@ paths:
   /data/company/{company}/salesordercosts:
     get:
       tags:
-        - salesordercosts
-      summary: "Retrieve salesordercosts"
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/aankoopkosten_tarieven:
-    get:
-      tags:
-        - aankoopkosten_tarieven
-      summary: "Retrieve aankoopkosten_tarieven"
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/afstanden:
-    get:
-      tags:
-        - afstanden
-      summary: "Retrieve afstanden"
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  
-  /data/company/{company}/articlestierprice:
-    get:
-      tags:
-        - articlestierprice
-      summary: "Retrieve articlestierprice"
+        - SalesOrdercosts
+      summary: "Retrieve SalesOrdercosts"
       parameters:
         - name: company
           in: path
