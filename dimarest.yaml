@@ -6219,7 +6219,7 @@ tags:
   - name: Addresses
   - name: SalesOrders
   - name: SalesOrderlines
-  - name: SalesCosts
+  - name: SalesOrdercosts
   - name: SalesOffers
   - name: SalesOfferlines
   - name: SalesInvoices
@@ -6246,8 +6246,7 @@ tags:
   - name: PurchaseOrderlineLotnumbers
   - name: PurchaseOrderlineSuppliers
   - name: QuoteLines
-  - name: Quotes
-  - name: SalesOrdercosts
+  - name: Quotes  
   - name: CustomerOrderAddresses
   - name: Endpoints
   - name: Schemas
