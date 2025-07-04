@@ -6400,26 +6400,6 @@ components:
 security:
   - basicAuth: []
 tags:
-  - name: department
-  - name: entities
-  - name: entitiestranslation
-  - name: fields
-  - name: fieldstranslation
-  - name: purchaseordercosts
-  - name: purchaseorderlineaddress
-  - name: purchaseorderlinelotnos
-  - name: purchaseorderlinesuppliers
-  - name: quotelines
-  - name: quotes
-  - name: salesordercosts
-  - name: aankoopkosten_tarieven
-  - name: afstanden
-  - name: articlesprice
-  - name: articlestierprice
-  - name: customerorderaddresses
-  - name: representativecustomers
-  - name: salesorderscalc
-  - name: validateuser
   - name: SalesOrders
   - name: SalesOrderlines
   - name: SalesCosts
@@ -6444,6 +6424,26 @@ tags:
   - name: ReturnAnnouncements
   - name: ReturnAnnouncementlines
   - name: RepresentativeCustomer
+  - name: department
+  - name: entities
+  - name: entitiestranslation
+  - name: fields
+  - name: fieldstranslation
+  - name: purchaseordercosts
+  - name: purchaseorderlineaddress
+  - name: purchaseorderlinelotnos
+  - name: purchaseorderlinesuppliers
+  - name: quotelines
+  - name: quotes
+  - name: salesordercosts
+  - name: aankoopkosten_tarieven
+  - name: afstanden
+  - name: articlesprice
+  - name: articlestierprice
+  - name: customerorderaddresses
+  - name: representativecustomers
+  - name: salesorderscalc
+  - name: validateuser
   - name: Endpoints
   - name: Schemas
 paths:
@@ -8008,6 +8008,296 @@ paths:
             type: string
           required: true
           example: 50
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/department:
+    get:
+      tags:
+        - department
+      summary: "Retrieve department"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/entities:
+    get:
+      tags:
+        - entities
+      summary: "Retrieve entities"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/entitiestranslation:
+    get:
+      tags:
+        - entitiestranslation
+      summary: "Retrieve entitiestranslation"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/fields:
+    get:
+      tags:
+        - fields
+      summary: "Retrieve fields"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/fieldstranslation:
+    get:
+      tags:
+        - fieldstranslation
+      summary: "Retrieve fieldstranslation"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/purchaseordercosts:
+    get:
+      tags:
+        - purchaseordercosts
+      summary: "Retrieve purchaseordercosts"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/purchaseorderlineaddress:
+    get:
+      tags:
+        - purchaseorderlineaddress
+      summary: "Retrieve purchaseorderlineaddress"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/purchaseorderlinelotnos:
+    get:
+      tags:
+        - purchaseorderlinelotnos
+      summary: "Retrieve purchaseorderlinelotnos"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/purchaseorderlinesuppliers:
+    get:
+      tags:
+        - purchaseorderlinesuppliers
+      summary: "Retrieve purchaseorderlinesuppliers"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/quotelines:
+    get:
+      tags:
+        - quotelines
+      summary: "Retrieve quotelines"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/quotes:
+    get:
+      tags:
+        - quotes
+      summary: "Retrieve quotes"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/salesordercosts:
+    get:
+      tags:
+        - salesordercosts
+      summary: "Retrieve salesordercosts"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/aankoopkosten_tarieven:
+    get:
+      tags:
+        - aankoopkosten_tarieven
+      summary: "Retrieve aankoopkosten_tarieven"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/afstanden:
+    get:
+      tags:
+        - afstanden
+      summary: "Retrieve afstanden"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  
+  /data/company/{company}/articlestierprice:
+    get:
+      tags:
+        - articlestierprice
+      summary: "Retrieve articlestierprice"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/representativecustomers:
+    get:
+      tags:
+        - representativecustomers
+      summary: "Retrieve representativecustomers"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/salesorderscalc:
+    get:
+      tags:
+        - salesorderscalc
+      summary: "Retrieve salesorderscalc"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
       responses:
         '200':
           description: Successful response
