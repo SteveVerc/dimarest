@@ -6216,6 +6216,7 @@ components:
 security:
   - basicAuth: []
 tags:
+  - name: Addresses
   - name: SalesOrders
   - name: SalesOrderlines
   - name: SalesCosts
@@ -6234,7 +6235,6 @@ tags:
   - name: ArticlesTierPrices
   - name: Contacts
   - name: PrivatePersons
-  - name: Addresses
   - name: Users
   - name: Company
   - name: Objects
