@@ -6285,8 +6285,10 @@ paths:
     get:
       tags:
         - SalesOrders
-      summary: "Retrieve SalesOrder by Id"
+      summary: "Retrieve SalesOrder by id"
       description: "- Retrieve Salesorder by primary key (header).
+      
+                    - Only rowdata is displayed
                    "
       parameters:
         - name: company
