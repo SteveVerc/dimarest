@@ -6285,7 +6285,7 @@ paths:
     get:
       tags:
         - SalesOrders
-      summary: "Retrieve SalesOrder"
+      summary: "Retrieve SalesOrder by Id"
       description: "- Retrieve Salesorder by primary key (header).
                    "
       parameters:
