@@ -6,7 +6,7 @@ servers:
   - url: http://beapsprogres01.kerridgecs.local:9095/web/api/v1
 components:
   securitySchemes:
-    basicAuth:
+    basicAuth: 
       type: http
       scheme: basic
   schemas:
@@ -7448,16 +7448,65 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /data/company/{company}/addresses/{id1}:
+    get:
+      tags:
+        - Addresses
+      summary: "Retrieve Addresses"
+      parameters:
+        - name: id1
+          in: path
+          schema:
+            type: number
+          description: PrimaryKey
+          required: true
+          example: 1
+        - name: limit
+          in: query
+          schema:
+            type: string
+          example: 10
+          description: Pagesize
+        - name: offset
+          in: query
+          schema:
+            type: string
+          example: 1
+          description: StartIndex
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /data/company/{company}/addresses:
     get:
       tags:
         - Addresses
+      summary: "Retrieve Addresses"
       parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+          description: Guid
         - name: limit
           in: query
           schema:
-            type: integer
-          example: '5'
+            type: string
+          example: 10
+          description: Pagesize
+        - name: offset
+          in: query
+          schema:
+            type: string
+          example: 1
+          description: StartIndex
         - name: company
           in: path
           schema:
@@ -7471,7 +7520,8 @@ paths:
             application/json: {}
     post:
       tags:
-        - Addresses 
+        - Addresses
+      summary: "Create Addresses"
       requestBody:
         content:
           application/json:
@@ -7551,7 +7601,8 @@ paths:
             application/json: {}
     put:
       tags:
-        - Addresses 
+        - Addresses
+      summary: "Update Addresses"
       requestBody:
         content:
           application/json:
