@@ -7558,19 +7558,20 @@ paths:
               type: object
               example:
                 addresses:
-                  - addressname1: Infomat4789789
-                    addressname2: test5000
+                  - addressname1: BART VANMECH
+                    addressname2: Dit is een test
       parameters:
         - name: Id
           in: query
           schema:
             type: string
-          example: 30783030-3030-3030-3030-3030303031323161
+          example: 30783030-3030-3030-3030-3030303033346335
         - name: company
           in: path
           schema:
             type: string
           required: true
+          example: 100
       responses:
         '200':
           description: Successful response
