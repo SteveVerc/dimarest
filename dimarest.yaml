@@ -6,48 +6,12 @@ servers:
   - url: http://beapsprogres01.kerridgecs.local:9095/web/api/v1
 components:
   securitySchemes:
-    basicAuth: 
+    basicAuth:
       type: http
       scheme: basic
   schemas:
     Addresses:
       properties:
-        aanspreektitel:
-          type: string
-        aanspreektitel_particulier:
-          type: string
-        adreslijn1:
-          type: string
-        adreslijn2:
-          type: string
-        adreslijn3:
-          type: string
-        addressname1:
-          type: string
-        addressname2:
-          type: string
-        addressname3:
-          type: string
-        adresnummer:
-          type: integer
-        afstand_km:
-          type: integer
-        breedtegraad:
-          type: number
-        consolidatieadresnummer:
-          type: integer
-        deletecode:
-          type: string
-        ean_code:
-          type: string
-        email_adres:
-          type: string
-        EORI_nr:
-          type: string
-        externe_id:
-          type: string
-        ext_Guid:
-          type: string
         e_com:
           type: string
         FieldName:
@@ -142,317 +106,159 @@ components:
           type: string
         zoeknaam2:
           type: string
-    Articles:
-      properties:
-        aangifteeenheid_intrastat:
+        aanspreektitel:
           type: string
-        aankoopeenheid:
+        aanspreektitel_particulier:
           type: string
-        aankoopprijs_coef:
-          type: number
-        aankoopprijs_eh:
+        adreslijn1:
           type: string
-        aankoopverpakking:
+        adreslijn2:
           type: string
-        aankoopverpakking_coef:
-          type: number
-        aankoop_coef:
-          type: number
-        aantal_etiketten:
+        adreslijn3:
+          type: string
+        adresnummer:
           type: integer
-        aantal_serienummers:
+        afstand_km:
           type: integer
-        acc_alcohol_perc:
+        breedtegraad:
           type: number
-        acc_alcohol_perc_eh:
-          type: string
-        acc_art_flg:
-          type: string
-        acc_code_b:
-          type: string
-        acc_code_g:
-          type: string
-        acc_grpcd:
-          type: string
-        acc_plato_buitenland:
-          type: number
-        ADR_klasse:
-          type: string
-        afmeting_breedte:
-          type: number
-        afmeting_breedte_bruto:
-          type: number
-        afmeting_breedte_eh:
-          type: string
-        afmeting_dikte:
-          type: number
-        afmeting_dikte_bruto:
-          type: number
-        afmeting_dikte_eh:
-          type: string
-        afmeting_dst:
-          type: number
-        afmeting_dst_eh1:
-          type: string
-        afmeting_dst_eh2:
-          type: string
-        afmeting_eenheid:
-          type: string
-        afmeting_lengte:
-          type: number
-        afmeting_lengte_bruto:
-          type: number
-        artikelassortiment:
-          type: string
-        artikelomschrijving1:
-          type: string
-        artikelomschrijving2:
-          type: string
-        artikelprijsgroep_aankoop:
-          type: string
-        artikelprijsgroep_verkoop:
-          type: string
-        artikeltype:
-          type: string
-        art_labels:
+        consolidatieadresnummer:
           type: integer
-        assemblage_kitting:
-          type: string
-        auto_generatie:
-          type: string
-        basiseenheid:
-          type: string
-        basismodel:
-          type: string
-        basisverpakking:
-          type: string
-        basisverpakking_coef:
-          type: number
-        binnenverpakking_coef:
-          type: number
-        blokkeringscode_offerte:
-          type: string
-        blokkeringscode_verkoop:
-          type: string
-        blokkeringsdatum_verkoop:
-          type: string
-        boekingsgroep_artikel:
-          type: string
-        boekingsgroep_verhuur:
-          type: string
-        btw_code:
-          type: string
-        calculatietype_aankooppr:
-          type: string
-        calculatietype_verkooppr:
-          type: string
-        class_id:
-          type: string
-        code_artikel:
-          type: string
-        code_artikel_model:
-          type: string
-        code_etiket:
-          type: string
-        code_matenbalk:
-          type: string
-        code_matenbalk2:
-          type: string
-        commissie_groep:
-          type: string
-        consumptie_coef:
-          type: number
-        consumptie_eenheid:
-          type: string
-        coupe_mask:
-          type: string
-        datum_eerste_verkoop:
-          type: string
-        datum_indienst:
-          type: string
-        datum_laatste_verkoop:
-          type: string
         deletecode:
           type: string
-        departement:
+        ean_code:
           type: string
-        depreciation_duration:
+        email_adres:
+          type: string
+        EORI_nr:
+          type: string
+        externe_id:
+          type: string
+        ext_Guid:
+          type: string
+        addressname1:
+          type: string
+        addressname2:
+          type: string
+        addressname3:
+          type: string
+    Articles:
+      properties:
+        zoeknaam:
+          type: string
+        tariefprijs_eh3:
+          type: string
+        tariefprijs_eh4:
+          type: string
+        testprtcode1:
+          type: string
+        testprtcode2:
+          type: string
+        testprtdate1:
+          type: string
+        testprtdate2:
+          type: string
+        tglspec:
+          type: string
+        tgl_basic_set:
+          type: string
+        tgl_bom_model:
+          type: string
+        tgl_geen_KK:
+          type: string
+        tgl_herb_model:
+          type: string
+        tgl_knip_data:
+          type: string
+        tgl_matrix:
+          type: string
+        tgl_reel_stock:
+          type: string
+        tgl_schapetiket:
+          type: string
+        tgl_set_gebruikt:
+          type: string
+        tgl_spec_set:
+          type: string
+        tgl_splitsen:
+          type: string
+        tgl_split_model:
+          type: string
+        tgl_split_uitval:
+          type: string
+        tgl_VAT_incl_input:
+          type: string
+        tgl_vervaldatum:
+          type: string
+        tgl_vk_boodschap:
+          type: string
+        tijd_creatie:
           type: integer
-        doorloop_type:
+        titel_vaste_tekst:
           type: string
-        ecoboni:
+        transf_record:
           type: string
-        eenheid_gebruik:
+        uitgeleend:
           type: string
-        eenheid_gebruik_coef:
+        vaste_btw_code:
+          type: string
+        verkoopeenheid:
+          type: string
+        verkoopprijs_coef:
           type: number
-        eigenaar:
-          type: integer
-        eigenschap_1:
+        verkoopprijs_eh:
           type: string
-        eigenschap_2:
+        verkoopprijs_niveau_sameng:
           type: string
-        eigenschap_3:
+        verkoopverpakking:
           type: string
-        eigenschap_4:
-          type: string
-        Electronisch_schap:
-          type: string
-        eu_merk:
-          type: string
-        extra_interventie_pick:
-          type: string
-        e_com:
-          type: string
-        firma_code:
-          type: string
-        forecast_perc:
+        verkoopverpakking_coef:
           type: number
-        geen_KK:
-          type: string
-        gewenst_serviceniveau:
+        verkoop_coef:
           type: number
-        gewicht_bruto:
+        verpakkingseenheid1:
+          type: string
+        verpakkingseenheid2:
+          type: string
+        verpak_type:
+          type: string
+        vervangartikelcode:
+          type: string
+        vervangen_artikel:
+          type: string
+        vervangen_datum:
+          type: string
+        vervangen_door:
+          type: string
+        volume_bruto:
           type: number
-        gewicht_bruto_basiseh:
+        volume_bruto_basiseh:
           type: number
-        gewicht_conditionnement:
-          type: string
-        gewicht_eenheid:
-          type: string
-        gewicht_netto:
+        volume_bruto_cft:
           type: number
-        gewicht_netto_basiseh:
+        volume_conditionnement:
+          type: string
+        volume_eenheid:
+          type: string
+        volume_eenheid_cft:
+          type: string
+        volume_netto:
           type: number
-        GN_taric:
-          type: string
-        goederencode:
-          type: string
-        goederencode_nummer:
-          type: integer
-        gratis:
-          type: string
-        groeperingscode1:
-          type: string
-        groeperingscode2:
-          type: string
-        groeperingscode3:
-          type: string
-        groeperingscode4:
-          type: string
-        groeperingscode5:
-          type: string
-        haspel:
-          type: string
-        hasp_mask:
-          type: string
-        herb_model_eenheid:
-          type: string
-        increment_aankoop_lev:
+        volume_netto_basiseh:
           type: number
-        increment_verkoop_klt:
+        volume_netto_cft:
           type: number
-        ind_gegr_afname_klt:
+        voorraadopvolging:
           type: string
-        ind_gegr_afname_lev:
+        voorraad_gelimiteerd:
           type: string
-        info:
-          type: string
-        intrastat_coef:
+        vpfactor:
           type: number
-        isOnderdeel:
+        vpfactor_dtl:
           type: string
-        kabelgroep:
-          type: string
-        kabel_AK_cugewicht:
+        wisselkoers_kostprijs:
           type: number
-        kabel_berekeningswijze:
-          type: string
-        kabel_cugewicht:
-          type: number
-        kabel_fetfactor:
-          type: number
-        kabel_tarieflijstcode:
-          type: string
-        kenmerk_1:
-          type: string
-        kenmerk_2:
-          type: string
-        kenmerk_3:
-          type: string
-        kenmerk_4:
-          type: string
-        kenmerk_5:
-          type: string
-        kenmerk_6:
-          type: string
-        klantdoc_niveau_sameng:
-          type: string
-        korting_bedrag:
-          type: number
-        korting_percentage:
-          type: number
-        kostensoort:
-          type: string
-        kostprijs_coef:
-          type: number
-        kostprijs_eh:
-          type: string
-        kostprijs_niveau_sameng:
-          type: string
-        k_factor:
-          type: number
-        land_van_oorsprong:
-          type: string
-        lastdrager:
-          type: string
-        lastdrager_coef:
-          type: number
-        leeggoedcode:
-          type: string
-        lengtemaat_conditionnement:
-          type: string
-        levdoc_niveau_samengesteld:
-          type: string
-        leverancierartikelnummer:
-          type: string
-        leverancier_omschrijving1:
-          type: string
-        leverancier_omschrijving2:
-          type: string
-        levertermijn_berekening:
-          type: string
-        levertermijn_gem_kl:
-          type: integer
-        locklasse:
-          type: string
-        loc_labels:
-          type: integer
-        lotnummers:
-          type: string
-        maatcode:
-          type: string
-        maatseq:
-          type: integer
-        magdoc_niveau_samengesteld:
-          type: string
-        main_firm:
-          type: string
-        matenbalk_HV:
-          type: string
-        merk:
-          type: string
-        merk_tecdoc:
-          type: string
-        Minimum_afname_aankoop:
-          type: number
-        minimum_afname_klt:
-          type: number
-        minimum_afname_lev:
-          type: number
-        min_haspel:
-          type: number
-        nalevering_componenten:
+        zelfde_hoofd_lev:
           type: string
         Niveau_collispecificatie:
           type: integer
@@ -576,122 +382,316 @@ components:
           type: string
         tariefprijs_eh2:
           type: string
-        tariefprijs_eh3:
+        groeperingscode1:
           type: string
-        tariefprijs_eh4:
+        groeperingscode2:
           type: string
-        testprtcode1:
+        groeperingscode3:
           type: string
-        testprtcode2:
+        groeperingscode4:
           type: string
-        testprtdate1:
+        groeperingscode5:
           type: string
-        testprtdate2:
+        haspel:
           type: string
-        tglspec:
+        hasp_mask:
           type: string
-        tgl_basic_set:
+        herb_model_eenheid:
           type: string
-        tgl_bom_model:
+        increment_aankoop_lev:
+          type: number
+        increment_verkoop_klt:
+          type: number
+        ind_gegr_afname_klt:
           type: string
-        tgl_geen_KK:
+        ind_gegr_afname_lev:
           type: string
-        tgl_herb_model:
+        info:
           type: string
-        tgl_knip_data:
+        intrastat_coef:
+          type: number
+        isOnderdeel:
           type: string
-        tgl_matrix:
+        kabelgroep:
           type: string
-        tgl_reel_stock:
+        kabel_AK_cugewicht:
+          type: number
+        kabel_berekeningswijze:
           type: string
-        tgl_schapetiket:
+        kabel_cugewicht:
+          type: number
+        kabel_fetfactor:
+          type: number
+        kabel_tarieflijstcode:
           type: string
-        tgl_set_gebruikt:
+        kenmerk_1:
           type: string
-        tgl_spec_set:
+        kenmerk_2:
           type: string
-        tgl_splitsen:
+        kenmerk_3:
           type: string
-        tgl_split_model:
+        kenmerk_4:
           type: string
-        tgl_split_uitval:
+        kenmerk_5:
           type: string
-        tgl_VAT_incl_input:
+        kenmerk_6:
           type: string
-        tgl_vervaldatum:
+        klantdoc_niveau_sameng:
           type: string
-        tgl_vk_boodschap:
+        korting_bedrag:
+          type: number
+        korting_percentage:
+          type: number
+        kostensoort:
           type: string
-        tijd_creatie:
+        kostprijs_coef:
+          type: number
+        kostprijs_eh:
+          type: string
+        kostprijs_niveau_sameng:
+          type: string
+        k_factor:
+          type: number
+        land_van_oorsprong:
+          type: string
+        lastdrager:
+          type: string
+        lastdrager_coef:
+          type: number
+        leeggoedcode:
+          type: string
+        lengtemaat_conditionnement:
+          type: string
+        levdoc_niveau_samengesteld:
+          type: string
+        leverancierartikelnummer:
+          type: string
+        leverancier_omschrijving1:
+          type: string
+        leverancier_omschrijving2:
+          type: string
+        levertermijn_berekening:
+          type: string
+        levertermijn_gem_kl:
           type: integer
-        titel_vaste_tekst:
+        locklasse:
           type: string
-        transf_record:
+        loc_labels:
+          type: integer
+        lotnummers:
           type: string
-        uitgeleend:
+        maatcode:
           type: string
-        vaste_btw_code:
+        maatseq:
+          type: integer
+        magdoc_niveau_samengesteld:
           type: string
-        verkoopeenheid:
+        main_firm:
           type: string
-        verkoopprijs_coef:
+        matenbalk_HV:
+          type: string
+        merk:
+          type: string
+        merk_tecdoc:
+          type: string
+        Minimum_afname_aankoop:
           type: number
-        verkoopprijs_eh:
-          type: string
-        verkoopprijs_niveau_sameng:
-          type: string
-        verkoopverpakking:
-          type: string
-        verkoopverpakking_coef:
+        minimum_afname_klt:
           type: number
-        verkoop_coef:
+        minimum_afname_lev:
           type: number
-        verpakkingseenheid1:
-          type: string
-        verpakkingseenheid2:
-          type: string
-        verpak_type:
-          type: string
-        vervangartikelcode:
-          type: string
-        vervangen_artikel:
-          type: string
-        vervangen_datum:
-          type: string
-        vervangen_door:
-          type: string
-        volume_bruto:
+        min_haspel:
           type: number
-        volume_bruto_basiseh:
+        nalevering_componenten:
+          type: string
+        ecoboni:
+          type: string
+        eenheid_gebruik:
+          type: string
+        eenheid_gebruik_coef:
           type: number
-        volume_bruto_cft:
+        eigenaar:
+          type: integer
+        eigenschap_1:
+          type: string
+        eigenschap_2:
+          type: string
+        eigenschap_3:
+          type: string
+        eigenschap_4:
+          type: string
+        Electronisch_schap:
+          type: string
+        eu_merk:
+          type: string
+        extra_interventie_pick:
+          type: string
+        e_com:
+          type: string
+        firma_code:
+          type: string
+        forecast_perc:
           type: number
-        volume_conditionnement:
+        geen_KK:
           type: string
-        volume_eenheid:
-          type: string
-        volume_eenheid_cft:
-          type: string
-        volume_netto:
+        gewenst_serviceniveau:
           type: number
-        volume_netto_basiseh:
+        gewicht_bruto:
           type: number
-        volume_netto_cft:
+        gewicht_bruto_basiseh:
           type: number
-        voorraadopvolging:
+        gewicht_conditionnement:
           type: string
-        voorraad_gelimiteerd:
+        gewicht_eenheid:
           type: string
-        vpfactor:
+        gewicht_netto:
           type: number
-        vpfactor_dtl:
-          type: string
-        wisselkoers_kostprijs:
+        gewicht_netto_basiseh:
           type: number
-        zelfde_hoofd_lev:
+        GN_taric:
           type: string
-        zoeknaam:
+        goederencode:
           type: string
+        goederencode_nummer:
+          type: integer
+        gratis:
+          type: string
+        acc_alcohol_perc_eh:
+          type: string
+        acc_art_flg:
+          type: string
+        acc_code_b:
+          type: string
+        acc_code_g:
+          type: string
+        acc_grpcd:
+          type: string
+        acc_plato_buitenland:
+          type: number
+        ADR_klasse:
+          type: string
+        afmeting_breedte:
+          type: number
+        afmeting_breedte_bruto:
+          type: number
+        afmeting_breedte_eh:
+          type: string
+        afmeting_dikte:
+          type: number
+        afmeting_dikte_bruto:
+          type: number
+        afmeting_dikte_eh:
+          type: string
+        afmeting_dst:
+          type: number
+        afmeting_dst_eh1:
+          type: string
+        afmeting_dst_eh2:
+          type: string
+        afmeting_eenheid:
+          type: string
+        afmeting_lengte:
+          type: number
+        afmeting_lengte_bruto:
+          type: number
+        artikelassortiment:
+          type: string
+        artikelomschrijving1:
+          type: string
+        artikelomschrijving2:
+          type: string
+        artikelprijsgroep_aankoop:
+          type: string
+        artikelprijsgroep_verkoop:
+          type: string
+        artikeltype:
+          type: string
+        art_labels:
+          type: integer
+        assemblage_kitting:
+          type: string
+        auto_generatie:
+          type: string
+        basiseenheid:
+          type: string
+        basismodel:
+          type: string
+        basisverpakking:
+          type: string
+        basisverpakking_coef:
+          type: number
+        binnenverpakking_coef:
+          type: number
+        blokkeringscode_offerte:
+          type: string
+        blokkeringscode_verkoop:
+          type: string
+        blokkeringsdatum_verkoop:
+          type: string
+        boekingsgroep_artikel:
+          type: string
+        boekingsgroep_verhuur:
+          type: string
+        btw_code:
+          type: string
+        calculatietype_aankooppr:
+          type: string
+        calculatietype_verkooppr:
+          type: string
+        class_id:
+          type: string
+        code_artikel:
+          type: string
+        code_artikel_model:
+          type: string
+        code_etiket:
+          type: string
+        code_matenbalk:
+          type: string
+        code_matenbalk2:
+          type: string
+        commissie_groep:
+          type: string
+        consumptie_coef:
+          type: number
+        consumptie_eenheid:
+          type: string
+        coupe_mask:
+          type: string
+        datum_eerste_verkoop:
+          type: string
+        datum_indienst:
+          type: string
+        datum_laatste_verkoop:
+          type: string
+        deletecode:
+          type: string
+        departement:
+          type: string
+        depreciation_duration:
+          type: integer
+        doorloop_type:
+          type: string
+        aangifteeenheid_intrastat:
+          type: string
+        aankoopeenheid:
+          type: string
+        aankoopprijs_coef:
+          type: number
+        aankoopprijs_eh:
+          type: string
+        aankoopverpakking:
+          type: string
+        aankoopverpakking_coef:
+          type: number
+        aankoop_coef:
+          type: number
+        aantal_etiketten:
+          type: integer
+        aantal_serienummers:
+          type: integer
+        acc_alcohol_perc:
+          type: number
     Company:
       properties:
         aankoop_in_beschikbaar:
@@ -1324,7 +1324,7 @@ components:
           type: string
         waarschuwing:
           type: string
-    objects:
+    Objects:
       properties:
         adresnummer:
           type: integer
@@ -1562,19 +1562,17 @@ components:
           type: integer
     PurchaseCosts:
       properties:
+        volgorde_berekening:
+          type: integer
         adresnummer_lev:
           type: integer
         automatisch_voorstellen:
           type: string
         bhverdeel:
           type: string
-        VatCode:
-          type: string
         code_kostprijsf_bestelk:
           type: string
         deletecode:
-          type: string
-        Firm:
           type: string
         gebruikerscode_kost:
           type: string
@@ -1604,10 +1602,6 @@ components:
           type: string
         omschrijving_E:
           type: string
-        DescFrench:
-          type: string
-        DescDutch:
-          type: string
         soort_kost:
           type: string
         systeemcode_kost:
@@ -1616,8 +1610,14 @@ components:
           type: integer
         type_kost:
           type: string
-        volgorde_berekening:
-          type: integer
+        DescDutch:
+          type: string
+        DescFrench:
+          type: string
+        Firm:
+          type: string
+        VatCode:
+          type: string
     PurchaseOrdercosts:
       properties:
         automatisch_voorstellen:
@@ -3032,8 +3032,6 @@ components:
           type: string
         factuuradresnummer:
           type: integer
-        CompanyId:
-          type: string
         forced_marge_akp:
           type: number
         geldigheidsduur:
@@ -3341,6 +3339,8 @@ components:
         wrkfld_log_2:
           type: string
         wrkfld_log_3:
+          type: string
+        CompanyId:
           type: string
     ReturnAnnouncementlines:
       properties:
@@ -3682,7 +3682,7 @@ components:
           type: integer
         verzenddocadres_ean_code:
           type: string
-    SalesInvoiceLines:
+    SalesInvoicelines:
       properties:
         aankoopprijs:
           type: number
@@ -5654,8 +5654,6 @@ components:
           type: string
         firma_bestelbonnummer:
           type: string
-        CompanyId:
-          type: string
         firma_code_aankoop:
           type: string
         firma_code_logistiek:
@@ -5806,8 +5804,6 @@ components:
           type: string
         leverdatum_vast:
           type: string
-        DeliveryDateProvided:
-          type: string
         leveringsdoc1_exempl:
           type: integer
         leveringsdoc2_exempl:
@@ -5888,8 +5884,6 @@ components:
           type: string
         naam_contactpersoon:
           type: string
-        OrderAddressPersonName:
-          type: string
         naam_contactpersoon_fac:
           type: string
         naam_contactpersoon_lev:
@@ -5920,8 +5914,6 @@ components:
           type: integer
         old_leverdatum_voorzien:
           type: string
-        OriginId:
-          type: string
         oorspr_transfer:
           type: string
         orderbevestiging_aantal:
@@ -5930,13 +5922,7 @@ components:
           type: string
         orderbevestiging_verkooppr:
           type: string
-        SalesOrderId:
-          type: integer
-        OrderStatus:
-          type: string
         order_kassa:
-          type: string
-        OrderReference:
           type: string
         order_type:
           type: string
@@ -6212,44 +6198,58 @@ components:
           type: string
         zone:
           type: string
+        CompanyId:
+          type: string
+        DeliveryDateProvided:
+          type: string
+        OrderAddressPersonName:
+          type: string
+        OrderReference:
+          type: string
+        OrderStatus:
+          type: string
+        OriginId:
+          type: string
+        SalesOrderId:
+          type: integer
 
 security:
   - basicAuth: []
 tags:
   - name: Addresses
+  - name: Articles
+  - name: ArticlesStock
+  - name: ArticlesPrice
+  - name: ArticlesTierPrice
   - name: SalesOrders
   - name: SalesOrderlines
-  - name: SalesOrdercosts
+  - name: SalesOrdersCalc
+  - name: SalesCosts
   - name: SalesOffers
   - name: SalesOfferlines
   - name: SalesInvoices
-  - name: SalesOrdersCalc
   - name: SalesInvoicelines
-  - name: SalesCosts
   - name: Customers
+  - name: CustomerOrderAddresses
   - name: PurchaseOrders
   - name: PurchaseOrderlines
-  - name: PurchaseCosts
-  - name: Articles
-  - name: ArticlesStock
-  - name: ArticlesPrices
-  - name: ArticlesTierPrices
+  - name: PurchaseCosts  
   - name: Contacts
-  - name: PrivatePersons
-  - name: Users
-  - name: ValidateUser
-  - name: Company
-  - name: Objects
+  - name: PrivatePersons   
+  - name: Company 
   - name: ReturnAnnouncements
   - name: ReturnAnnouncementlines
-  - name: RepresentativeCustomers
+  - name: RepresentativeCustomers 
   - name: PurchaseOrdercosts
   - name: PurchaseOrderlineAddress
   - name: PurchaseOrderlineLotnumbers
   - name: PurchaseOrderlineSuppliers
   - name: QuoteLines
-  - name: Quotes  
-  - name: CustomerOrderAddresses
+  - name: Quotes
+  - name: SalesOrdercosts
+  - name: Objects
+  - name: Users
+  - name: ValidateUser
   - name: Endpoints
   - name: Schemas
 paths:
@@ -6642,12 +6642,31 @@ paths:
     get:
       tags:
         - SalesOffers
+      summary: "Retrieve SalesOffers"
+      description: "- Retrieve all SalesOffers with a default limit of 60 records (headers)
+
+                    - Use the Id query parameter to get a full dataset of the record (header & detail). 
+      
+                    - Use limit & offset for paging.
+                   "
       parameters:
         - name: id
           in: query
           schema:
             type: string
-          example: 
+          description: Guid
+        - name: limit
+          in: query
+          schema:
+            type: string
+          example: 10
+          description: Pagesize
+        - name: offset
+          in: query
+          schema:
+            type: string
+          example: 1
+          description: StartIndex
         - name: company
           in: path
           schema:
@@ -6661,7 +6680,9 @@ paths:
             application/json: {}
     post:
       tags:
-        - SalesOffers 
+        - SalesOffers
+      summary: "Create SalesOffer"
+      description: "Create a SalesOffer by uploading a jsonbody." 
       requestBody:
         content:
           application/json:
@@ -6711,6 +6732,8 @@ paths:
     get:
       tags:
         - SalesOffers
+      summary: "Retrieve SalesOffer"
+      description: "Retrieve a SalesOffer by primary key." 
       parameters:
         - name: company
           in: path
@@ -6729,10 +6752,17 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /data/company/{company}/salesoffers/{id1}/SalesOfferlines:
+  /data/company/{company}/salesoffers/{id1}/salesofferlines:
     get:
       tags:
         - SalesOfferlines
+      summary: "Retrieve SalesOfferlines"
+      description: "- Retrieve all SalesOfferlines with a default limit of 60 records (headers)
+
+                    - Use the Id query parameter to get a full dataset of the record (header & detail). 
+      
+                    - Use limit & offset for paging.
+                   "
       parameters:
         - name: company
           in: path
@@ -6746,50 +6776,11 @@ paths:
             type: string
           required: true
           example: 33
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/SalesOfferlines:
-    get:
-      tags:
-        - SalesOfferlines
-      parameters:
         - name: id
           in: query
           schema:
             type: string
-          example: 30783030-3030-3030-3030-3030313038316338
-          required: true
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/SalesOffers/{id1}/SalesOfferlines:
-    get:
-      tags:
-        - SalesOfferlines
-      parameters:
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100
-        - name: id1
-          in: path
-          schema:
-            type: string
-          required: true
-          example: 100546
+          description: Guid
       responses:
         '200':
           description: Successful response
@@ -6799,6 +6790,8 @@ paths:
     get:
       tags:
         - SalesOfferlines
+      summary: "Retrieve SalesOfferlines"
+      description: "Retrieve a SalesOfferline by primary key."
       parameters:
         - name: company
           in: path
@@ -6827,12 +6820,31 @@ paths:
     get:
       tags:
         - SalesInvoices
+      summary: "Retrieve SalesInvoices"
+      description: "- Retrieve all SalesInvoices with a default limit of 60 records (headers)
+
+                    - Use the Id query parameter to get a full dataset of the record (header & detail). 
+      
+                    - Use limit & offset for paging.
+                   "
       parameters:
         - name: id
           in: query
           schema:
             type: string
-          example: 30783030-3030-3030-3030-3030333832653839
+          description: Guid
+        - name: limit
+          in: query
+          schema:
+            type: string
+          example: 10
+          description: Pagesize
+        - name: offset
+          in: query
+          schema:
+            type: string
+          example: 1
+          description: StartIndex
         - name: company
           in: path
           schema:
@@ -6941,12 +6953,31 @@ paths:
     get:
       tags:
         - Customers
+      summary: "Retrieve Customers"
+      description: "- Retrieve all Customers with a default limit of 60 records (headers)
+
+                    - Use the Id query parameter to get a full dataset of the record (header & detail). 
+      
+                    - Use limit & offset for paging.
+                   "
       parameters:
         - name: id
           in: query
           schema:
             type: string
-          example: 30783030-3030-3030-3030-3030373639363035
+          description: Guid
+        - name: limit
+          in: query
+          schema:
+            type: string
+          example: 10
+          description: Pagesize
+        - name: offset
+          in: query
+          schema:
+            type: string
+          example: 1
+          description: StartIndex
         - name: company
           in: path
           schema:
@@ -6961,7 +6992,7 @@ paths:
   /data/company/{company}/customerorderaddresses:
     post:
       tags:
-        - Customers 
+        - CustomerOrderAddresses 
       requestBody:
         content:
           application/json:
@@ -7016,7 +7047,31 @@ paths:
     get:
       tags:
         - Endpoints
+      summary: "Retrieve Endpoints"
+      description: "- Retrieve all Endpoints with a default limit of 60 records (headers)
+
+                    - Use the Id query parameter to get a full dataset of the record (header & detail). 
+      
+                    - Use limit & offset for paging.
+                   "
       parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+          description: Guid
+        - name: limit
+          in: query
+          schema:
+            type: string
+          example: 10
+          description: Pagesize
+        - name: offset
+          in: query
+          schema:
+            type: string
+          example: 1
+          description: StartIndex
         - name: company
           in: path
           schema:
@@ -7180,7 +7235,7 @@ paths:
   /data/company/{company}/articles/{id1}/price:
     get:
       tags:
-        - ArticlesPrices
+        - ArticlesPrice
       parameters:
         - name: company
           in: path
@@ -7202,7 +7257,7 @@ paths:
   /data/company/{company}/articlesprice:
     get:
       tags:
-        - ArticlesPrices
+        - ArticlesPrice
       parameters:
         - name: ArticleList
           in: query
@@ -7224,12 +7279,28 @@ paths:
     get:
       tags:
         - Articles
+      summary: "Retrieve Articles"
+      description: "- Retrieve all Articles with a default limit of 60 records (headers)
+
+                    - Use the Id query parameter to get a full dataset of the record (header & detail). 
+      
+                    - Use limit & offset for paging.
+                   "
       parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
         - name: limit
           in: query
           schema:
             type: integer
           example: '5'
+        - name: offset
+          in: query
+          schema:
+            type: integer
+          example: '0'
         - name: company
           in: path
           schema:
@@ -7245,6 +7316,9 @@ paths:
     get:
       tags:
         - Articles
+      summary: "Retrieve Articles"
+      description: "- Retrieve Article by primary key (headers)
+                   "
       parameters:
         - name: company
           in: path
@@ -7266,7 +7340,7 @@ paths:
   /data/company/{company}/articles/{id1}/tierprice/{id2}:
     get:
       tags:
-        - ArticlesTierPrices
+        - ArticlesTierPrice
       parameters:
         - name: company
           in: path
@@ -7453,32 +7527,21 @@ paths:
       tags:
         - Addresses
       summary: "Retrieve Addresses"
+      description: "- Retrieve Addresses by primary key (header).
+                   "
       parameters:
-        - name: id1
-          in: path
-          schema:
-            type: number
-          description: PrimaryKey
-          required: true
-          example: 1
-        - name: limit
-          in: query
-          schema:
-            type: string
-          example: 10
-          description: Pagesize
-        - name: offset
-          in: query
-          schema:
-            type: string
-          example: 1
-          description: StartIndex
         - name: company
           in: path
           schema:
             type: string
           required: true
           example: 100
+        - name: id1
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 1
       responses:
         '200':
           description: Successful response
@@ -7489,24 +7552,18 @@ paths:
       tags:
         - Addresses
       summary: "Retrieve Addresses"
+      description: "- Retrieve all SalesOrders with a default limit of 60 records (headers)
+
+                    - Use the Id query parameter to get a full dataset of the record (header & detail). 
+      
+                    - Use limit & offset for paging.
+                   "
       parameters:
-        - name: id
-          in: query
-          schema:
-            type: string
-          description: Guid
         - name: limit
           in: query
           schema:
-            type: string
-          example: 10
-          description: Pagesize
-        - name: offset
-          in: query
-          schema:
-            type: string
-          example: 1
-          description: StartIndex
+            type: integer
+          example: '5'
         - name: company
           in: path
           schema:
@@ -7521,7 +7578,8 @@ paths:
     post:
       tags:
         - Addresses
-      summary: "Create Addresses"
+      summary: "Create Address"
+      description: "Create a Address by uploading a jsonbody." 
       requestBody:
         content:
           application/json:
@@ -7602,7 +7660,8 @@ paths:
     put:
       tags:
         - Addresses
-      summary: "Update Addresses"
+      summary: "Update Address"
+      description: "Update a Address by uploading a jsonbody and providing the query id parameter (guid)." 
       requestBody:
         content:
           application/json:
@@ -7610,20 +7669,19 @@ paths:
               type: object
               example:
                 addresses:
-                  - addressname1: BART VANMECH
-                    addressname2: Dit is een test
+                  - addressname1: Infomat4789789
+                    addressname2: test5000
       parameters:
         - name: Id
           in: query
           schema:
             type: string
-          example: 30783030-3030-3030-3030-3030303033346335
+          example: 30783030-3030-3030-3030-3030303031323161
         - name: company
           in: path
           schema:
             type: string
           required: true
-          example: 100
       responses:
         '200':
           description: Successful response
@@ -7633,6 +7691,13 @@ paths:
     put:
       tags:
         - Users
+      summary: "Retrieve Users"
+      description: "- Retrieve all Users with a default limit of 60 records (headers)
+
+                    - Use the Id query parameter to get a full dataset of the record (header & detail). 
+      
+                    - Use limit & offset for paging.
+                   "
       requestBody:
         content:
           application/json:
@@ -7660,6 +7725,9 @@ paths:
     get:
       tags:
         - ValidateUser
+      summary: "Validate a User"
+      description: "- Validate a user.
+                   "
       parameters:
         - name: login
           in: query
@@ -7686,17 +7754,38 @@ paths:
     get:
       tags:
         - Company
+      summary: "Retrieve Companies"
+      description: "- Retrieve all Companies with a default limit of 60 records (headers)
+
+                    - Use the Id query parameter to get a full dataset of the record (header & detail). 
+      
+                    - Use limit & offset for paging.
+                   "
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '5'
+        - name: offset
+          in: query
+          schema:
+            type: integer
+          example: '0'
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
-  /data/company/{company}:
+  /data/company/{id1}:
     get:
       tags:
         - Company
+      summary: "Retrieve Company"
+      description: "- Retrieve a company by primary key.
+                   "
       parameters:
-        - name: company
+        - name: id1
           in: path
           schema:
             type: string
@@ -7760,18 +7849,35 @@ paths:
     get:
       tags:
         - ReturnAnnouncements
+      summary: "Retrieve ReturnAnnouncements"
+      description: "- Retrieve all ReturnAnnouncements with a default limit of 60 records (headers)
+
+                    - Use the Id query parameter to get a full dataset of the record (header & detail). 
+      
+                    - Use limit & offset for paging.
+                   "
       parameters:
         - name: id
           in: query
           schema:
             type: string
-          example: 30783030-3030-3030-3030-3030326164313030
+          description: "Guid"
         - name: company
           in: path
           schema:
             type: string
           required: true
           example: 100
+        - name: limit
+          in: query
+          schema:
+            type: number
+          example: 60
+        - name: offset
+          in: query
+          schema:
+            type: number
+          example: 0
       responses:
         '200':
           description: Successful response
@@ -7781,6 +7887,9 @@ paths:
     get:
       tags:
         - ReturnAnnouncements
+      summary: "Retrieve ReturnAnnouncement"
+      description: "- Retrieve ReturnAnnouncement by primary key (headers)
+                   "
       parameters:
         - name: company
           in: path
@@ -7849,10 +7958,11 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /data/company/{company}/Representative/{id1}/Customers:
+  /data/company/{company}/articlestierprice:
     get:
       tags:
-        - RepresentativeCustomers
+        - ArticlesTierPrice
+      summary: "Retrieve ArticlesTierPrice"
       parameters:
         - name: company
           in: path
@@ -7860,12 +7970,136 @@ paths:
             type: string
           required: true
           example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/company/{id1}:
+    get:
+      tags:
+        - Company
+      summary: "- Retrieve Company"
+      description: "- Retrieve Company by primary key. 
+"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
         - name: id1
           in: path
           schema:
             type: string
           required: true
-          example: 50
+          example: 1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/company:
+    get:
+      tags:
+        - Company
+      summary: "Retrieve Company"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/objects:
+    get:
+      tags:
+        - Objects
+      summary: "Retrieve Objects"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/privatepersons/{id1}:
+    get:
+      tags:
+        - PrivatePersons
+      summary: "- Retrieve PrivatePersons"
+      description: "- Retrieve PrivatePersons by primary key. 
+"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: id1
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/purchasecosts/{id1}:
+    get:
+      tags:
+        - PurchaseCosts
+      summary: "- Retrieve PurchaseCosts"
+      description: "- Retrieve PurchaseCosts by primary key. 
+"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: id1
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/purchaseordercosts/{id1}:
+    get:
+      tags:
+        - PurchaseOrdercosts
+      summary: "- Retrieve PurchaseOrdercosts"
+      description: "- Retrieve PurchaseOrdercosts by primary key. 
+"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: id1
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 1
       responses:
         '200':
           description: Successful response
@@ -7888,6 +8122,30 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /data/company/{company}/purchaseorderlineaddress/{id1}:
+    get:
+      tags:
+        - PurchaseOrderlineAddress
+      summary: "- Retrieve PurchaseOrderlineAddress"
+      description: "- Retrieve PurchaseOrderlineAddress by primary key. 
+"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: id1
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /data/company/{company}/purchaseorderlineaddress:
     get:
       tags:
@@ -7900,6 +8158,30 @@ paths:
             type: string
           required: true
           example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/purchaseorderlinelotnumbers/{id1}:
+    get:
+      tags:
+        - PurchaseOrderlineLotnumbers
+      summary: "- Retrieve PurchaseOrderlineLotnumbers"
+      description: "- Retrieve PurchaseOrderlineLotnumbers by primary key. 
+"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: id1
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 1
       responses:
         '200':
           description: Successful response
@@ -7922,6 +8204,71 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /data/company/{company}/purchaseorderlines/{id1}:
+    get:
+      tags:
+        - PurchaseOrderlines
+      summary: "- Retrieve PurchaseOrderlines"
+      description: "- Retrieve PurchaseOrderlines by primary key. 
+"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: id1
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/purchaseorderlines:
+    get:
+      tags:
+        - PurchaseOrderlines
+      summary: "Retrieve PurchaseOrderlines"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/purchaseorderlinesuppliers/{id1}:
+    get:
+      tags:
+        - PurchaseOrderlineSuppliers
+      summary: "- Retrieve PurchaseOrderlineSuppliers"
+      description: "- Retrieve PurchaseOrderlineSuppliers by primary key. 
+"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: id1
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /data/company/{company}/purchaseorderlinesuppliers:
     get:
       tags:
@@ -7934,6 +8281,30 @@ paths:
             type: string
           required: true
           example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/quotelines/{id1}:
+    get:
+      tags:
+        - QuoteLines
+      summary: "- Retrieve QuoteLines"
+      description: "- Retrieve QuoteLines by primary key. 
+"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: id1
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 1
       responses:
         '200':
           description: Successful response
@@ -7956,6 +8327,30 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /data/company/{company}/quotes/{id1}:
+    get:
+      tags:
+        - Quotes
+      summary: "- Retrieve Quotes"
+      description: "- Retrieve Quotes by primary key. 
+"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: id1
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /data/company/{company}/quotes:
     get:
       tags:
@@ -7968,6 +8363,81 @@ paths:
             type: string
           required: true
           example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/representativecustomers:
+    get:
+      tags:
+        - RepresentativeCustomers
+      summary: "Retrieve RepresentativeCustomers"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/returnannouncementlines:
+    get:
+      tags:
+        - ReturnAnnouncementlines
+      summary: "Retrieve ReturnAnnouncementlines"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/salesofferlines:
+    get:
+      tags:
+        - SalesOfferlines
+      summary: "Retrieve SalesOfferlines"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/salesordercosts/{id1}:
+    get:
+      tags:
+        - SalesOrdercosts
+      summary: "- Retrieve SalesOrdercosts"
+      description: "- Retrieve SalesOrdercosts by primary key. 
+"
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+        - name: id1
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 1
       responses:
         '200':
           description: Successful response
@@ -7994,7 +8464,7 @@ paths:
     get:
       tags:
         - SalesOrdersCalc
-      summary: "Retrieve salesorderscalc"
+      summary: "Retrieve SalesOrdersCalc"
       parameters:
         - name: company
           in: path
