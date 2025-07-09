@@ -7604,15 +7604,29 @@ paths:
           content:
             application/json: {}
   /data/company/{company}/users:
+    get:
+      tags:
+        - Users
+      summary: "Retrieve User"
+      description: "- Retrieve logged-in userdata.
+                   "
+      parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
     put:
       tags:
         - Users
-      summary: "Retrieve Users"
-      description: "- Retrieve all Users with a default limit of 60 records (headers)
-
-                    - Use the Id query parameter to get a full dataset of the record (header & detail). 
-      
-                    - Use limit & offset for paging.
+      summary: "Update User"
+      description: "- Update User
                    "
       requestBody:
         content:
