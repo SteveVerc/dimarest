@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "212ec910-0b2c-4507-a501-9d2e2f60962b",
-		"name": "Dimarest V1",
+		"_postman_id": "6e5e4e4e-c949-4085-8449-20150c3efc04",
+		"name": "Dimarest V1 (01/08/2025)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "32369788",
-		"_collection_link": "https://infomat-8511.postman.co/workspace/e12330cd-edd0-49a0-88c2-54464f6e2b0d/collection/32369788-212ec910-0b2c-4507-a501-9d2e2f60962b?action=share&source=collection_link&creator=32369788"
+		"_collection_link": "https://infomat-8511.postman.co/workspace/Infomat-Workspace~e12330cd-edd0-49a0-88c2-54464f6e2b0d/collection/32369788-6e5e4e4e-c949-4085-8449-20150c3efc04?action=share&source=collection_link&creator=32369788"
 	},
 	"item": [
 		{
@@ -17,12 +17,12 @@
 							"name": "GET",
 							"item": [
 								{
-									"name": "SalesOrders",
+									"name": "SalesOrders by pkey",
 									"request": {
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{api}}/data/company/{{company}}/salesorders?SalesOrderId=40018",
+											"raw": "{{api}}/data/company/{{company}}/salesorders/3516",
 											"host": [
 												"{{api}}"
 											],
@@ -30,13 +30,8 @@
 												"data",
 												"company",
 												"{{company}}",
-												"salesorders"
-											],
-											"query": [
-												{
-													"key": "SalesOrderId",
-													"value": "40018"
-												}
+												"salesorders",
+												"3516"
 											]
 										}
 									},
@@ -48,7 +43,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{api}}/data/company/{{company}}/salesorders?id=30783030-3030-3030-3030-3030336564383832",
+											"raw": "{{api}}/data/company/{{company}}/salesorders?id=30783030-3030-3030-3030-3030363763373130",
 											"host": [
 												"{{api}}"
 											],
@@ -61,8 +56,28 @@
 											"query": [
 												{
 													"key": "id",
-													"value": "30783030-3030-3030-3030-3030336564383832"
+													"value": "30783030-3030-3030-3030-3030363763373130"
 												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "SalesOrders",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api}}/data/company/{{company}}/salesorders",
+											"host": [
+												"{{api}}"
+											],
+											"path": [
+												"data",
+												"company",
+												"{{company}}",
+												"salesorders"
 											]
 										}
 									},
@@ -80,7 +95,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"SalesOrders\": [\r\n        {\r\n            \"CompanyId\": \"DI1\",\r\n            \"ExternalReference\": \"referentie\",\r\n            \"OrderDate\": \"2025-01-29\",\r\n            \"RequestDeliveryDate\": \"2025-01-30\",\r\n            \"IsCollectedByCustomer\": false,\r\n            \"TermsOfDeliveryId\": \"FRC\",\r\n            \"WarehouseId\": null,\r\n            \"TransportMethodId\": null,\r\n            \"CurrencyId\": \"EUR\",\r\n            \"DocumentOrigin\": \"ePO\",\r\n            \"Username\": \"dsuser\",\r\n            \"BackOrdersTreatment\": null\r\n        }\r\n    ],\r\n    \"SalesOrderAddresses\": [\r\n        {\r\n            \"CompanyId\": \"DI1\",\r\n            \"AddressTypeId\": \"BUYER\",\r\n            \"AddressId\": 93,\r\n            \"AddressLine1\": null,\r\n            \"AddressLine2\": null,\r\n            \"AddressLine3\": null,\r\n            \"AddressName1\": null,\r\n            \"AddressName2\": null,\r\n            \"AddressName3\": null,\r\n            \"CityName\": null,\r\n            \"CountryId\": null,\r\n            \"DepartmentId\": null,\r\n            \"DepartmentName\": null,\r\n            \"EanCode\": null,\r\n            \"EmailAddress\": null,\r\n            \"FaxNumber1\": null,\r\n            \"FirstName\": null,\r\n            \"LanguageId\": null,\r\n            \"LastName\": null,\r\n            \"MobilePhoneNumber\": null,\r\n            \"PersonId\": 2,\r\n            \"PhoneNumber1\": null,\r\n            \"PostCode\": null,\r\n            \"Languagecode\": \"NL\"\r\n        },\r\n        {\r\n            \"CompanyId\": \"DI1\",\r\n            \"AddressTypeId\": \"DELIVERY\",\r\n            \"AddressId\": 119,\r\n            \"AddressLine1\": null,\r\n            \"AddressLine2\": null,\r\n            \"AddressLine3\": null,\r\n            \"AddressName1\": null,\r\n            \"AddressName2\": null,\r\n            \"AddressName3\": null,\r\n            \"CityName\": null,\r\n            \"CountryId\": null,\r\n            \"DepartmentId\": null,\r\n            \"DepartmentName\": null,\r\n            \"EanCode\": null,\r\n            \"EmailAddress\": null,\r\n            \"FaxNumber1\": null,\r\n            \"FirstName\": null,\r\n            \"LanguageId\": null,\r\n            \"LastName\": null,\r\n            \"MobilePhoneNumber\": null,\r\n            \"PersonId\": 0,\r\n            \"PhoneNumber1\": null,\r\n            \"PostCode\": null,\r\n            \"Languagecode\": \"NL\"\r\n        },\r\n        {\r\n            \"CompanyId\": \"DI1\",\r\n            \"AddressTypeId\": \"INVOICE\",\r\n            \"AddressId\": 93,\r\n            \"AddressLine1\": null,\r\n            \"AddressLine2\": null,\r\n            \"AddressLine3\": null,\r\n            \"AddressName1\": null,\r\n            \"AddressName2\": null,\r\n            \"AddressName3\": null,\r\n            \"CityName\": null,\r\n            \"CountryId\": null,\r\n            \"DepartmentId\": null,\r\n            \"DepartmentName\": null,\r\n            \"EanCode\": null,\r\n            \"EmailAddress\": null,\r\n            \"FaxNumber1\": null,\r\n            \"FirstName\": null,\r\n            \"LanguageId\": null,\r\n            \"LastName\": null,\r\n            \"MobilePhoneNumber\": null,\r\n            \"PersonId\": 0,\r\n            \"PhoneNumber1\": null,\r\n            \"PostCode\": null,\r\n            \"Languagecode\": \"NL\"\r\n        },\r\n        {\r\n            \"CompanyId\": \"DI1\",\r\n            \"AddressTypeId\": \"WAREHOUSE\",\r\n            \"AddressId\": 0,\r\n            \"AddressLine1\": null,\r\n            \"AddressLine2\": null,\r\n            \"AddressLine3\": null,\r\n            \"AddressName1\": null,\r\n            \"AddressName2\": null,\r\n            \"AddressName3\": null,\r\n            \"CityName\": null,\r\n            \"CountryId\": null,\r\n            \"DepartmentId\": null,\r\n            \"DepartmentName\": null,\r\n            \"EanCode\": null,\r\n            \"EmailAddress\": null,\r\n            \"FaxNumber1\": null,\r\n            \"FirstName\": null,\r\n            \"LanguageId\": null,\r\n            \"LastName\": null,\r\n            \"MobilePhoneNumber\": null,\r\n            \"PersonId\": 0,\r\n            \"PhoneNumber1\": null,\r\n            \"PostCode\": null,\r\n            \"Languagecode\": null\r\n        }\r\n    ],\r\n    \"SalesOrderLines\": [\r\n        {\r\n            \"CompanyId\": \"DI1\",\r\n            \"OrderLineId\": 10,\r\n            \"ItemId\": \"merctruck\",\r\n            \"ItemDescription1\": \"omschrijving1 van merctruck\",\r\n            \"ItemDescription2\": \"omschrijving2 van merctruck\",\r\n            \"NumberOfRequiredUnits\": 2.0000,\r\n            \"SalesUnitId\": \"PCE\",\r\n            \"RequestedDeliveryDate\": \"2025-01-30\",\r\n            \"TariffPrice\": 0,\r\n            \"TariffPriceUnitId\": \"\",\r\n            \"NetSalesPrice\": 0.0000,\r\n            \"NetLineAmount\": 0,\r\n            \"LotNumber\": null\r\n        },\r\n        {\r\n            \"CompanyId\": \"DI1\",\r\n            \"OrderLineId\": 20,\r\n            \"ItemId\": \"74180030\",\r\n            \"ItemDescription1\": \"BOORKOP M.SLEUT. 115 16MM 5/8X16  72829\",\r\n            \"ItemDescription2\": \"ROHM 2009\",\r\n            \"NumberOfRequiredUnits\": 1.0000,\r\n            \"SalesUnitId\": \"PCE\",\r\n            \"RequestedDeliveryDate\": \"2025-01-30\",\r\n            \"TariffPrice\": 0,\r\n            \"TariffPriceUnitId\": \"\",\r\n            \"NetSalesPrice\": 0.0000,\r\n            \"NetLineAmount\": 0,\r\n            \"LotNumber\": null\r\n        }\r\n    ],\r\n    \"SalesOrderTexts\": [\r\n        {\r\n            \"CompanyId\": \"DI1\",\r\n            \"SequenceNumber\": 1,\r\n            \"TextDetail\": \"referentie2\"\r\n        }\r\n    ],\r\n    \"SalesOrderPayments\": []\r\n}",
+											"raw": "{\r\n    \"SalesOrders\": [{\r\n            \"CompanyId\": \"jvr\",\r\n            \"OrderId\": \"1\",\r\n            \"ExternalReference\": \"referentie\",\r\n            \"OrderDate\": \"2025-01-29\",\r\n            \"RequestDeliveryDate\": \"2025-01-30\",\r\n            \"IsCollectedByCustomer\": false,\r\n            \"TermsOfDeliveryId\": \"FRC\",\r\n            \"WarehouseId\": null,\r\n            \"TransportMethodId\": null,\r\n            \"CurrencyId\": \"EUR\",\r\n            \"DocumentOrigin\": \"ePO\",\r\n            \"Username\": \"dsuser\",\r\n            \"BackOrdersTreatment\": null,\r\n            \"InternalReference\": \"whoppa255\",\r\n            \"OrderAddressId\": 1090548,\r\n            \"SalesOrderAddresses\": [{\r\n                    \"AddressTypeId\": \"BUYER\",\r\n                    \"AddressLine1\": null,\r\n                    \"AddressLine2\": null,\r\n                    \"AddressLine3\": null,\r\n                    \"AddressName1\": null,\r\n                    \"AddressName2\": null,\r\n                    \"AddressName3\": null,\r\n                    \"CityName\": null,\r\n                    \"CountryId\": null,\r\n                    \"DepartmentId\": null,\r\n                    \"DepartmentName\": null,\r\n                    \"EanCode\": null,\r\n                    \"EmailAddress\": null,\r\n                    \"FaxNumber1\": null,\r\n                    \"FirstName\": null,\r\n                    \"LanguageId\": null,\r\n                    \"LastName\": null,\r\n                    \"MobilePhoneNumber\": null,\r\n                    \"PersonId\": 2,\r\n                    \"PhoneNumber1\": null,\r\n                    \"PostCode\": null,\r\n                    \"Languagecode\": \"NL\"\r\n                }, {\r\n                    \"AddressTypeId\": \"DELIVERY\",\r\n                    \"AddressId\": 1090548,\r\n                    \"AddressLine1\": null,\r\n                    \"AddressLine2\": null,\r\n                    \"AddressLine3\": null,\r\n                    \"AddressName1\": null,\r\n                    \"AddressName2\": null,\r\n                    \"AddressName3\": null,\r\n                    \"CityName\": null,\r\n                    \"CountryId\": null,\r\n                    \"DepartmentId\": null,\r\n                    \"DepartmentName\": null,\r\n                    \"EanCode\": null,\r\n                    \"EmailAddress\": null,\r\n                    \"FaxNumber1\": null,\r\n                    \"FirstName\": null,\r\n                    \"LanguageId\": null,\r\n                    \"LastName\": null,\r\n                    \"MobilePhoneNumber\": null,\r\n                    \"PersonId\": 0,\r\n                    \"PhoneNumber1\": null,\r\n                    \"PostCode\": null,\r\n                    \"Languagecode\": \"NL\"\r\n                }, {\r\n                    \"AddressTypeId\": \"INVOICE\",\r\n                    \"AddressId\": 1090548,\r\n                    \"AddressLine1\": null,\r\n                    \"AddressLine2\": null,\r\n                    \"AddressLine3\": null,\r\n                    \"AddressName1\": null,\r\n                    \"AddressName2\": null,\r\n                    \"AddressName3\": null,\r\n                    \"CityName\": null,\r\n                    \"CountryId\": null,\r\n                    \"DepartmentId\": null,\r\n                    \"DepartmentName\": null,\r\n                    \"EanCode\": null,\r\n                    \"EmailAddress\": null,\r\n                    \"FaxNumber1\": null,\r\n                    \"FirstName\": null,\r\n                    \"LanguageId\": null,\r\n                    \"LastName\": null,\r\n                    \"MobilePhoneNumber\": null,\r\n                    \"PersonId\": 0,\r\n                    \"PhoneNumber1\": null,\r\n                    \"PostCode\": null,\r\n                    \"Languagecode\": \"NL\"\r\n                }, {\r\n                    \"AddressTypeId\": \"WAREHOUSE\",\r\n                    \"AddressId\": 0,\r\n                    \"AddressLine1\": null,\r\n                    \"AddressLine2\": null,\r\n                    \"AddressLine3\": null,\r\n                    \"AddressName1\": null,\r\n                    \"AddressName2\": null,\r\n                    \"AddressName3\": null,\r\n                    \"CityName\": null,\r\n                    \"CountryId\": null,\r\n                    \"DepartmentId\": null,\r\n                    \"DepartmentName\": null,\r\n                    \"EanCode\": null,\r\n                    \"EmailAddress\": null,\r\n                    \"FaxNumber1\": null,\r\n                    \"FirstName\": null,\r\n                    \"LanguageId\": null,\r\n                    \"LastName\": null,\r\n                    \"MobilePhoneNumber\": null,\r\n                    \"PersonId\": 0,\r\n                    \"PhoneNumber1\": null,\r\n                    \"PostCode\": null,\r\n                    \"Languagecode\": null\r\n                }\r\n            ],\r\n            \"SalesOrderLines\": [{\r\n                    \"OrderLineId\": 10,\r\n                    \"ItemId\": \"autopart9\",\r\n                    \"ItemDescription1\": \"omschrijving1 van merctruck\",\r\n                    \"ItemDescription2\": \"omschrijving2 van merctruck\",\r\n                    \"numberofunitsinorder\": 2.0000,\r\n                    \"SalesUnitId\": \"PCE\",\r\n                    \"RequestedDeliveryDate\": \"2025-01-30\",\r\n                    \"TariffPrice\": \"100\",\r\n                    \"TariffPriceUnitId\": \"\",\r\n                    \"NetSalesPrice\": 0.0000,\r\n                    \"NetLineAmount\": 0,\r\n                    \"LotNumber\": null\r\n                }, {\r\n                    \"OrderLineId\": 20,\r\n                    \"ItemId\": \"autopart8\",\r\n                    \"ItemDescription1\": \"BOORKOP M.SLEUT. 115 16MM 5\\/8X16  72829\",\r\n                    \"ItemDescription2\": \"ROHM 2009\",\r\n                    \"numberofunitsinorder\": 1.0000,\r\n                    \"SalesUnitId\": \"PCE\",\r\n                    \"RequestedDeliveryDate\": \"2025-01-30\",\r\n                    \"TariffPrice\": 0,\r\n                    \"TariffPriceUnitId\": \"\",\r\n                    \"NetSalesPrice\": 0.0000,\r\n                    \"NetLineAmount\": 0,\r\n                    \"LotNumber\": null\r\n                }\r\n            ],\r\n            \"SalesOrderTexts\": [\r\n                {\r\n                    \"SequenceNumber\": 1,\r\n                    \"TextDetail\": \"referentie2 postman order\"\r\n                }\r\n            ],\r\n            \"SalesOrderPayments\": []\r\n        }\r\n    ]\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -105,50 +120,10 @@
 							]
 						},
 						{
-							"name": "PUT",
-							"item": [
-								{
-									"name": "SalesOrder",
-									"request": {
-										"method": "PUT",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"SalesOrders\": [\r\n        {\r\n            \"CompanyId\": \"{{company}}\",\r\n            \"ProvidedDeliveryDate\": \"2010-03-15\",\r\n            \"OrderReference\": \"\",\r\n            \"OrderAddressPersonName\": \"\",\r\n            \"OriginId\": \"\\n\\n\",\r\n            \"InternalDepartmentId\": \"\",\r\n            \"OrderAddressName1\": \"BUHRMANN UBENS\",\r\n            \"OrderAddressName2\": \"\",\r\n            \"OrderAddressName3\": \"\",\r\n            \"OrderAddressLine1\": \"POSTBUS 33\",\r\n            \"OrderAddressLine2\": \"\",\r\n            \"OrderAddressLine3\": \"\",\r\n            \"OrderAddressPostCode\": \"7200 AA\",\r\n            \"OrderAddressCityName\": \"ZUTPHEN\",\r\n            \"OrderAddressCountryId\": \"\\n\\nNederland\",\r\n            \"OrderAddressTelephoneNumber1\": \"\",\r\n            \"OrderAddressId\": 10,\r\n            \"DeliveryAddressName1\": \"BUHRMANN UBENS\",\r\n            \"DeliveryAddressName2\": \"\",\r\n            \"DeliveryAddressName3\": \"\",\r\n            \"DeliveryAddressLine1\": \"POSTBUS 33\",\r\n            \"DeliveryAddressLine2\": \"\",\r\n            \"DeliveryAddressLine3\": \"\",\r\n            \"DeliveryAddressPostCode\": \"7200 AA\",\r\n            \"DeliveryAddressCityName\": \"ZUTPHEN\",\r\n            \"DeliveryAddressCountryId\": \"\\n\\nNederland\",\r\n            \"DeliveryAddressTelephoneNumber1\": \"\",\r\n            \"DeliveryAddressId\": 10,\r\n            \"InvoiceAddressName1\": \"BUHRMANN UBENS\",\r\n            \"InvoiceAddressName2\": \"\",\r\n            \"InvoiceAddressName3\": \"\",\r\n            \"InvoiceAddressLine1\": \"POSTBUS 33\",\r\n            \"InvoiceAddressLine2\": \"\",\r\n            \"InvoiceAddressLine3\": \"\",\r\n            \"InvoiceAddressPostCode\": \"7200 AA\",\r\n            \"InvoiceAddressCityName\": \"ZUTPHEN\",\r\n            \"InvoiceAddressCountryId\": \"\\n\\nNederland\",\r\n            \"VatNumber\": \"NL 812517611B01\",\r\n            \"InvoiceAddressTelephoneNumber1\": \"\",\r\n            \"InvoiceAddressId\": 10,\r\n            \"TotalCostsAmount\": 0.000,\r\n            \"ProjectDiscountPercentage\": 0.0,\r\n            \"ProjectDiscountAmount\": 0.0,\r\n            \"RequestedDeliveryDate\": \"2025-03-11\",\r\n            \"TermsOfDeliveryId\": \"EXW\",\r\n            \"promocode\": \"\"\r\n        }\r\n    ]\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{api}}/data/company/{{company}}/salesorders?id=30783030-3030-3030-3030-3030336564383832",
-											"host": [
-												"{{api}}"
-											],
-											"path": [
-												"data",
-												"company",
-												"{{company}}",
-												"salesorders"
-											],
-											"query": [
-												{
-													"key": "id",
-													"value": "30783030-3030-3030-3030-3030336564383832"
-												}
-											]
-										}
-									},
-									"response": []
-								}
-							]
-						},
-						{
 							"name": "Schema",
 							"item": [
 								{
-									"name": "SalesOrders",
+									"name": "SalesOrders (meta)",
 									"request": {
 										"method": "GET",
 										"header": [],
@@ -212,6 +187,29 @@
 													"key": "VatSystemId",
 													"value": "21"
 												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Schema",
+							"item": [
+								{
+									"name": "SalesCosts (meta)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api}}/meta/salescosts",
+											"host": [
+												"{{api}}"
+											],
+											"path": [
+												"meta",
+												"salescosts"
 											]
 										}
 									},
@@ -330,6 +328,29 @@
 									"response": []
 								}
 							]
+						},
+						{
+							"name": "Schema",
+							"item": [
+								{
+									"name": "SalesOffers (meta)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api}}/meta/salesoffers",
+											"host": [
+												"{{api}}"
+											],
+											"path": [
+												"meta",
+												"salesoffers"
+											]
+										}
+									},
+									"response": []
+								}
+							]
 						}
 					]
 				},
@@ -382,6 +403,29 @@
 												"SalesOffers",
 												"10546",
 												"SalesOfferLines"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Schema",
+							"item": [
+								{
+									"name": "SalesOfferLines (meta)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api}}/meta/salesofferlines",
+											"host": [
+												"{{api}}"
+											],
+											"path": [
+												"meta",
+												"salesofferlines"
 											]
 										}
 									},
@@ -471,6 +515,29 @@
 									"response": []
 								}
 							]
+						},
+						{
+							"name": "Schema",
+							"item": [
+								{
+									"name": "SalesInvoices (meta)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api}}/meta/salesinvoices",
+											"host": [
+												"{{api}}"
+											],
+											"path": [
+												"meta",
+												"salesinvoices"
+											]
+										}
+									},
+									"response": []
+								}
+							]
 						}
 					]
 				},
@@ -504,7 +571,7 @@
 									"response": []
 								},
 								{
-									"name": "SalesInvoicelines Id",
+									"name": "SalesInvoicelines by Id",
 									"request": {
 										"method": "GET",
 										"header": [],
@@ -530,11 +597,34 @@
 									"response": []
 								}
 							]
+						},
+						{
+							"name": "Schema",
+							"item": [
+								{
+									"name": "SalesInvoicelines (meta)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api}}/meta/salesinvoicelines",
+											"host": [
+												"{{api}}"
+											],
+											"path": [
+												"meta",
+												"salesinvoicelines"
+											]
+										}
+									},
+									"response": []
+								}
+							]
 						}
 					]
 				},
 				{
-					"name": "SalesOrderlines",
+					"name": "SalesOrderLines",
 					"item": [
 						{
 							"name": "GET",
@@ -555,25 +645,6 @@
 												"{{company}}",
 												"salesorders",
 												"38739"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "SalesOrderlines (meta)",
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{api}}/meta/salesorderlines/",
-											"host": [
-												"{{api}}"
-											],
-											"path": [
-												"meta",
-												"salesorderlines",
-												""
 											]
 										}
 									},
@@ -632,6 +703,230 @@
 									"response": []
 								}
 							]
+						},
+						{
+							"name": "Schema",
+							"item": [
+								{
+									"name": "SalesOrderlines (meta)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api}}/meta/salesorderlines/",
+											"host": [
+												"{{api}}"
+											],
+											"path": [
+												"meta",
+												"salesorderlines",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "SalesOrderTexts",
+					"item": [
+						{
+							"name": "GET",
+							"item": [
+								{
+									"name": "SalesOrderTexts by pkey",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api}}/data/company/{{company}}/salesordertexts/38739",
+											"host": [
+												"{{api}}"
+											],
+											"path": [
+												"data",
+												"company",
+												"{{company}}",
+												"salesordertexts",
+												"38739"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "SalesOrderTexts by Id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api}}/data/company/{{company}}/salesordertexts?id=30783030-3030-3030-3030-3030336564383832",
+											"host": [
+												"{{api}}"
+											],
+											"path": [
+												"data",
+												"company",
+												"{{company}}",
+												"salesordertexts"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "30783030-3030-3030-3030-3030336564383832"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "SalesOrderTexts",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api}}/data/company/{{company}}/salesordertexts",
+											"host": [
+												"{{api}}"
+											],
+											"path": [
+												"data",
+												"company",
+												"{{company}}",
+												"salesordertexts"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Schema",
+							"item": [
+								{
+									"name": "SalesOrderTexts (meta)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api}}/meta/salesordertexts",
+											"host": [
+												"{{api}}"
+											],
+											"path": [
+												"meta",
+												"salesordertexts"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "SalesOrderAddresses",
+					"item": [
+						{
+							"name": "GET",
+							"item": [
+								{
+									"name": "SalesOrderAddresses by pkey",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api}}/data/company/{{company}}/salesorderaddresses/38739",
+											"host": [
+												"{{api}}"
+											],
+											"path": [
+												"data",
+												"company",
+												"{{company}}",
+												"salesorderaddresses",
+												"38739"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "SalesOrderAddresses by Id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api}}/data/company/{{company}}/salesorderaddresses?id=30783030-3030-3030-3030-3030336564383832",
+											"host": [
+												"{{api}}"
+											],
+											"path": [
+												"data",
+												"company",
+												"{{company}}",
+												"salesorderaddresses"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "30783030-3030-3030-3030-3030336564383832"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "SalesOrderAddresses",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api}}/data/company/{{company}}/salesorderaddresses",
+											"host": [
+												"{{api}}"
+											],
+											"path": [
+												"data",
+												"company",
+												"{{company}}",
+												"salesorderaddresses"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Schema",
+							"item": [
+								{
+									"name": "SalesOrderAddresses (meta)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api}}/meta/salesorderaddresses",
+											"host": [
+												"{{api}}"
+											],
+											"path": [
+												"meta",
+												"salesorderaddresses"
+											]
+										}
+									},
+									"response": []
+								}
+							]
 						}
 					]
 				}
@@ -670,12 +965,33 @@
 							"response": []
 						},
 						{
+							"name": "Customers by pk",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/data/company/{{company}}/customers/1",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"data",
+										"company",
+										"{{company}}",
+										"customers",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Customers by Id",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{api}}/data/company/{{company}}/customers?id=30783030-3030-3030-3030-3030373639363035",
+									"raw": "{{api}}/data/company/{{company}}/customers?id=30783030-3030-3030-3030-3031643338383233",
 									"host": [
 										"{{api}}"
 									],
@@ -688,7 +1004,7 @@
 									"query": [
 										{
 											"key": "id",
-											"value": "30783030-3030-3030-3030-3030373639363035"
+											"value": "30783030-3030-3030-3030-3031643338383233"
 										}
 									]
 								}
@@ -701,7 +1017,7 @@
 					"name": "POST",
 					"item": [
 						{
-							"name": "CustomerOrderAddresses",
+							"name": "Customers",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -715,35 +1031,324 @@
 									}
 								},
 								"url": {
-									"raw": "{{api}}/data/company/001/customerorderaddresses",
+									"raw": "{{api}}/data/company/{{company}}/customers",
 									"host": [
 										"{{api}}"
 									],
 									"path": [
 										"data",
 										"company",
-										"001",
-										"customerorderaddresses"
+										"{{company}}",
+										"customers"
 									]
 								}
 							},
 							"response": []
-						},
+						}
+					]
+				},
+				{
+					"name": "Schema",
+					"item": [
 						{
-							"name": "CustomerOrderAddresses (meta)",
+							"name": "Customers (meta)",
 							"request": {
-								"method": "POST",
+								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{api}}/meta/company/001/customerorderaddresses",
+									"raw": "{{api}}/meta/company/{{company}}/customers",
 									"host": [
 										"{{api}}"
 									],
 									"path": [
 										"meta",
 										"company",
-										"001",
-										"customerorderaddresses"
+										"{{company}}",
+										"customers"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "DeliveryAddresses",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "DeliveryAddresses",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/data/company/{{company}}/DeliveryAddresses?limit=5",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"data",
+										"company",
+										"{{company}}",
+										"DeliveryAddresses"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeliveryAddresses by pk",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/data/company/{{company}}/DeliveryAddresses/1",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"data",
+										"company",
+										"{{company}}",
+										"DeliveryAddresses",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeliveryAddresses by Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/data/company/{{company}}/DeliveryAddresses?id=30783030-3030-3030-3030-3031643338383233",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"data",
+										"company",
+										"{{company}}",
+										"DeliveryAddresses"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "30783030-3030-3030-3030-3031643338383233"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "DeliveryAddresses",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"AddressName\": \"test\",\r\n    \"FirstName\": \"Steve\",\r\n    \"LastName\": \"Vercaemere\",\r\n    \"AddressLine1\": \"Jan Straat 5\",\r\n    \"CityName\": \"Wevelgem\",\r\n    \"PostCode\": \"8560\",\r\n    \"CountryId\": \"BE\",\r\n    \"LanguageCode\": \"nl\",\r\n    \"Telephone\": \"+3256123640\",\r\n    \"Email\": \"steve.vercaemere@kerridgecs.com\",\r\n    \"Website\": \"http://info.kerridgecs.com\",\r\n    \"Login\": \"test\",\r\n    \"Password\": \"test\",\r\n    \"vertegenwoordiger\": \"jan\",\r\n    \"VatNumber\": \"465465415465\",\r\n    \"BusinessNumber\": \"46556465\",\r\n    \"VatSystemId\": \"1\",\r\n    \"Group1Id\": \"\",\r\n    \"NumberOfEmployees\": \"5\",\r\n    \"prosp_sector\": \"\",\r\n    \"jur_vorm\": \"BV\",\r\n    \"EmailInternal\": \"steve.vercaemere@kerridgecs.com\",\r\n    \"departement\": \"\",\r\n    \"BirthDate\": \"15/01/1979\",\r\n    \"FunctionId\": \"\",\r\n    \"pers_fax\": \"\",\r\n    \"pers_mobile\": \"\",\r\n    \"pers_telefoon\": \"\",\r\n    \"pers_volgnummer\": 0,\r\n    \"Newsletter\": true,\r\n    \"Blocked\": false,\r\n    \"OrderAddressId\": 439\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api}}/data/company/{{company}}/deliveryaddresses",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"data",
+										"company",
+										"{{company}}",
+										"deliveryaddresses"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Schema",
+					"item": [
+						{
+							"name": "DeliveryAddresses (meta)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/meta/company/{{company}}/deliveryaddresses",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"meta",
+										"company",
+										"{{company}}",
+										"deliveryaddresses"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "InvoiceAddresses",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "InvoiceAddresses",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/data/company/{{company}}/InvoiceAddresses?limit=5",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"data",
+										"company",
+										"{{company}}",
+										"InvoiceAddresses"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "InvoiceAddresses by pk",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/data/company/{{company}}/InvoiceAddresses/1",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"data",
+										"company",
+										"{{company}}",
+										"InvoiceAddresses",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "InvoiceAddresses by Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/data/company/{{company}}/InvoiceAddresses?id=30783030-3030-3030-3030-3031643338383233",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"data",
+										"company",
+										"{{company}}",
+										"InvoiceAddresses"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "30783030-3030-3030-3030-3031643338383233"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "InvoiceAddresses",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"AddressName\": \"test\",\r\n    \"FirstName\": \"Steve\",\r\n    \"LastName\": \"Vercaemere\",\r\n    \"AddressLine1\": \"Jan Straat 5\",\r\n    \"CityName\": \"Wevelgem\",\r\n    \"PostCode\": \"8560\",\r\n    \"CountryId\": \"BE\",\r\n    \"LanguageCode\": \"nl\",\r\n    \"Telephone\": \"+3256123640\",\r\n    \"Email\": \"steve.vercaemere@kerridgecs.com\",\r\n    \"Website\": \"http://info.kerridgecs.com\",\r\n    \"Login\": \"test\",\r\n    \"Password\": \"test\",\r\n    \"vertegenwoordiger\": \"jan\",\r\n    \"VatNumber\": \"465465415465\",\r\n    \"BusinessNumber\": \"46556465\",\r\n    \"VatSystemId\": \"1\",\r\n    \"Group1Id\": \"\",\r\n    \"NumberOfEmployees\": \"5\",\r\n    \"prosp_sector\": \"\",\r\n    \"jur_vorm\": \"BV\",\r\n    \"EmailInternal\": \"steve.vercaemere@kerridgecs.com\",\r\n    \"departement\": \"\",\r\n    \"BirthDate\": \"15/01/1979\",\r\n    \"FunctionId\": \"\",\r\n    \"pers_fax\": \"\",\r\n    \"pers_mobile\": \"\",\r\n    \"pers_telefoon\": \"\",\r\n    \"pers_volgnummer\": 0,\r\n    \"Newsletter\": true,\r\n    \"Blocked\": false,\r\n    \"OrderAddressId\": 439\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api}}/data/company/{{company}}/InvoiceAddresses",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"data",
+										"company",
+										"{{company}}",
+										"InvoiceAddresses"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Schema",
+					"item": [
+						{
+							"name": "InvoiceAddresses (meta)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api}}/meta/company/{{company}}/InvoiceAddresses",
+									"host": [
+										"{{api}}"
+									],
+									"path": [
+										"meta",
+										"company",
+										"{{company}}",
+										"InvoiceAddresses"
 									]
 								}
 							},
@@ -816,20 +1421,20 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{api}}/data/company/001/purchaseorders?Id=30783030-3030-3030-3030-3030323837353834",
+									"raw": "{{api}}/data/company/{{company}}/purchaseorders?Id=30783030-3030-3030-3030-3030306530643062",
 									"host": [
 										"{{api}}"
 									],
 									"path": [
 										"data",
 										"company",
-										"001",
+										"{{company}}",
 										"purchaseorders"
 									],
 									"query": [
 										{
 											"key": "Id",
-											"value": "30783030-3030-3030-3030-3030323837353834"
+											"value": "30783030-3030-3030-3030-3030306530643062"
 										}
 									]
 								}
@@ -842,7 +1447,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{api}}/data/company/{{company}}/purchaseorders/3/purchaseorderlines",
+									"raw": "{{api}}/data/company/{{company}}/purchaseorders/17673/purchaseorderlines",
 									"host": [
 										"{{api}}"
 									],
@@ -851,7 +1456,7 @@
 										"company",
 										"{{company}}",
 										"purchaseorders",
-										"3",
+										"17673",
 										"purchaseorderlines"
 									]
 								}
@@ -1194,14 +1799,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{api}}/data/company/01/articles?limit=5",
+									"raw": "{{api}}/data/company/{{company}}/articles?limit=5",
 									"host": [
 										"{{api}}"
 									],
 									"path": [
 										"data",
 										"company",
-										"01",
+										"{{company}}",
 										"articles"
 									],
 									"query": [
@@ -1475,26 +2080,6 @@
 					"name": "GET",
 					"item": [
 						{
-							"name": "Adresses",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{api}}/data/company/{{company}}/addresses",
-									"host": [
-										"{{api}}"
-									],
-									"path": [
-										"data",
-										"company",
-										"{{company}}",
-										"addresses"
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "Addresses",
 							"request": {
 								"method": "GET",
@@ -1625,7 +2210,7 @@
 			"name": "Users",
 			"item": [
 				{
-					"name": "User",
+					"name": "Data - User",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -1638,6 +2223,26 @@
 								}
 							}
 						},
+						"url": {
+							"raw": "{{api}}/data/company/{{company}}/users",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"data",
+								"company",
+								"{{company}}",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Data - User Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
 						"url": {
 							"raw": "{{api}}/data/company/{{company}}/users",
 							"host": [
@@ -1689,25 +2294,31 @@
 			"name": "Company",
 			"item": [
 				{
-					"name": "Company",
+					"name": "Data Company",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{api}}/data/company",
+							"raw": "{{api}}/data/company?limit=2",
 							"host": [
 								"{{api}}"
 							],
 							"path": [
 								"data",
 								"company"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								}
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Company by primekey",
+					"name": "Data Company Key",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -1731,87 +2342,72 @@
 			"name": "Objects",
 			"item": [
 				{
-					"name": "GET",
-					"item": [
-						{
-							"name": "Object",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{api}}/data/company/{{company}}/objects/SALESORDER/69853",
-									"host": [
-										"{{api}}"
-									],
-									"path": [
-										"data",
-										"company",
-										"{{company}}",
-										"objects",
-										"SALESORDER",
-										"69853"
-									]
+					"name": "Object Object Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/object/company/{{company}}/objects?id=30783030-3030-3030-3030-3030383337366331",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"object",
+								"company",
+								"{{company}}",
+								"objects"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "30783030-3030-3030-3030-3030383337366331"
 								}
-							},
-							"response": []
+							]
 						}
-					]
+					},
+					"response": []
 				},
 				{
-					"name": "Schema",
-					"item": [
-						{
-							"name": "Meta Object",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{api}}/meta/company/01/objects",
-									"host": [
-										"{{api}}"
-									],
-									"path": [
-										"meta",
-										"company",
-										"01",
-										"objects"
-									]
-								}
-							},
-							"response": []
+					"name": "Data Object",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/data/company/{{company}}/objects/SALESORDER/69853",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"data",
+								"company",
+								"{{company}}",
+								"objects",
+								"SALESORDER",
+								"69853"
+							]
 						}
-					]
+					},
+					"response": []
 				},
 				{
-					"name": "Object",
-					"item": [
-						{
-							"name": "Object  by Id",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{api}}/object/company/{{company}}/objects?id=30783030-3030-3030-3030-3030383337366331",
-									"host": [
-										"{{api}}"
-									],
-									"path": [
-										"object",
-										"company",
-										"{{company}}",
-										"objects"
-									],
-									"query": [
-										{
-											"key": "id",
-											"value": "30783030-3030-3030-3030-3030383337366331"
-										}
-									]
-								}
-							},
-							"response": []
+					"name": "Meta Object",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/meta/company/01/objects",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"meta",
+								"company",
+								"01",
+								"objects"
+							]
 						}
-					]
+					},
+					"response": []
 				}
 			]
 		},
@@ -1826,7 +2422,7 @@
 					"name": "GET",
 					"item": [
 						{
-							"name": "ReturnAnnouncements",
+							"name": "Data - ReturnAnnouncements (firm 100 limit 5)",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -1852,19 +2448,19 @@
 							"response": []
 						},
 						{
-							"name": "ReturnAnnouncements by primekey",
+							"name": "Data - ReturnAnnouncements (firm 100 - 13)",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{api}}/data/company/{{company}}/returnannouncements/13",
+									"raw": "{{api}}/data/company/100/returnannouncements/13",
 									"host": [
 										"{{api}}"
 									],
 									"path": [
 										"data",
 										"company",
-										"{{company}}",
+										"100",
 										"returnannouncements",
 										"13"
 									]
@@ -1873,19 +2469,19 @@
 							"response": []
 						},
 						{
-							"name": "ReturnAnnouncements by Id",
+							"name": "Data - ReturnAnnouncements (Id)",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{api}}/data/company/{{company}}/returnannouncements?id=30783030-3030-3030-3030-3030326164313030",
+									"raw": "{{api}}/data/company/100/returnannouncements?id=30783030-3030-3030-3030-3030326164313030",
 									"host": [
 										"{{api}}"
 									],
 									"path": [
 										"data",
 										"company",
-										"{{company}}",
+										"100",
 										"returnannouncements"
 									],
 									"query": [
@@ -1905,10 +2501,10 @@
 					"item": []
 				},
 				{
-					"name": "Schema",
+					"name": "META",
 					"item": [
 						{
-							"name": "ReturnAnnouncements",
+							"name": "Meta - ReturnAnnouncements",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -1945,14 +2541,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{api}}/data/company/100/returnannouncements/18",
+									"raw": "{{api}}/data/company/{{company}}/returnannouncements/18",
 									"host": [
 										"{{api}}"
 									],
 									"path": [
 										"data",
 										"company",
-										"100",
+										"{{company}}",
 										"returnannouncements",
 										"18"
 									]
@@ -1970,7 +2566,7 @@
 					"name": "Schema",
 					"item": [
 						{
-							"name": "ReturnAnnouncementlines",
+							"name": "Meta - ReturnAnnouncementlines",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -1998,7 +2594,7 @@
 					"name": "GET",
 					"item": [
 						{
-							"name": "RepresentativeCustomer",
+							"name": "Data - RepresentativeCustomer (comp 100)",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -2026,16 +2622,21 @@
 		}
 	],
 	"auth": {
-		"type": "basic",
-		"basic": [
+		"type": "apikey",
+		"apikey": [
 			{
-				"key": "password",
-				"value": "kp",
+				"key": "in",
+				"value": "header",
 				"type": "string"
 			},
 			{
-				"key": "username",
-				"value": "gst",
+				"key": "key",
+				"value": "Ocp-Apim-Subscription-Key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "6756f9ac912449e9999e2d091e9549a8",
 				"type": "string"
 			}
 		]
@@ -2065,12 +2666,18 @@
 	"variable": [
 		{
 			"key": "api",
-			"value": "http://beapsprogres01.kerridgecs.local:8070/web/api/v1",
-			"type": "string"
+			"value": "http://beapsprogres01.kerridgecs.local:9095/web/api/v1",
+			"type": "string",
+			"disabled": true
 		},
 		{
 			"key": "company",
 			"value": "100",
+			"type": "string"
+		},
+		{
+			"key": "api",
+			"value": "https://infom-apim-dev-bnlx.azure-api.net/infomat/v1",
 			"type": "string"
 		}
 	]
