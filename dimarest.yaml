@@ -3,10 +3,7 @@ info:
   title: Dimarest V1
   version: 1.0.0
 servers:
-  - url: http://beapsprogres01.kerridgecs.local:9095/web/api/v1
-externalDocs:
-  description: Documentation
-  url: https://kcsjiracloud.atlassian.net/wiki/spaces/DYM/pages/26150045019/DimaRest+V1
+  - url: http://beapstraindb01.kerridgecs.local:9095/web/api/v1
 components:
   securitySchemes:
     basicAuth:
