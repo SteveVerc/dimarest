@@ -3,7 +3,7 @@ info:
   title: Dimarest V1
   version: 1.0.0
 servers:
-  - url: http://beapstrain01.kerridgecs.local:9095/web/api/v1
+  - url: http://beapstraindb01.kerridgecs.local:9095/web/api/v1
 components:
   securitySchemes:
     basicAuth:
