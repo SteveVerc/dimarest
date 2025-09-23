@@ -942,11 +942,6 @@ paths:
       tags:
         - ArticlesSpecifications
       parameters:
-        - name: 2ba
-          in: query
-          schema:
-            type: boolean
-          example: 'true'
         - name: company
           in: path
           schema:
