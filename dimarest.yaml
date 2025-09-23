@@ -3,14 +3,17 @@ info:
   title: Dimarest V1
   version: 1.0.0
 servers:
-  - url: https://helpdesk.infomat.eu/frigeapi/web/api/v1
+  - url: https://infom-apim-dev-bnlx.azure-api.net/frige/v1
 components:
   securitySchemes:
-    basicAuth:
-      type: http
-      scheme: basic
+    ApiKeyAuth: # arbitrary name for the security scheme
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: Ocp-Apim-Subscription-Key # name of the header, query parameter or cookie
+
+# 2) Apply the API key globally to all operations
 security:
-  - basicAuth: []
+  - ApiKeyAuth: [] # use the same name as under securitySchemes
 tags:
   - name: Addresses
   - name: Articles
