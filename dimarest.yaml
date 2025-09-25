@@ -3,15 +3,15 @@ info:
   title: Dimarest V1
   version: 1.0.0
 servers:
-  - url: https://infom-apim-dev-bnlx.azure-api.net/frige/v1
+  - url: http://beapstraindb01.kerridgecs.local:9095/web/api/v1
+    description: Proplanet Test
 components:
   securitySchemes:
-    ApiKeyAuth: # arbitrary name for the security scheme
-      type: apiKey
-      in: header # can be "header", "query" or "cookie"
-      name: Ocp-Apim-Subscription-Key # name of the header, query parameter or cookie
+    basicAuth:
+      type: http
+      scheme: basic
 security:
-  - ApiKeyAuth: [] # use the same name as under securitySchemes
+  - basicAuth: []
 tags:
   - name: Addresses
   - name: Articles
