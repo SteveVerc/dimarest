@@ -374,7 +374,8 @@ paths:
           in: query
           schema:
             type: string
-          example: 30783030-3030-3030-3030-3063316563343438
+          example: 30783030-3030-3030-3030-3037343139626334
+          required: true
         - name: company
           in: path
           schema:
