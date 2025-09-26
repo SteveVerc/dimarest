@@ -1084,12 +1084,6 @@ paths:
           in: query
           schema:
             type: boolean
-          example: 'true'
-        - name: ArticleList
-          in: query
-          schema:
-            type: string
-          example: 112210192,112210193
         - name: company
           in: path
           schema:
@@ -1129,8 +1123,9 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /data/company/{company}/articlesstock:
+  /data/company/{company}/articlesstock/{id1}:
     get:
+      description: Stock by articlelist 
       tags:
         - ArticlesStock
       parameters:
@@ -1138,9 +1133,9 @@ paths:
           in: query
           schema:
             type: boolean
-          example: 'true'
-        - name: ArticleList
-          in: query
+        - name: id1
+          in: path
+          required: true
           schema:
             type: string
           example: 112210192,112210193
