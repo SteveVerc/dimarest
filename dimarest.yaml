@@ -98,14 +98,12 @@ paths:
           in: query
           schema:
             type: string
-          example: 10
           description: Pagesize
         - name: offset
           in: query
           schema:
             type: string
-          example: 1
-          description: StartIndex
+          description: Start from index
         - name: company
           in: path
           schema:
@@ -582,14 +580,12 @@ paths:
           in: query
           schema:
             type: string
-          example: 10
           description: Pagesize
         - name: offset
           in: query
           schema:
             type: string
-          example: 1
-          description: StartIndex
+          description: Start from index
         - name: company
           in: path
           schema:
@@ -687,23 +683,33 @@ paths:
                     - Use limit & offset for paging.
                    "
       parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+          description: "Guid"
         - name: company
           in: path
           schema:
             type: string
           required: true
           example: FGE
+        - name: limit
+          in: query
+          schema:
+            type: string
+          description: Pagesize
+        - name: offset
+          in: query
+          schema:
+            type: string
+          description: Start from index
         - name: id1
           in: path
           schema:
             type: string
           required: true
           example: 33
-        - name: id
-          in: query
-          schema:
-            type: string
-          description: Guid
       responses:
         '200':
           description: Successful response
@@ -759,15 +765,13 @@ paths:
         - name: limit
           in: query
           schema:
-            type: string
-          example: 10
+            type: integer
           description: Pagesize
         - name: offset
           in: query
           schema:
-            type: string
-          example: 1
-          description: StartIndex
+            type: integer
+          description: Start from index
         - name: company
           in: path
           schema:
@@ -871,15 +875,13 @@ paths:
         - name: limit
           in: query
           schema:
-            type: string
-          example: 10
+            type: integer
           description: Pagesize
         - name: offset
           in: query
           schema:
-            type: string
-          example: 1
-          description: StartIndex
+            type: integer
+          description: Start from index
         - name: company
           in: path
           schema:
@@ -964,15 +966,13 @@ paths:
         - name: limit
           in: query
           schema:
-            type: string
-          example: 10
+            type: integer
           description: Pagesize
         - name: offset
           in: query
           schema:
-            type: string
-          example: 1
-          description: StartIndex
+            type: integer
+          description: Start from index
         - name: company
           in: path
           schema:
@@ -1058,12 +1058,12 @@ paths:
           in: query
           schema:
             type: integer
-          example: '10'
+          description: Pagesize
         - name: offset
           in: query
           schema:
             type: integer
-          example: '5'
+          description: Start from index
         - name: company
           in: path
           schema:
@@ -1172,13 +1172,14 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /data/company/{company}/articlesprice:
+  /data/company/{company}/articlesprice/{id1}:
     get:
       tags:
         - ArticlesPrice
       parameters:
-        - name: ArticleList
-          in: query
+        - name: id1
+          in: path
+          required: true
           schema:
             type: string
           example: 112210192,112210193
@@ -1212,12 +1213,12 @@ paths:
           in: query
           schema:
             type: integer
-          example: '5'
+          description: Pagesize
         - name: offset
           in: query
           schema:
             type: integer
-          example: '0'
+          description: Start from index
         - name: company
           in: path
           schema:
@@ -1387,7 +1388,12 @@ paths:
           in: query
           schema:
             type: integer
-          example: '5'
+          description: Pagesize
+        - name: offset
+          in: query
+          schema:
+            type: integer
+          description: Start from index
         - name: company
           in: path
           schema:
@@ -1480,7 +1486,12 @@ paths:
           in: query
           schema:
             type: integer
-          example: '5'
+          description: Pagesize
+        - name: offset
+          in: query
+          schema:
+            type: integer
+          description: Start from index
         - name: company
           in: path
           schema:
@@ -1697,12 +1708,12 @@ paths:
           in: query
           schema:
             type: integer
-          example: '5'
+          description: Pagesize
         - name: offset
           in: query
           schema:
             type: integer
-          example: '0'
+          description: Start from index
       responses:
         '200':
           description: Successful response
@@ -1793,22 +1804,22 @@ paths:
           schema:
             type: string
           description: "Guid"
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          description: Pagesize
+        - name: offset
+          in: query
+          schema:
+            type: integer
+          description: Start from index
         - name: company
           in: path
           schema:
             type: string
           required: true
           example: FGE
-        - name: limit
-          in: query
-          schema:
-            type: number
-          example: 60
-        - name: offset
-          in: query
-          schema:
-            type: number
-          example: 0
       responses:
         '200':
           description: Successful response
