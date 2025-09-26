@@ -859,7 +859,7 @@ paths:
         - name: id1
           in: path
           required: true
-          example: 439
+          example: 1
           schema:
             type: string
         - name: company
