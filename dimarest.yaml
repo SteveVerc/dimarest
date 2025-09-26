@@ -252,6 +252,7 @@ paths:
       parameters:
         - name: id
           in: query
+          required: true
           schema:
             type: string
           example: 30783030-3030-3030-3030-3030323364643061
@@ -442,6 +443,7 @@ paths:
       parameters:
         - name: id
           in: query
+          required: true
           schema:
             type: string
           example: 30783030-3030-3030-3030-3030323364643061
