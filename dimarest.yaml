@@ -258,7 +258,7 @@ paths:
           required: true
           example: FGE
       responses:
-        '200':
+        '201':
           description: Successful response
           content:
             application/json: {}
@@ -600,7 +600,7 @@ paths:
           required: true
           example: FGE
       responses:
-        '200':
+        '201':
           description: Successful response
           content:
             application/json: {}
@@ -812,6 +812,29 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /data/company/{company}/customers/{id1}:
+    get:
+      tags:
+        - Customers
+      summary: "Retrieve Customers"
+      parameters:
+        - name: id1
+          in: path
+          required: true
+          example: 439
+          schema:
+            type: string
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: FGE
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /data/company/{company}/customers:
     get:
       tags:
@@ -850,33 +873,10 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /data/company/{company}/customers/{id1}:
-    get:
-      tags:
-        - Customers
-      summary: "Retrieve Customers by pk"
-      parameters:
-        - name: id1
-          in: path
-          required: true
-          example: 1
-          schema:
-            type: string
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: FGE
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}          
-  /data/company/{company}/customerorderaddresses:
     post:
       tags:
-        - CustomerOrderAddresses 
+        - Customers
+      summary: "Create Customer"
       requestBody:
         content:
           application/json:
@@ -914,7 +914,6 @@ paths:
                 pers_volgnummer: 0
                 Newsletter: true
                 Blocked: false
-                OrderAddressId: 439
       parameters:
         - name: company
           in: path
@@ -923,7 +922,7 @@ paths:
           required: true
           example: FGE
       responses:
-        '200':
+        '201':
           description: Successful response
           content:
             application/json: {}
@@ -1421,7 +1420,7 @@ paths:
           required: true
           example: FGE
       responses:
-        '200':
+        '201':
           description: Successful response
           content:
             application/json: {}
@@ -1561,7 +1560,7 @@ paths:
           required: true
           example: FGE
       responses:
-        '200':
+        '201':
           description: Successful response
           content:
             application/json: {}
