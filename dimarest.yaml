@@ -374,7 +374,7 @@ paths:
           in: query
           schema:
             type: string
-          example: 30783030-3030-3030-3030-3030323364643061
+          example: 30783030-3030-3030-3030-3063316563343438
         - name: company
           in: path
           schema:
@@ -395,7 +395,7 @@ paths:
           in: path
           schema:
             type: string
-          example: 95791
+          example: 95811
           required: true
         - name: company
           in: path
@@ -417,7 +417,7 @@ paths:
           in: path
           schema:
             type: string
-          example: 95791
+          example: 95811
           required: true
         - name: id2
           in: path
@@ -446,7 +446,7 @@ paths:
           required: true
           schema:
             type: string
-          example: 30783030-3030-3030-3030-3030323364643061
+          example: 30783030-3030-3030-3030-3034323566363134
         - name: company
           in: path
           schema:
