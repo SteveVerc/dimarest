@@ -28,7 +28,6 @@ tags:
   - name: SalesInvoices
   - name: SalesInvoicelines
   - name: Customers
-  - name: CustomerOrderAddresses
   - name: PurchaseOrders
   - name: PurchaseOrderlines
   - name: PurchaseCosts  
