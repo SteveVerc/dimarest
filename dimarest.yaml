@@ -4,7 +4,6 @@ info:
   version: 1.0.0
 servers:
   - url: http://beapstraindb01.kerridgecs.local:9095/web/api/v1
-    description: Proplanet Test
 components:
   securitySchemes:
     basicAuth:
@@ -19,9 +18,9 @@ tags:
   - name: ArticlesPrice
   - name: ArticlesTierPrice
   - name: ArticlesSpecifications
-  - name: Company
   - name: SalesOrders
   - name: SalesOrderTexts
+  - name: SalesOrderAddresses
   - name: SalesOrderlines
   - name: SalesOrderlineTexts
   - name: SalesOrdersCalc
@@ -52,34 +51,8 @@ tags:
   - name: ValidateUser
   - name: Endpoints
   - name: Schemas
+  
 paths:
-  /meta/{endpoint}:
-    get:
-      tags:
-        - Schemas
-      summary: "Retrieve Schema"
-      description: "- Retrieve the Schema (header).
-      
-                    - Mode : dev (to see the databasefields).
-                   "
-      parameters:
-        - name: endpoint
-          required: true
-          in: path
-          schema:
-            type: string         
-          example: salesorders
-          description: salesorders, salesoffers, ...
-        - name: mode
-          in: query
-          schema:
-            type: string
-      #deprecated: true
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
   /data/company/{company}/salesorders/{id1}:
     get:
       tags:
@@ -156,148 +129,386 @@ paths:
               type: object
               example:
                 SalesOrders:
-                  - CompanyId: DI1
-                    ExternalReference: referentie
-                    OrderDate: '2025-01-29'
-                    RequestDeliveryDate: '2025-01-30'
-                    IsCollectedByCustomer: false
-                    TermsOfDeliveryId: FRC
-                    WarehouseId: null
-                    TransportMethodId: null
-                    CurrencyId: EUR
-                    DocumentOrigin: ePO
-                    Username: dsuser
-                    BackOrdersTreatment: null
-                SalesOrderAddresses:
-                  - CompanyId: DI1
-                    AddressTypeId: BUYER
-                    AddressId: 93
-                    AddressLine1: null
-                    AddressLine2: null
-                    AddressLine3: null
-                    AddressName1: null
-                    AddressName2: null
-                    AddressName3: null
-                    CityName: null
-                    CountryId: null
-                    DepartmentId: null
-                    DepartmentName: null
-                    EanCode: null
-                    EmailAddress: null
-                    FaxNumber1: null
-                    FirstName: null
-                    LanguageId: null
-                    LastName: null
-                    MobilePhoneNumber: null
-                    PersonId: 2
-                    PhoneNumber1: null
-                    PostCode: null
-                    Languagecode: NL
-                  - CompanyId: DI1
-                    AddressTypeId: DELIVERY
-                    AddressId: 119
-                    AddressLine1: null
-                    AddressLine2: null
-                    AddressLine3: null
-                    AddressName1: null
-                    AddressName2: null
-                    AddressName3: null
-                    CityName: null
-                    CountryId: null
-                    DepartmentId: null
-                    DepartmentName: null
-                    EanCode: null
-                    EmailAddress: null
-                    FaxNumber1: null
-                    FirstName: null
-                    LanguageId: null
-                    LastName: null
-                    MobilePhoneNumber: null
-                    PersonId: 0
-                    PhoneNumber1: null
-                    PostCode: null
-                    Languagecode: NL
-                  - CompanyId: DI1
-                    AddressTypeId: INVOICE
-                    AddressId: 93
-                    AddressLine1: null
-                    AddressLine2: null
-                    AddressLine3: null
-                    AddressName1: null
-                    AddressName2: null
-                    AddressName3: null
-                    CityName: null
-                    CountryId: null
-                    DepartmentId: null
-                    DepartmentName: null
-                    EanCode: null
-                    EmailAddress: null
-                    FaxNumber1: null
-                    FirstName: null
-                    LanguageId: null
-                    LastName: null
-                    MobilePhoneNumber: null
-                    PersonId: 0
-                    PhoneNumber1: null
-                    PostCode: null
-                    Languagecode: NL
-                  - CompanyId: DI1
-                    AddressTypeId: WAREHOUSE
-                    AddressId: 0
-                    AddressLine1: null
-                    AddressLine2: null
-                    AddressLine3: null
-                    AddressName1: null
-                    AddressName2: null
-                    AddressName3: null
-                    CityName: null
-                    CountryId: null
-                    DepartmentId: null
-                    DepartmentName: null
-                    EanCode: null
-                    EmailAddress: null
-                    FaxNumber1: null
-                    FirstName: null
-                    LanguageId: null
-                    LastName: null
-                    MobilePhoneNumber: null
-                    PersonId: 0
-                    PhoneNumber1: null
-                    PostCode: null
-                    Languagecode: null
-                SalesOrderLines:
-                  - CompanyId: DI1
-                    OrderLineId: 10
-                    ItemId: merctruck
-                    ItemDescription1: omschrijving1 van merctruck
-                    ItemDescription2: omschrijving2 van merctruck
-                    NumberOfRequiredUnits: 2
-                    SalesUnitId: PCE
-                    RequestedDeliveryDate: '2025-01-30'
-                    TariffPrice: 0
-                    TariffPriceUnitId: ''
-                    NetSalesPrice: 0
-                    NetLineAmount: 0
-                    LotNumber: null
-                  - CompanyId: DI1
-                    OrderLineId: 20
-                    ItemId: '74180030'
-                    ItemDescription1: BOORKOP M.SLEUT. 115 16MM 5/8X16  72829
-                    ItemDescription2: ROHM 2009
-                    NumberOfRequiredUnits: 1
-                    SalesUnitId: PCE
-                    RequestedDeliveryDate: '2025-01-30'
-                    TariffPrice: 0
-                    TariffPriceUnitId: ''
-                    NetSalesPrice: 0
-                    NetLineAmount: 0
-                    LotNumber: null
-                SalesOrderTexts:
-                  - CompanyId: DI1
-                    SequenceNumber: 1
-                    TextDetail: referentie2
-                SalesOrderPayments: []
+                - ExternalReference: referentie
+                  EntryDate: '2025-09-26'
+                  RequestDeliveryDate: '2025-12-30'
+                  DeliveryCollected: false
+                  TermsOfDeliveryId: FRC
+                  WarehouseId: null
+                  TransportMethodId: null
+                  CurrencyId: EUR
+                  DocumentOrigin: ePO
+                  Username: dsuser
+                  OrderAddresses:
+                    - AddressId: 1
+                      AddressLine1: null
+                      AddressLine2: null
+                      AddressLine3: null
+                      AddressName1: null
+                      AddressName2: null
+                      AddressName3: null
+                      CityName: null
+                      CountryId: null
+                      DepartmentId: null
+                      DepartmentName: null
+                      EanCode: null
+                      EmailAddress: null
+                      FaxNumber1: null
+                      FirstName: null
+                      LanguageId: null
+                      LastName: null
+                      MobilePhoneNumber: null
+                      PersonId: null
+                      PhoneNumber1: null
+                      PostCode: null
+                      Languagecode: NL
+                  DeliveryAddresses:
+                    - AddressId: 1
+                      AddressLine1: null
+                      AddressLine2: null
+                      AddressLine3: null
+                      AddressName1: null
+                      AddressName2: null
+                      AddressName3: null
+                      CityName: null
+                      CountryId: null
+                      DepartmentId: null
+                      DepartmentName: null
+                      EanCode: null
+                      EmailAddress: null
+                      FaxNumber1: null
+                      FirstName: null
+                      LanguageId: null
+                      LastName: null
+                      MobilePhoneNumber: null
+                      PersonId: null
+                      PhoneNumber1: null
+                      PostCode: null
+                      Languagecode: NL
+                  InvoiceAddresses:
+                    - AddressId: 1
+                      AddressLine1: null
+                      AddressLine2: null
+                      AddressLine3: null
+                      AddressName1: null
+                      AddressName2: null
+                      AddressName3: null
+                      CityName: null
+                      CountryId: null
+                      DepartmentId: null
+                      DepartmentName: null
+                      EanCode: null
+                      EmailAddress: null
+                      FaxNumber1: null
+                      FirstName: null
+                      LanguageId: null
+                      LastName: null
+                      MobilePhoneNumber: null
+                      PersonId: null
+                      PhoneNumber1: null
+                      PostCode: null
+                      Languagecode: NL
+                  SalesOrderLines:
+                    - ItemId: '112210192'
+                      NumberOfUnitsInOrder: 2
+                      SalesUnitId: PCE
+                      RequestedDeliveryDate: '2025-12-30'
+                      TariffPrice: 100
+                      TariffPriceUnitId: ''
+                      NetSalesPrice: 0
+                      NetLineAmount: 0
+                      LotNumber: null
+                      SalesOrderLineTexts:
+                        - TextDetail: test text (112210192)
+                        - TextDetail: test text (112210192) 2de
+                    - ItemId: '100410347'
+                      NumberOfUnitsInOrder: 1
+                      SalesUnitId: ST
+                      RequestedDeliveryDate: '2025-12-30'
+                      TariffPrice: 100
+                      TariffPriceUnitId: ''
+                      NetSalesPrice: 0
+                      NetLineAmount: 0
+                      LotNumber: null
+                      SalesOrderLineTexts:
+                        - TextDetail: test text (100410347)
+                        - TextDetail: test text (100410347) 2de
+                  SalesOrderTexts:
+                    - TextDetail: referentie2 postman order
       parameters:
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: FGE
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/salesordertexts:
+    get:
+      tags:
+        - SalesOrderTexts
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+          example: 30783030-3030-3030-3030-3030323364643061
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: FGE
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/salesorders/{id1}/salesordertexts:
+    get:
+      tags:
+        - SalesOrderTexts
+      parameters:
+        - name: id1
+          in: path
+          schema:
+            type: string
+          example: 95791
+          required: true
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: FGE
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/salesorders/{id1}/salesordertexts/{id2}:
+    get:
+      tags:
+        - SalesOrderTexts
+      parameters:
+        - name: id1
+          in: path
+          schema:
+            type: string
+          example: 95791
+          required: true
+        - name: id2
+          in: path
+          schema:
+            type: string
+          example: 10
+          required: true
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: FGE
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/salesorders/{id1}/addresses:
+    get:
+      tags:
+        - SalesOrderAddresses
+      description: ''
+      parameters:
+        - name: id1
+          in: path
+          schema:
+            type: string
+          example: 95791
+          required: true
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: FGE
+      responses:
+        '200':
+          description: Successful response
+  /data/company/{company}/salesorders/{id1}/addresses/{id2}:
+    get:
+      tags:
+        - SalesOrderAddresses
+      description: ''
+      parameters:
+        - name: id1
+          in: path
+          schema:
+            type: string
+          example: 95791
+          required: true
+        - name: id2
+          in: path
+          schema:
+            type: string
+          example: ORD
+          required: true
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: FGE
+      responses:
+        '200':
+          description: Successful response
+  /data/company/{company}/salesorderlines:
+    get:
+      tags:
+        - SalesOrderlines
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+          example: 30783030-3030-3030-3030-3030323364643061
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: FGE
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/salesorders/{id1}/salesorderlines:
+    get:
+      tags:
+        - SalesOrderlines
+      parameters:
+        - name: id1
+          in: path
+          schema:
+            type: string
+          example: 95791
+          required: true
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: FGE
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/salesorders/{id1}/salesorderlines/{id2}:
+    get:
+      tags:
+        - SalesOrderlines
+      parameters:
+        - name: id1
+          in: path
+          schema:
+            type: string
+          example: 95791
+          required: true
+        - name: id2
+          in: path
+          schema:
+            type: string
+          example: 10
+          required: true
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: FGE
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/salesorderlinetexts:
+    get:
+      tags:
+        - SalesOrderlineTexts
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+          example: 30783030-3030-3030-3030-3030323364643061
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: FGE
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/salesorders/{id1}/salesorderlines/{id2}/salesorderlinetexts:
+    get:
+      tags:
+        - SalesOrderlineTexts
+      parameters:
+        - name: id1
+          in: path
+          schema:
+            type: string
+          example: 95791
+          required: true
+        - name: id2
+          in: path
+          schema:
+            type: string
+          example: 10
+          required: true
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: FGE
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /data/company/{company}/salesorders/{id1}/salesorderlines/{id2}/salesorderlinetexts/{id3}:
+    get:
+      tags:
+        - SalesOrderlineTexts
+      parameters:
+        - name: id1
+          in: path
+          schema:
+            type: string
+          example: 95791
+          required: true
+        - name: id2
+          in: path
+          schema:
+            type: string
+          example: 10
+          required: true
+        - name: id3
+          in: path
+          schema:
+            type: string
+          example: 10
+          required: true
         - name: company
           in: path
           schema:
@@ -629,48 +840,6 @@ paths:
             type: string
           example: 30783030-3030-3030-3030-3030316666643030
           required: true
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: FGE
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/salesorderlines:
-    get:
-      tags:
-        - SalesOrderlines
-      parameters:
-        - name: id
-          in: query
-          schema:
-            type: string
-          example: 30783030-3030-3030-3030-3030323364643061
-        - name: company
-          in: path
-          schema:
-            type: string
-          required: true
-          example: FGE
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /data/company/{company}/salesorderlines/{id1}/salesorderlinetexts:
-    get:
-      tags:
-        - SalesOrderlineTexts
-      parameters:
-        - name: id
-          in: query
-          schema:
-            type: string
-          example: 30783030-3030-3030-3030-3030323364643061
         - name: company
           in: path
           schema:
@@ -2228,6 +2397,33 @@ paths:
             type: string
           required: true
           example: FGE
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /meta/{endpoint}:
+    get:
+      tags:
+        - Schemas
+      summary: "Retrieve Schema"
+      description: "- Retrieve the Schema (header).
+      
+                    - Mode : dev (to see the databasefields).
+                   "
+      parameters:
+        - name: endpoint
+          required: true
+          in: path
+          schema:
+            type: string         
+          example: salesorders
+          description: salesorders, salesoffers, ...
+        - name: mode
+          in: query
+          schema:
+            type: string
+      #deprecated: true
       responses:
         '200':
           description: Successful response
