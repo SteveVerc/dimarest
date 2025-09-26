@@ -850,6 +850,29 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /data/company/{company}/customers/{id1}:
+    get:
+      tags:
+        - Customers
+      summary: "Retrieve Customers by pk"
+      parameters:
+        - name: id1
+          in: path
+          required: true
+          example: 439
+          schema:
+            type: string
+        - name: company
+          in: path
+          schema:
+            type: string
+          required: true
+          example: FGE
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}          
   /data/company/{company}/customerorderaddresses:
     post:
       tags:
